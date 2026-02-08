@@ -1,1 +1,781 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVault - Уникальная библиотека веб-книг</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #ff9a76;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Основной контент */
+        main {
+            padding: 40px 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 0 30px;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Книжная полка */
+        .bookshelf {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .book {
+            width: 280px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .book:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .book-cover {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .book-icon {
+            font-size: 4rem;
+            color: white;
+            opacity: 0.9;
+            z-index: 1;
+        }
+
+        .book-info {
+            padding: 25px;
+        }
+
+        .book-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .book-author {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .book-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--gray);
+            margin-bottom: 20px;
+            height: 70px;
+            overflow: hidden;
+        }
+
+        .book-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-download {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-download:hover {
+            background-color: #ff7a50;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(255, 154, 118, 0.3);
+        }
+
+        .btn-preview {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-preview:hover {
+            background-color: rgba(74, 111, 165, 0.1);
+        }
+
+        /* Секция загрузки */
+        .upload-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .upload-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .upload-section p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .upload-area {
+            border: 3px dashed var(--primary);
+            border-radius: 10px;
+            padding: 60px 20px;
+            background-color: rgba(74, 111, 165, 0.03);
+            margin-bottom: 25px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .upload-area:hover {
+            background-color: rgba(74, 111, 165, 0.08);
+        }
+
+        .upload-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .upload-text h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .upload-text p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        .upload-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            margin: 0 auto;
+        }
+
+        .upload-btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(22, 96, 136, 0.2);
+        }
+
+        /* Подвал */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .book {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .upload-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-book-sparkles"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>BookVault</h1>
+                        <p>Уникальная библиотека веб-книг</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="#bookshelf"><i class="fas fa-book-open"></i> Книги</a></li>
+                        <li><a href="#upload"><i class="fas fa-upload"></i> Загрузить</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> О нас</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- Герой-секция -->
+        <section class="hero">
+            <h2>Погрузитесь в мир веб-книг</h2>
+            <p>Откройте для себя уникальную коллекцию интерактивных веб-книг. Загружайте, читайте и делитесь своими собственными творениями с сообществом.</p>
+            <a href="#upload" class="btn upload-btn">
+                <i class="fas fa-cloud-upload-alt"></i> Загрузить книгу
+            </a>
+        </section>
+
+        <!-- Книжная полка -->
+        <section id="bookshelf">
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--secondary); font-size: 2rem;">Популярные веб-книги</h2>
+            <div class="bookshelf">
+                <!-- Книга 1 -->
+                <div class="book">
+                    <div class="book-cover">
+                        <div class="book-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Мастерство веб-разработки</h3>
+                        <p class="book-author"><i class="fas fa-user"></i> Алексей Вебстеров</p>
+                        <p class="book-description">Полное руководство по созданию современных веб-приложений с использованием HTML5, CSS3 и JavaScript.</p>
+                        <div class="book-actions">
+                            <button class="btn btn-download" onclick="downloadBook(1)">
+                                <i class="fas fa-download"></i> Скачать
+                            </button>
+                            <button class="btn btn-preview" onclick="previewBook(1)">
+                                <i class="fas fa-eye"></i> Просмотр
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Книга 2 -->
+                <div class="book">
+                    <div class="book-cover">
+                        <div class="book-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Искусство веб-дизайна</h3>
+                        <p class="book-author"><i class="fas fa-user"></i> Мария Креативова</p>
+                        <p class="book-description">Интерактивное руководство по созданию эстетичных и функциональных пользовательских интерфейсов.</p>
+                        <div class="book-actions">
+                            <button class="btn btn-download" onclick="downloadBook(2)">
+                                <i class="fas fa-download"></i> Скачать
+                            </button>
+                            <button class="btn btn-preview" onclick="previewBook(2)">
+                                <i class="fas fa-eye"></i> Просмотр
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Книга 3 -->
+                <div class="book">
+                    <div class="book-cover">
+                        <div class="book-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Введение в искусственный интеллект</h3>
+                        <p class="book-author"><i class="fas fa-user"></i> Дмитрий Алгоритмов</p>
+                        <p class="book-description">Интерактивная книга о машинном обучении и нейронных сетях с практическими примерами.</p>
+                        <div class="book-actions">
+                            <button class="btn btn-download" onclick="downloadBook(3)">
+                                <i class="fas fa-download"></i> Скачать
+                            </button>
+                            <button class="btn btn-preview" onclick="previewBook(3)">
+                                <i class="fas fa-eye"></i> Просмотр
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция загрузки -->
+        <section id="upload" class="upload-section">
+            <h3>Загрузите свою веб-книгу</h3>
+            <p>Поделитесь своей уникальной веб-книгой с нашим сообществом. Поддерживаются форматы HTML, EPUB, PDF и другие веб-совместимые форматы.</p>
+            
+            <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+                <div class="upload-icon">
+                    <i class="fas fa-file-upload"></i>
+                </div>
+                <div class="upload-text">
+                    <h4>Перетащите файлы сюда или нажмите для выбора</h4>
+                    <p>Максимальный размер файла: 100 MB. Поддерживаемые форматы: HTML, EPUB, PDF, ZIP</p>
+                </div>
+            </div>
+            
+            <input type="file" id="fileInput" style="display: none;" accept=".html,.epub,.pdf,.zip" onchange="handleFileUpload(event)">
+            
+            <button class="btn upload-btn" onclick="document.getElementById('fileInput').click()">
+                <i class="fas fa-folder-open"></i> Выбрать файл для загрузки
+            </button>
+            
+            <div id="uploadStatus" style="margin-top: 20px;"></div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>О BookVault</h4>
+                    <p>BookVault - это уникальная платформа для обмена интерактивными веб-книгами. Мы предоставляем авторам возможность делиться своими творениями, а читателям - открывать новые увлекательные произведения.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Главная</a></li>
+                        <li><a href="#bookshelf"><i class="fas fa-chevron-right"></i> Каталог книг</a></li>
+                        <li><a href="#upload"><i class="fas fa-chevron-right"></i> Загрузить книгу</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Правила сообщества</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Помощь и поддержка</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Книжная, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@bookvault.ru</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 BookVault. Все права защищены. Сайт создан для демонстрации уникального оформления.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Функция для скачивания книги
+        function downloadBook(bookId) {
+            const status = document.getElementById('uploadStatus');
+            status.innerHTML = `<div style="background-color: #d4edda; color: #155724; padding: 15px; border-radius: 8px; border: 1px solid #c3e6cb;">
+                <i class="fas fa-check-circle"></i> Началась загрузка книги #${bookId}. Ваша книга будет сохранена в папке "Загрузки".
+            </div>`;
+            
+            // В реальном приложении здесь был бы код для скачивания файла
+            setTimeout(() => {
+                status.innerHTML = `<div style="background-color: #d1ecf1; color: #0c5460; padding: 15px; border-radius: 8px; border: 1px solid #bee5eb;">
+                    <i class="fas fa-info-circle"></i> Книга #${bookId} успешно скачана!
+                </div>`;
+            }, 1500);
+        }
+
+        // Функция для предпросмотра книги
+        function previewBook(bookId) {
+            alert(`Открывается предпросмотр книги #${bookId}. В реальном приложении здесь был бы открыт просмотрщик книг.`);
+        }
+
+        // Обработка загрузки файла
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            const status = document.getElementById('uploadStatus');
+            const uploadArea = document.getElementById('uploadArea');
+            
+            if (!file) return;
+            
+            // Проверка типа файла
+            const validTypes = ['application/pdf', 'application/epub+zip', 'text/html', 'application/zip'];
+            const fileExtension = file.name.split('.').pop().toLowerCase();
+            const validExtensions = ['pdf', 'epub', 'html', 'zip'];
+            
+            if (!validExtensions.includes(fileExtension) && !validTypes.includes(file.type)) {
+                status.innerHTML = `<div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; border: 1px solid #f5c6cb;">
+                    <i class="fas fa-exclamation-triangle"></i> Ошибка: неподдерживаемый формат файла. Пожалуйста, загрузите файл в формате HTML, EPUB, PDF или ZIP.
+                </div>`;
+                return;
+            }
+            
+            // Проверка размера файла
+            if (file.size > 100 * 1024 * 1024) {
+                status.innerHTML = `<div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; border: 1px solid #f5c6cb;">
+                    <i class="fas fa-exclamation-triangle"></i> Ошибка: файл слишком большой. Максимальный размер: 100 MB.
+                </div>`;
+                return;
+            }
+            
+            // Изменение вида области загрузки
+            uploadArea.innerHTML = `
+                <div class="upload-icon">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <div class="upload-text">
+                    <h4>Загрузка файла: ${file.name}</h4>
+                    <p>Размер: ${(file.size / (1024*1024)).toFixed(2)} MB</p>
+                    <div style="margin-top: 15px; height: 10px; background-color: #e9ecef; border-radius: 5px; overflow: hidden;">
+                        <div id="progressBar" style="height: 100%; width: 0%; background-color: var(--accent); transition: width 0.3s;"></div>
+                    </div>
+                </div>
+            `;
+            
+            // Имитация процесса загрузки
+            let progress = 0;
+            const progressBar = document.getElementById('progressBar');
+            const interval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        status.innerHTML = `<div style="background-color: #d4edda; color: #155724; padding: 15px; border-radius: 8px; border: 1px solid #c3e6cb;">
+                            <i class="fas fa-check-circle"></i> Файл "${file.name}" успешно загружен! Он будет проверен модератором и вскоре появится в каталоге.
+                        </div>`;
+                        
+                        // Возвращаем область загрузки в исходное состояние
+                        uploadArea.innerHTML = `
+                            <div class="upload-icon">
+                                <i class="fas fa-file-upload"></i>
+                            </div>
+                            <div class="upload-text">
+                                <h4>Перетащите файлы сюда или нажмите для выбора</h4>
+                                <p>Максимальный размер файла: 100 MB. Поддерживаемые форматы: HTML, EPUB, PDF, ZIP</p>
+                            </div>
+                        `;
+                        uploadArea.onclick = () => document.getElementById('fileInput').click();
+                    }, 500);
+                }
+            }, 200);
+        }
+
+        // Добавляем обработчик для перетаскивания файлов
+        document.addEventListener('DOMContentLoaded', function() {
+            const uploadArea = document.getElementById('uploadArea');
+            
+            // Предотвращаем стандартное поведение браузера для перетаскивания
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, preventDefaults, false);
+                document.body.addEventListener(eventName, preventDefaults, false);
+            });
+            
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            // Подсветка области загрузки при перетаскивании файла
+            ['dragenter', 'dragover'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, highlight, false);
+            });
+            
+            ['dragleave', 'drop'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, unhighlight, false);
+            });
+            
+            function highlight() {
+                uploadArea.style.backgroundColor = 'rgba(74, 111, 165, 0.15)';
+                uploadArea.style.borderColor = 'var(--accent)';
+            }
+            
+            function unhighlight() {
+                uploadArea.style.backgroundColor = 'rgba(74, 111, 165, 0.03)';
+                uploadArea.style.borderColor = 'var(--primary)';
+            }
+            
+            // Обработка сброса файла
+            uploadArea.addEventListener('drop', handleDrop, false);
+            
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                
+                // Создаем событие change для input файла
+                const fileInput = document.getElementById('fileInput');
+                fileInput.files = files;
+                
+                // Запускаем обработку загрузки
+                const event = new Event('change', { bubbles: true });
+                fileInput.dispatchEvent(event);
+            }
+        });
+    </script>
+</body>
+</html>
