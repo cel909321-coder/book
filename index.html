@@ -3,878 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СИБИРЬ - книга ученника НАДИП</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Ruins Library - Надип</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        :root {
-            --primary-color: #1a3c34;
-            --secondary-color: #4a7c6d;
-            --accent-color: #d4a574;
-            --text-color: #333;
-            --light-bg: #f5f1e8;
-            --dark-bg: #0d261f;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
         body {
-            background-color: var(--light-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(218, 199, 172, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(77, 126, 109, 0.05) 0%, transparent 20%);
-            min-height: 100vh;
-            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0a0a0a;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .site-wrapper {
+            width: 92%;
+            max-width: 1300px;
+            height: 90vh;
+            background-color: #0a0a0a;
+            border-radius: 12px;
+            padding: 70px 35px 35px 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
-
-        /* Header styles */
-        header {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
+        .header {
+            position: absolute;
+            top: 25px;
+            left: 45px;
+            z-index: 10;
+        }
+        .site-title {
+            font-family: 'Special Elite', 'Courier New', cursive;
+            font-size: 34px;
+            font-weight: 400;
+            color: #ffffff;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+        .white-layer {
+            background-color: #f5f3f0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            padding: 45px 55px 40px 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             position: relative;
             overflow: hidden;
-            border-bottom: 8px solid var(--accent-color);
         }
-
-        header::before {
-            content: "";
+        .white-layer::before {
+            content: "☢️ 💀 📖 ☢️ 💀 📖 ☢️ 💀 📖 ☢️ 💀 📖 ☢️ 💀 📖";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%234a7c6d' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.3;
+            font-size: 60px;
+            letter-spacing: 40px;
+            word-spacing: 60px;
+            line-height: 2.8;
+            opacity: 0.04;
+            pointer-events: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            padding: 30px;
+            z-index: 0;
         }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--accent-color);
-            margin-bottom: 10px;
+        .hero {
+            text-align: center;
             position: relative;
-            display: inline-block;
-        }
-
-        .logo::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-            font-style: italic;
-        }
-
-        /* Main content */
-        .main-content {
+            z-index: 1;
+            flex: 1;
             display: flex;
             flex-direction: column;
-            min-height: calc(100vh - 250px);
-            padding: 40px 0;
+            justify-content: center;
         }
-
-        .book-cover {
-            width: 200px;
-            height: 300px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            border-radius: 10px;
-            margin: 0 auto 40px;
+        .greeting {
+            font-size: 38px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            font-family: 'Cinzel', 'Georgia', serif;
+        }
+        .highlight {
+            font-weight: 900;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 44px;
+            letter-spacing: 3px;
+        }
+        .description {
+            margin-top: 15px;
+            font-size: 17px;
+            color: #555;
+            font-weight: 300;
+            letter-spacing: 2px;
+            font-family: 'Special Elite', 'Courier New', cursive;
+            opacity: 0.7;
+        }
+        .bookshelf {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            position: relative;
+            z-index: 1;
+            margin-top: 10px;
+        }
+        .book-card {
+            width: 190px;
+            height: 250px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            background: #1a1a1a;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            font-weight: bold;
-            box-shadow: var(--shadow);
             position: relative;
-            overflow: hidden;
-            border: 8px solid white;
         }
-
-        .book-cover::before {
-            content: "СИБИРЬ";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2.8rem;
+        .book-card:hover {
+            transform: scale(1.08) translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+        .book-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .book-card:hover .book-image {
+            filter: brightness(0.7);
+        }
+        .book-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            flex-direction: column;
+            gap: 5px;
+        }
+        /* ===== ГЕНЕРИРУЕМАЯ КАРТИНКА ДЛЯ ПЕРВОЙ КНИГИ ===== */
+        .generated-cover {
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(135deg, #1a0a0a 0%, #2d1a1a 30%, #3d2a1a 60%, #1a0a0a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
             text-align: center;
+            font-family: 'Special Elite', cursive;
+            color: #c4a882;
+            position: relative;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .generated-cover::before {
+            content: "☢️";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 28px;
+            opacity: 0.3;
+        }
+        .generated-cover::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, transparent 100%);
+            border-radius: 0 0 8px 8px;
+            pointer-events: none;
+        }
+        .generated-cover .city {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: #d4b896;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 1;
             line-height: 1.2;
         }
-
-        .book-cover::after {
-            content: "НАДИП";
+        .generated-cover .nightmare {
+            font-size: 14px;
+            letter-spacing: 12px;
+            color: #8a6a4a;
+            margin-top: 4px;
+            position: relative;
+            z-index: 1;
+        }
+        .generated-cover .divider {
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8a6a4a, transparent);
+            margin: 8px 0;
+            position: relative;
+            z-index: 1;
+        }
+        .generated-cover .sub {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #6a5a4a;
+            position: relative;
+            z-index: 1;
+            line-height: 1.6;
+        }
+        .generated-cover .stamp {
             position: absolute;
             bottom: 20px;
-            right: 20px;
-            font-size: 1.2rem;
-            opacity: 0.8;
+            right: 15px;
+            font-size: 10px;
+            color: #5a4a3a;
+            opacity: 0.4;
+            transform: rotate(-10deg);
+            letter-spacing: 2px;
+            z-index: 1;
         }
 
-        .chapter-controls {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .chapter-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
+        /* ===== ОПИСАНИЕ КНИГИ ПРИ НАВЕДЕНИИ ===== */
+        .book-description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.88);
+            backdrop-filter: blur(4px);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 12px;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 10;
+            pointer-events: none;
         }
-
-        .chapter-btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-5px);
+        .book-card:hover .book-description {
+            opacity: 1;
         }
-
-        .chapter-btn.active {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            transform: scale(1.1);
-        }
-
-        .chapter-content {
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            border-left: 8px solid var(--accent-color);
-            min-height: 400px;
-        }
-
-        .chapter-title {
-            color: var(--primary-color);
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--light-bg);
+        .book-description p {
+            color: #c4a882;
+            font-family: 'Special Elite', cursive;
+            font-size: 9px;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
             text-align: center;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+        }
+        .book-description .title {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #d4b896;
+            margin-bottom: 4px;
+            font-weight: 700;
         }
 
-        .chapter-text {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            text-align: justify;
-        }
-
-        .chapter-text p {
-            margin-bottom: 20px;
-            text-indent: 1.5em;
-        }
-
-        .dialogue {
-            margin: 25px 0;
-            padding-left: 20px;
-            border-left: 3px solid var(--accent-color);
-        }
-
-        .character {
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .quote {
-            font-style: italic;
-            padding: 20px;
-            background-color: var(--light-bg);
-            border-left: 4px solid var(--accent-color);
-            margin: 25px 0;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-        }
-
-        .scene-change {
-            text-align: center;
-            margin: 30px 0;
-            padding: 15px;
-            color: var(--secondary-color);
-            font-weight: bold;
-            border-top: 1px dashed var(--secondary-color);
-            border-bottom: 1px dashed var(--secondary-color);
-        }
-
-        /* Personal touch section */
-        .personal-touch {
-            background-color: var(--dark-bg);
-            color: white;
-            padding: 40px 0;
-            margin-top: 50px;
-            border-top: 8px solid var(--accent-color);
-        }
-
-        .personal-touch h3 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--accent-color);
-        }
-
-        .personal-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .personal-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .personal-text p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .personal-image {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, var(--accent-color) 0%, #e6c9a5 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: var(--primary-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 0.9rem;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .copyright {
-            opacity: 0.8;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .chapter-content {
-                padding: 25px;
-            }
-            
-            .chapter-title {
-                font-size: 1.8rem;
-            }
-            
-            .chapter-text {
-                font-size: 1.1rem;
-            }
-            
-            .personal-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-            }
+            .site-wrapper { padding: 55px 15px 15px 15px; }
+            .site-title { font-size: 22px; }
+            .white-layer { padding: 25px 20px 20px 20px; }
+            .greeting { font-size: 22px; }
+            .highlight { font-size: 26px; }
+            .description { font-size: 14px; }
+            .bookshelf { flex-direction: column; align-items: center; gap: 15px; }
+            .book-card { width: 140px; height: 180px; }
+            .generated-cover .city { font-size: 18px; letter-spacing: 5px; }
+            .generated-cover .nightmare { font-size: 12px; letter-spacing: 8px; }
+            .book-description p { font-size: 8px; line-height: 1.4; }
+            .book-description .title { font-size: 10px; }
         }
-
-        /* Animation for chapter change */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.5s ease forwards;
+        @media (max-width: 480px) {
+            .site-wrapper { padding: 45px 10px 10px 10px; }
+            .site-title { font-size: 17px; }
+            .white-layer { padding: 20px 15px 15px 15px; }
+            .greeting { font-size: 18px; }
+            .highlight { font-size: 22px; }
+            .description { font-size: 12px; }
+            .book-card { width: 120px; height: 155px; }
+            .generated-cover .city { font-size: 14px; letter-spacing: 3px; }
+            .generated-cover .nightmare { font-size: 10px; letter-spacing: 5px; }
+            .generated-cover .sub { font-size: 9px; }
+            .generated-cover::before { font-size: 18px; top: 8px; right: 8px; }
+            .book-description p { font-size: 7px; line-height: 1.3; }
+            .book-description .title { font-size: 9px; }
+            .book-description { padding: 8px; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">НАДИП</div>
-            <h1>СИБИРЬ</h1>
-            <p class="subtitle">Книга ученика НАДИП.</p>
-        </div>
-    </header>
 
-    <main class="container main-content">
-        <div class="book-cover"></div>
-        
-        <div class="chapter-controls">
-            <button class="chapter-btn active" data-chapter="1">1</button>
-            <button class="chapter-btn" data-chapter="2">2</button>
-            <button class="chapter-btn" data-chapter="3">3</button>
-            <button class="chapter-btn" data-chapter="4">4</button>
-            <button class="chapter-btn" data-chapter="5">5</button>
-            <button class="chapter-btn" data-chapter="6">6</button>
-            <button class="chapter-btn" data-chapter="7">7</button>
+    <div class="site-wrapper">
+
+        <div class="header">
+            <h1 class="site-title">RUINS LIBRARY</h1>
         </div>
-        
-        <div class="chapter-content">
-            <h2 class="chapter-title">Глава 1: Первые дни</h2>
-            <div class="chapter-text">
-                <!-- Текст первой главы с исправленными ошибками и разбитый на абзацы -->
-                <p>Наступивший новый день встретил Даниила ярким восходом солнца. Его день начался как обычно: он встал, умылся, привел себя в порядок, поел. В это время ему написал его друг Слава и попросил выйти на лестничную площадку (в подъезд). Даниил накинул олимпийку, надел тапки и вышел в подъезд. На лестничной площадке стоял Слава, докуривая сигарету. Они пожали руки, и Слава начал диалог.</p>
-                
-                <p>— Слава: Ты слышал, сегодня должен быть эфир президента. Будет говорить насчёт того, что большая часть Европы угрожает нам ядерным оружием.</p>
-                
-                <p>— Даниил: Да, это смех. Никому не нужны потери. Я считаю, что президент не позволит этому случиться, по крайней мере надеюсь.</p>
-                
-                <p>— Слава: Не думаю. Речь уже об этом давно пошла, не думаю, что это будет как ситуация с военной операцией на Украине. Идёт что-то масштабное.</p>
-                
-                <p>— Даниил: Ну будем надеяться на то, что всё обойдётся дипломатическим путём.</p>
-                
-                <p>Слава попрощался с Даниилом и начал подниматься к себе на этаж. Даниил в это время решил созвониться со своим другом Данилой. Во время звонка Даниил спросил, будет ли тот свободен вечером. Данила сказал, что как раз будет заканчивать доставлять заказы вечером. Они договорились, что Даниил позвонит Даниле вечером после эфира.</p>
-                
-                <p>Избегая худшего, Даниил решил сходить в магазин «ЕРМАК», закупиться сайрой, обычными консервами и пару кило разных видов круп. По пути к магазину он встретил своих друзей Степана и Кирилла, которые шли с чёрными пакетами, где находились алкоголь и еда. Они поздоровались и предложили Даниилу пойти с ними на квартиру к Кириллу, потому что сегодня у него должна была быть вписка в честь того, что он купил себе квартиру. Даниил отказался, сославшись на то, что у него много дел и ему нужно помочь выкинуть Славе его старый диван. Друзья не стали уговаривать, попрощались и двинули в сторону Братского шоссе.</p>
-                
-                <p>В магазине было всё, что ему требовалось. Он купил и вышел из магазина. На улице стояла осенняя прохладная погода, пожелтевшие листья методично спускались на асфальт. Придя домой, было 3 часа дня. Он разложил всё на столе, поднялся к Славе и попросил отдать ему пару пустых баклажек. Слава раньше подрабатывал вожатым в местном летнем оздоровительном лагере «Лосёнок». Его уволили из-за инцидента, когда парни из отряда, где он был вожатым, спровоцировали Славу на драку, не зная, что за его спиной 12 лет бокса и что он является действующим мастером спорта. В этом инциденте Слава сломал одному парню челюсть, второму сломал 5 рёбер, а третий отделался лёгким испугом, так как успел убежать. На Славу завели уголовное дело, но всё обошлось, так как пострадавшие не стали писать заявление и претензий к нему не было. Он отделался 12 месяцами исправительных работ. Слава отдал баклажки и предупредил, чтобы Даниил их тщательно вымыл. Даниил начал набирать по одной баклажке, ставя их в ванну. Набрав все баклажки водой, всю еду и воду он поставил на балкон. Сев на диван, время подходило к вечеру.</p>
-                
-                <p>Увидев, что времени до эфира остаётся мало, он решил сложить все нужные вещи на кровать, чтобы при отбытии не забыть ничего нужного. Взял бейсбольную биту, тактический топорик, фонарик, батарейки, радио и две рации с набором «голосовой няни». Прошёл час, до 6 часов и эфира оставались считанные минуты. Как только начался эфир, президент сразу заявил и разрушил надежды Даниила и граждан, что всё решится дипломатическим путём. Ядерные удары начали происходить по всей стране, так же как и по Европе и другим странам, которые начали бомбардировку. Президент говорил, что со стороны США и РФ использовалось ядерное, баллистическое, химическое и грязное оружие. Он также заявил, что находится рядом с крупными городами и важными стратегическими объектами, потому что упомянутое оружие могло убить не взрывной волной, а уже последствиями химических и грязных бомб. Напоследок он сказал, что не о чем беспокоиться: люди в крупных городах спрятались в метро, где должно было хватать припасов на 2–3 месяца. Правительство предугадало ход Европы и заранее, за 3 часа, эвакуировало почти всех граждан в метро и успело завести туда скот и всё, что нужно, чтобы продержаться, пока прибудет помощь со стороны правительства. А насчёт малонаселённых пунктов дали полное командование и право действий местной власти – полиции и другим подразделениям. Например, что и произошло у нас в нашем маленьком сибирском городишке, который находился поблизости с самым большим озером в мире.</p>
-                
-                <p>Даниил сидел, не понимая: реальность это или сон, может быть, это симуляция? Таким вопросом задавался наш парень. Ущипнув себя, он понял, что это всё взаправду и медлить ни в коем случае нельзя. Взяв бейсбольную биту налегке, он решил подняться к Славе. Постучал, ему открыл Слава, от него несло лёгким перегаром и табачным дымом. Выйдя на лестничную клетку, Слава рассказал, что думает об этой ситуации, и предложил план действий.</p>
-                
-                <p>— Слава: Ху@во складываются наши дела, Даниил. Я предлагаю поехать к Тимохе на гаражный кооператив на первое время. Судя по тому, как он обустроил свободный участок вокруг своего гаража, я считаю, получилась бы там неплохая база на время, обдумать, что почём.</p>
-                
-                <p>— Даниил: Неплохая идея, но сперва я позвоню ему и узнаю, как обстоят у него дела там, спокойно ли возле гаражей? У себя ли ты на гараже? Ну и неплохо было бы созвониться с некоторыми парнями и девушками, чтобы узнать их состояние и предложить так же последовать к ним на гаражный кооператив.</p>
-                
-                <p>— Слава: С таким успехом мог ты и у меня спросить, на гараже ли он или нет.</p>
-                
-                <p>— Даниил: Ну спрашиваю у тебя, называй. Почему я вытягивать должен инфу из тебя?</p>
-                
-                <p>— Слава: Потому что ты у меня не интересовался сегодня насчёт этого и только сейчас упомянул Тимоху, поэтому забей. Тимоха у себя на гараже, он говорил мне вчера, что будет менять колесо у себя на «четвёрке», поэтому он по-любому должен быть там.</p>
-                
-                <p>Звонок на телефон Даниила…</p>
-                
-                <p>— Неизвестный: Привет, Даниил. Не против встретиться? А то стрёмно как-то одному двигаться, да и беспредел какой-то начал твориться на улице. Парни друг с другом бьются на улице. Один парень подбежал к девушке, ударил её в живот, схватил за волосы и потащил за дом, она кричала. Я х@й знает, что делать.</p>
-                
-                <p>— Слава: Ну чё, кто тебе звонит?</p>
-                
-                <p>— Даниил: Серёга, это ты?</p>
-                
-                <p>— Сергей: Да, ты чё, не узнал меня по голосу?</p>
-                
-                <p>— Даниил: Не-а. Ладно, щас не об этом. Собирайся и к завтрашнему дню подъезжай к гаражному кооперативу. Гараж, где мы будем находиться, находится возле большого ангара. Если не пропадёт связь, лучше позвони.</p>
-                
-                <p>— Сергей: Услышал тебя, Денчик. Постараюсь дожить до завтра :) Буду делиться новостями в телеграмме. Удачи.</p>
-                
-                <p>— Даниил: И тебе, Серёга.</p>
-                
-                <p>Конец звонка.</p>
-                
-                <p>— Слава: Ну чё говорит?</p>
-                
-                <p>— Даниил: Говорит, что на Крупской совсем п@здец творится. Ну я ему сказал, чтобы держался и завтра держал путь на гаражи.</p>
-                
-                <p>— Слава: Ага, ну понял. Ладно, бери рюкзак, иди. Я тоже пойду возьму, и пойдём пешочком, пройдёмся до гаражей – как раз узнаем, что у нас на районе творится.</p>
-                
-                <p>Теперь речь пойдёт про Дэнчика, который работает доставщиком еды и как раз таки был на заказе. Во время езды на своей Волге ему поступил звонок от Даниила. Он рассказал, что произошло, и план действий. Дэнчик сразу отменил заказ и начал держать путь к своему дому. Подъехав к дому, он увидел, как возле входа в подъезд валяется бездыханное тело девушки лет 15–16. Из груди у неё торчал нож, а глаза переполняли страх и паника. Данила стошнило в кусты, и он резко забежал в подъезд. Зайдя в квартиру, он почувствовал облегчение: «Дом – это моя крепость». Взял пару сосисок, шпрот и литр воды из-под крана. Зашёл к себе в комнату, взял наушники, зарядку, монтировку, чтобы если что отбить атаку невменяемых людей, которые сделали такое с девушкой. Напоследок он взял самое главное для него – это его гитара, которую ему подарил его брат в подростковом возрасте. Положив всё это в сумку, он сложил всё в багажник, кроме монтировки. Во дворе Братского шоссе, 7 было довольно тихо, не считая факта, что совсем недавно он наткнулся на труп. Все его действия заняли около часа. Выехав на дорогу, он увидел перевёрнутый полицейский «бобик» с пулевыми отверстиями – скорее всего от дробовика, судя по дробным отверстиям. Рядом с ним валялось два полицейских, а за машиной лежал мужчина, держа в руках дробовик. Данил решил остановиться и выйти с монтировкой, чтобы обшмонать полицейских, их «бобик» и мужчину за машиной.</p>
-                
-                <p>Подойдя ближе, он схватил АКС, которая лежала рядом с полицейским. Передёрнув затвор, вылетела гильза, упала на пол. Тело мужика за машиной зашевелилось. Данил, подойдя ближе, увидел, как мужчина вставлял картечь в ствол.</p>
-                
-                <p>— Данил: Оружие на пол, руки за голову!</p>
-                
-                <p>— Мужчина: Стой, не стреляй, я ложу дробовик.</p>
-                
-                <p>— Данил: Выйди ко мне с поднятыми руками.</p>
-                
-                <p>— Мужчина: Хорошо, я выхожу, только не стреляй.</p>
-                
-                <p>— Данил: Ты один тут?</p>
-                
-                <p>— Мужчина: Да, я тут один. Дай мне просто уйти, оружие можешь оставить себе.</p>
-                
-                <p>— Данил: Вали нах@й отсюда, толстый.</p>
-                
-                <p>— Мужчина: Удачи, только будь осторожней: они ещё один наряд вызывали.</p>
-                
-                <p>Данил проводил мужика взглядом и поставил АКС на предохранитель. Он начал обшманывать полицейских, надел неповреждённый бронежилет и каску. Взяв второй АКС, обоймы с бронежилетов и схватив дробовик с пола, он пошёл складывать всё в багажник. Услышав, что полицейская сирена приближается, Данил запаниковал. Закрыв багажник, он сел за руль и нажал на педаль, втопив вперёд.</p>
-                
-                <p>Подъезжая к гаражам, он заметил, как двое парней бьют полицейского ногами. Оружие он решил не брать, чтобы не привлекать выстрелом большое внимание, вместо этого взял монтировку. Выйдя из машины, он начал подходить к парням. Замахнувшись, он нанёс чёткий удар по затылку. Туша парня свалилась на землю замертво – видимо, Данил рассёк ему череп. Второй парень ударил Данила в висок, рассёк ему этим бровь. Пробил ему печень. Данил пошатнулся, но не упал, у него потемнело в глазах, и он выронил монтировку. Парень замахнулся, но тут же ему прилетело дубинкой по рёбрам, он упал и скорчился от боли. Полицейский с разбитым носом поблагодарил Данила за то, что спас его от этих извергов. Данил спросил у него: «Надеюсь, информация о том, что я убил этого парня, останется между нами, да?» Полицейский сказал, что уже после эфира законы пропали для таких, как он, и он сам виноват, что такое произошло, поэтому ты можешь быть свободен. Но ты должен знать: сегодня не вздумай приходить в магазины и даже рядом с ними не стой. Должна быть зачистка мародёров, и мои напарники по службе будут забирать всё продовольствие себе, чтобы никому не осталось. Но есть и хорошая новость: на будущее раз в неделю будут отправлять патрульные машины с продовольствием, которые будут раздавать еду всем гражданам. Больше сказать он не мог, так как это секретная информация. Спросил он, а зовут-то тебя как, парень? Данил посмотрел мужчине прямо в глаза и сказал, что его зовут Данил. После этого поступил ответ, что полицейского зовут Миша. Они попрощались. Данил сел в машину и, смотря в зеркало заднего вида, отчётливо видел, как Мишаня взял на плечи парня и понёс в сторону парковки. Заехав на гаражный кооператив, его обступили с двух сторон гаражи. Он знал, где находится гараж Тимохи, и держал путь к нему.</p>
-                
-                <p class="scene-change">1 ЧАС НАЗАД…</p>
-                
-                <p>— Слава: Ну чё, долго нам уже бежать этот долбаный кросс?</p>
-                
-                <p>— Даниил: Нет, чутка осталось. Бог терпел и нам велел терпеть.</p>
-                
-                <p>— Слава: Бл@ть, давай без твоих нотаций сейчас, лучше молча беги.</p>
-                
-                <p>— Даниил: Да ладно, не агрессируй, просто хотел разговор поддержать.</p>
-                
-                <p>— Слава: Смотри там на пригорке двое пацанов что-то тащат.</p>
-                
-                <p>— Даниил: Ну-ка, давай втопим за ними.</p>
-                
-                <p>Слава и Даниил побежали в сторону пригорка, где были замечены два парня. Подбегая, парни обернулись. Один из них сбросил пакет, повесил сумку за спину и достал ПЛ (пистолет Лебедева) из штанов. Наши ребята остановились за 3 метра от парней, которые наставили пистолет на них.</p>
-                
-                <p>— Неизвестный1: Биту на пол, ложи, лошадь!</p>
-                
-                <p>— Неизвестный2: И ты тоже, здоровый, доставай, чё у тебя там есть.</p>
-                
-                <p>— Даниил: Бросаю, бросаю, парни, не глупите.</p>
-                
-                <p>— Слава: У меня нет ничего, я голый.</p>
-                
-                <p>— Неизвестный2: Зачем вы нас преследовали? Забрать наши припасы хотели, да, псы позорные?</p>
-                
-                <p>— Слава: Слышь, нормально общайся. До х@я Рембо себе почувствовал? Ты пистолетик-то убери, я тебя манерам научу.</p>
-                
-                <p>— Неизвестный1: Так, оба тише будьте. Мы уходим, вы забираете свою биту и валите в другую сторону. Если увижу, что преследуете нас – сразу без разговоров пулю в лоб всажу.</p>
-                
-                <p>— Даниил: Понял, понял.</p>
-                
-                <p>Парни начали отдаляться. Слава хотел догнать их и всё-таки забрать то, что у них было, но Даниил убедил его, что для начала нам нужно добраться до Тимохи, а потом уже идти и забирать что-то у других людей. Даниил, подобрав биту, сказал: «Продолжаем кросс». Они побежали дальше. Через 10 минут были уже на месте. Перед их лицами стоял забор из профнастила высотой примерно 2,5 метра. Стояли также ворота из такого же настила. Постучав, они услышали топот и голос Тимохи: «Кто там?» Слава ответил, опередив Даниила: «Это мы, открывай быстрее». Ворота открылись, и вместе с этим открылись 200 квадратных метров, на которых стояли два гаража по 20 квадратных метров каждый. Тимоха стоял в рабочих перчатках и с разводным ключом. Позади него послышался женский голос: «Тимоша, кто там пришёл?» – это была его 17-летняя девушка Аня. Тимоха крикнул ей, что это его друзья Слава и Даниил. Тимоха сказал: «Пошлите внутрь, на улице лучше сейчас не стоять, я думаю».</p>
-                
-                <p>Войдя в гараж, они оказались в одном из них, где стояла «четвёрка» уже с колесом. В двух гаражах был спуск в подвал, где находились печи. На диване, который стоял рядом с машиной, сидела Аня. Увидев нас, она встала, подошла и обняла всех. Она была рада, что теперь не только Тимоха сможет её защитить, но и его друзья, – она чувствовала себя в безопасности. Тимоха взял пачку сигарет, дал Славе, и они вышли на улицу. Слава сказал, что нужно будет съездить на твоей «четвёрке» до нашего дома и забрать оттуда припасы и нужные вещи. Смотря на Славу и Тимоху, я кивнул. Тимоха сказал, что в подвале находятся закрутки на стеллажах, в углу стоит 4 картонных коробки с консервами 30×30 см. Пока что в работающем холодильнике лежало 3 кг говядины, 2 пятилитровки воды, и упомянул, что за гаражами стоит маленькая цистерна с примерно 1000 литров воды. Также в другом подвале стояли канистры с бензином (пара штук), топоры, инструменты, немного одежды, радио без батареек и старое ружьё без патронов. Слава сказал: «Чё, настолько всего достаточно здесь?» Тимоха ответил положительно и добавил, что этих запасов, по его расчёту, должно хватить 10–15 людям на 2–3 месяца, если соблюдать диету, и считая только его припасы, находящиеся в гараже. Даниил сказал, что скоро должен подъехать Данил на Волге, и мы с ним сгоняем до моего дома, заберём припасы и… Тимоха перебил Даниила тем, что сегодня после эфира приходило трое парней, которые сначала стучали в ворота и требовали их впустить, потом перелезли через забор и начали дёргать дверь гаража, где находились мы с Аней. Они сказали между собой, что нужно будет сюда вернуться и забрать себе это место. «Ты нам это говоришь зачем? Чтобы мы были на стреме? Мы уже после эфира на стреме, поэтому не ссы, как придут – так и уйдут». Тимоха кивнул, повернулся, чтобы скинуть бычок, как услышал, что подъехала машина. Он засветился от счастья и побежал к воротам, открыл их, и на территорию заехала Волга. Оттуда вышел Данил в бронежилете, каске, держа в руке АКС. Тимоха закрыл ворота, подбежал к Данилу.</p>
-                
-                <p>— Тимоха: Ну ты падла, как же я давно тебя не видел, братан!</p>
-                
-                <p>— Данил: Я тоже рад тебя видеть, ишак ты мой.</p>
-                
-                <p>Они сделали своё фирменное приветствие руками и обнялись. Данил сказал, что в багажнике лежит ещё 1 бронежилет, каска, упомянув, что в одном из бронежилетов слегка поломана бронеплита, но это парней не смутило. Слава набросился на броню, но сзади его схватил Даниил и перекинул через бедро. Слава упал на землю, но как только он поднялся, увидел, что на Данииле уже надета броня. «Да больно-то и хотелось». Тимоха сказал, что хватит вести себя как дети малые, и сказал садиться к Данилу в тачку и ехать к себе домой за припасами. Данил сказал, чтобы они помогли разгрузить багажник. Там лежало: 2 автомата АКС, один охотничий дробовик, 6 обойм, две пачки патронов (картечь), 1 пачка патронов на винтовку, рюкзак с припасами и две рации. После разгрузки Слава взял дробовик и надел себе кастрюлю на голову, сказав, что это защитит от атаки других людей, например того парня с ПЛ. А Даниил взял себе АКС и две обоймы, а также взял маленький ножик из мастерской Тимохи. Собравшись, Данил рассказал историю от полицейского Мишани про то, что будет зачистка мародёров и нужно быть аккуратнее. Слава выкрикнул, что только пусть попробуют рыпнуться на нас – сразу почувствуют вкус картечи. Тимоха дал подзатыльника Славе и сказал, что это тебе не по безоружным стрелять, это потенциальные люди, которые готовы тебя убить и будут по тебе стрелять. Ответ прилетел от Славы такой: «Да, да, да… Ты лучше бы жопу просиживать с нами собрался и поехал». Тимоха сказал, что не может, потому что остаётся защищать свою девушку, и может пожелать вам, парни, только удачи. Слава нахмурился, но впитал информацию. Чутка посидев на дорожку, где Данил рассказал, где он достал стволы, они сели в Волгу и двинули в путь. Тимоха закрыл ворота и закрыл глаза, набрав воздух и вздохнув. Напрыгнув на него сзади, Аня не дала подумать Тимохе и сказала ему, что пока парней нет, мы можем развлечься вдвоём. Тимоха улыбнулся, по его взгляду было видно, что он не против. Зайдя в гараж, они повесили белый носок на дверь гаража.</p>
-                
-                <p>Перенесёмся к нашим старым друзьям Степану и Кириллу. Придя домой, они разложили всю алкоголь и еду на стол. Сели на диван и включили подборку треков. Степану позвонила их подруга Даша, их позвали на квартиру к Кириллу, чтобы отпраздновать.</p>
-                
-                <p>— Даша: Алё, Стёпа? Ну и чё, куда нам с Полиной идти?</p>
-                
-                <p>— Степа: Топайте на Братское шоссе, 11, первый подъезд со стороны садика «Солнышко».</p>
-                
-                <p>— Даша: А кто вообще будет ещё на квартире?</p>
-                
-                <p>— Степа: Ну я, вы, Кирилл, Настя и её подруга Полина.</p>
-                
-                <p>— Даша: Поняла. Ну вас мало, мальчиков будет грустно, наверное.</p>
-                
-                <p>— Степа: Да забей, какая разница? Всё равно все пришли отдыхать, а не мутить.</p>
-                
-                <p>Степа положил трубку и встал с дивана. Подойдя к окну, чтобы покурить электронную сигарету, он увидел, что ему на телефон пришло сообщение от МЧС, где говорилось, чтобы все зашли и просмотрели эфир президента. Степа докурил и пошёл к телеку. Кирилл сидел в телефоне и переписывался с подругой. Степа сел на диван и включил главный канал с прямым эфиром. Успев зайти на половину эфира, Степа и Кирилл поняли, что в мире начал происходить пизд@ц. Кирилл встал и достал из шкафа бейсбольную биту и сказал, что нужно выйти и встретить подруг. Степа только хотел согласиться, как прозвенел оглушающий крик с улицы. Кирилл накинул жилетку и тапки, выбежал на лестничную клетку, за ним побежал Степа, успев схватить только складной нож. Выбежав из подъезда, они увидели, как мужчина лет 30 накинулся на подруг. Полина валялась на листьях с разбитым носом, видимо, в отключке. Что касается Даши – мужчина держал её за две руки, прижав к холодному бетону, он уже хотел сделать очень грязные вещи. Но Кирилл произвёл точный, сильный и оглушительный удар. Шлепок об лысую голову мужика прозвенел, он упал с разбитой головой на Дашу. Степа подбежал и откинул тело мужика, помог подняться Даше, а Кирилл подбежал поднять Полину. Кирилл закинул на плечи Полину и понёс её в подъезд, Степа стоял и ждал Кирилла, придерживая двери.</p>
-                
-                <p class="scene-change">15 минут спустя</p>
-                
-                <p>Полина сидела с ватой в носу, пила пиво и смотрела в точку. Даша сидела и разговаривала со Степой и Кириллом – как они пришли к этому событию и что произошло. Этот мужчина начал следовать за ними после звонка Даши Стёпе. Степа кивнул головой и посмотрел понимающим взглядом на Дашу, осмотрев её сверху вниз. «Дальше что было?» Даша ущипнула его за сосок и сказала, чтобы таким взглядом не смотрел на неё. Даша продолжила и привела к тому, что уже произошло. После этого им поступил звонок от Насти, что они остаются вдвоём дома, потому что выходить на улицу сейчас стало опасно. Степан сказал: «Ага, если что – звони» и сбросил трубку.</p>
-                
-                <p class="scene-change">16 часов назад</p>
-                
-                <p>Придя со школы, Костя разделся и пошёл есть. Поев, он пошёл к себе в комнату и сел за компьютер. За компьютером он просидел 3 часа. Отойдя, чтобы утолить жажду, Костя заглянул в телефон: там было 4 пропущенных от контакта «Даниил Друг». Костя попил и набрал меня (после эфира прошло 20 минут).</p>
-                
-                <p>— Даниил: Костя, какого х@я ты не берёшь трубку?</p>
-                
-                <p>— Костя: Да бл@ть, извиняй, я играл.</p>
-                
-                <p>— Даниил: Ты эфир смотрел?</p>
-                
-                <p>— Костя: Нет. А что такое? Ты же знаешь, я новости не смотрю.</p>
-                
-                <p>— Даниил: … Ладно, расскажу кратко: в общем, началась ядерная война между Европой и РФ. Поэтому щас у нас в Сибири будет твориться пизд@ц. Старайся по возможности не выходить на улицу. Если прям нужно – возьми с собой что-то, чем бы ты смог защитить себя.</p>
-                
-                <p>— Костя: Чё, серьёзно? Я такой момент проиграл… Ладно, Даниил, я тебя понял. Так насчёт безопасности: мог бы я с вами двигаться? Не знаю, правда, куда вы собираетесь идти, но я хочу пойти с вами. Так и так с вами, я думаю, будет безопаснее.</p>
-                
-                <p>— Даниил: Конечно, можешь. Завтра утром мы будем находиться на гаражном кооперативе возле заправки и белого заброшенного здания. Ждём тебя там. В первое время будем обосновываться там.</p>
-                
-                <p>— Костя: Хорошо. А кто с тобой и к кому вы на кооператив собрались идти?</p>
-                
-                <p>— Даниил: Со мной Слава в данный момент. К Тимохе будем двигать на гаражи. Есть ещё в планах людей собрать, чтобы расширить населённость группы.</p>
-                
-                <p>— Костя: Солевой?!?!? Ну нет… Бл@ть, ну зачем было его звать? Если он опять будет меня трогать без причин – честно, я убью его.</p>
-                
-                <p>— Даниил: Не переживай, я поговорю с ним насчёт этого.</p>
-                
-                <p>— Костя: Надеюсь.</p>
-                
-                <p>— Даниил: Ладно, будем тебя ждать. Если связь будет – звони, встретим.</p>
-                
-                <p>— Костя: Обязательно наберу.</p>
-                
-                <p>Костя положил телефон, сидя и думая от безысходности, что будет дальше и сможет ли он выжить в таком мире. Его мысли прервал телефонный звонок от абонента «Даша (Принцесса)». Он взял трубку и спросил, что ей нужно. Она сказала, что за ними с Миланой и Алиной идут какие-то трое мужчин. Костя вспомнил слова Даниила о том, что сейчас опасно выходить на улицу, тем более являясь девушкой без оружия. Костя спросил, где они находятся. Даша сказала, что идут возле торгового дома в сторону 5-й школы. Костя сказал, чтоб шли в сторону магазина «ДРУЖБА», добавил, чтобы они не шли через общаги, и что он уже одевается и идёт к ним. Даша начала говорить, что их трое, после этих слов он услышал женский визг. Даша попросила скорее бежать до них и сбросила трубку. Костя одел спортивки «Адидас», накинул куртку, взял кухонный нож, обернув его в полотенце, чтобы при беге случайным образом он не сработал против него. Открыв дверь, он увидел, как по ступенькам, запыхавшись, поднимался его друг Елисей. Он поднялся на лестничную клетку и обнял Костю, когда тот закрывал дверь на ключ.</p>
-                
-                <p>— Костя: Ты чё тут делаешь, Елисей?</p>
-                
-                <p>— Елисей: Я пришёл к тебе с высотки пешком. Там совсем пизд@ц творится.</p>
-                
-                <p>— Костя: А с Наташей что? Видел ли ты её?</p>
-                
-                <p>— Елисей: Нет, я её не видел. Надеюсь, с ней всё хорошо. Если хочешь, можем вместе сходить за ней, вдвоём думаю будет куда безопаснее.</p>
-                
-                <p>Костя махнул рукой в сторону ступенек и начал спускаться по ним.</p>
-                
-                <p>— Костя: Нет, не сейчас. Щас я иду за подругой Дашей, на них трое мужчин напали. Нужно торопиться. Ты мне с этим поможешь!</p>
-                
-                <p>— Елисей: Нет, я на это не подписывался. Давай ты мне дверь откроешь, я у тебя дома посижу?</p>
-                
-                <p>— Костя: Нет, ты пойдёшь со мной. Я верю, что одного, ну край – двух положу, но троих я не вытяну. Поэтому ты мне с этим поможешь.</p>
-                
-                <p>Елисей нехотя согласился – одному ему было бы трудно выжить.</p>
-                
-                <p class="scene-change">Спустя 5 минут</p>
-                
-                <p>Подходя к «Дружбе», они увидели, как оттуда выносят 4 парня, грузят ящики в газель. Рядом с газелью стояли двое парней с ружьями. Обойдя через низ, они увидели, как Милана, подруга Даши, лежит на траве, посыпанной снегом. Подбежав к ней, парни начали её будить, привели в чувства и начали спрашивать, что произошло и где её подруги. Милана заплакала и сказала, что те двое мужчин надругались над ней и увели её подруг в 20-ю общагу. Костя достал нож, перевернул его концом вниз и пошёл подниматься по ступенькам. Елисею он сказал сидеть на остановке и ждать, пока Костя вернётся к ним.</p>
-                
-                <p>Костя поднялся наверх к общаге и зашёл внутрь. Внутри был запах крови и тухлятины. Повернувшись направо, он увидел, как местный алкаш валяется возле ступенек весь в крови. Видимо, он не сам умер, а его забили до смерти здесь, на ступеньках. Костю не сильно это отвлекло, он пошёл к вахте. На вахте он увидел через стекло, как летают мухи, а внутри валяется мёртвая вахтёрша с телефоном в руках. В пузе у неё торчал деревянный кол, видимо, наточенный из ножки табуретки. Всё время, как он зашёл в общагу, он слышал разные крики на верхних этажах. Обернувшись, он увидел, как по ступенькам крался мужчина с бутылкой. Увидев, что его раскрыли, мужик побежал на Костю. Костя увернулся и вонзил сзади в спину нож. Мужик пытался дотянуться до ножа, но упал и начал истекать кровью. Костя достал нож из его спины, и кровь начала литься ещё большим потоком. Костя начал подниматься по ступенькам и услышал крик Даши. Он поднялся на этаж, откуда доносился крик. Войдя в свободное пространство на этаже, он увидел, как по коридору бежит Даша, а за ней гнался мужчина. Даша забежала за спину Кости.</p>
-                
-                <p>Костя замахнулся, но точным тяжёлым кулаком мужчина сложил Костю одним ударом. Нож выпал, а Костина бровь была рассечена. Прибежал второй мужик, но намного меньше своего друга. Здоровый схватил Дашу за волосы и кинул мужику в руки, она дёргалась, но он её держал. Костя в момент хотел встать и схватиться за нож, пока тот мужик отвлёкся, но тут же ему прилетел чёткий удар в лицо с ноги 48-го размера. У Кости вылетел зуб, разбилась губа и нос стал разбитым. Костя лежал, у него в глазах всё плыло, он смотрел на мужика, который шёл к нему. Тот сел на Костю и начал бить его кулаками по лицу. Произошло 2 удара, Костя был уже никакущий. В моменте он увидел, как позади мужиков поднимался Елисей. Он схватил нож Кости и накинулся на мелкого мужика, который держал Дашу, и начал вонзать нож ему в шею. Кровь потекла фонтаном и обрызгала всё и всех, кто был в радиусе 2 метров. Мужик прекратил избиение Кости и переключился на Елисея. Елисею прилетело точно в солнечное сплетение, он жадно глотнул воздух и тут же получил второй удар в лицо, из носа у него потекла кровь, он упал на одно колено. Костя из последних сил накинулся сзади на мужика и взял его на удушающий. Даша подбежала к плачущей Милане и стала её успокаивать.</p>
-                
-                <p>Елисей воспользовался моментом и вонзил нож в пузо мужику, вспоров его живот, оттуда выпали кишки. Костя отпустил мужика, и тот упал замертво. Даша подбежала к Елисею и Косте, обняв их. Елисей пошёл к Милане, чтобы помочь ей подняться, а Даша поцеловала Костю. Костя смущённо посмотрел и спросил, что это только что было. Даша ему ответила, что это поцелуй. Ухмыльнувшись, она напомнила, что в квартире у этих выблядков находится Алина с ещё одним пацаном. Костя схватил нож и, подтолкнув Елисея в сторону коридора, где находилась квартира, побежал туда. Забежав в квартиру, он увидел, как Алина душит ногами его давнего знакомого Влада. Даша подбежала и остановила Алину. Они посадили Влада на стул и начали расспрашивать, зачем они шли за подругами Кости. Влад ответил, что всё равно миру пришёл пизд@ц, как сказал его отец, поэтому нужно пользоваться моментом. И они успели воспользоваться только Миланой. Милана заплакала от того, что ей напомнили это событие, и выбежала из квартиры, за ней побежала Даша с успокаивающими словами. Влад посмеялся и получил сразу удар от Елисея в лоб. Влад поднялся и не ожидал от Елисея, тот упал в отключку. В следующий момент Влад накинулся на Костю, но он успел среагировать и нанёс удар ножом по площади лица. Влад заверещал свинячьим воплем от боли, Алина вздрогнула. Влад убрал руки с лица, Костя и Алина увидели, что на площади его глаза был порез, который затронул сам глаз, сделав Влада слепым на один глаз. В его глаз заливалась кровь, ухудшая и так плохой обзор. Влад распсиховался и напал на Костю, но сзади его вырубила Алина, ударив его стулом, который разлетелся, в воздухе полетела кровь и щепки от стула.</p>
-                
-                <p>Проверив пульс Влада, они привели в рассудок Елисея и вышли, прикрыв дверь его квартиры. Группа Кости превратилась из двух парней в бригаду из 5 человек, хоть и не всех боеспособных. Было 8 вечера. Выйдя на улицу, они увидели, как 3 полицейских «бобика» и «буханка» подъехали к «Дружбе». Костя и его группа последовали в обход через низ, через остановку. Поднимаясь на районные многоэтажки, они услышали много выстрелов и криков со стороны «Дружбы», они поспешили в подъёме наверх.</p>
-                
-                <p>Входя в подъезд, Костя входил последним и заметил, как у подъезда его друга Даниила стоит машина ещё одного друга – Данила. Костя не решил тратить время на проверку и последовал за остальными. Придя домой, все уставшие легли спать, а Костя, Даша и Елисей пока что сидели на кухне. Костя обрабатывал свои раны, а Елисей и Даша сидели, общались, попивая чай.</p>
-                
-                <p>Обработав раны, Костя завёл с ними так же диалог, но Елисей слился, ушёл спать, подбежав и посмотрев на Дашу. Костя проводил Елисея непонимающим взглядом в комнату и сел на стул, переведя внимание на Дашу. Они сидели, говорили, но во время рассказа Даши Костя уснул. Даша подошла к Косте, легла ему на плечо и обняла его.</p>
-                
-                <p>Проснулись они от того, что их фоткал Елисей, который случайно забыл выключить вспышку и разбудил их двоих. Костя встал и побежал за Елисеем, чтобы отобрать у него телефон. Даша протёрла глаза и потянулась. Даша посмотрела в окно и увидела ЕГО. Лёню, её парня. Он был с автоматом АКС и вёл под прицелом здорового парня, который выглядел чуть постарше Кости. Сзади подъехала Волга и забрала их двоих. Поехали они наверх, в сторону Братского шоссе, 7. Даша зашла в комнату со слезами на глазах и сказала Кости, что её парень ищет её и нужно что-то делать. Костя подошёл и обнял её, начал успокаивать. Елисей сидел, расспрашивал Милану и Алину, кто такой её парень.</p>
-                
-                <p>Перенесёмся к нашим главным героям. Они ехали на Волге Данила к дому Славы и Даниила. Проезжая повороты, Даниил увидел, как группа людей поднималась в горку по ступенькам, но он не предал этому значения. Подъехав к подъезду, Слава вышел первым с дробовиком, закрыл дверь, проверил, спокойно ли всё на районе, и начал двигаться ко входу в подъезд. Выйдя все из машины, они зашли в подъезд. Данил, заходя в подъезд, держал всё под прицелом АКС. Поднявшись на этаж Даниила, они разделились: Слава пошёл к себе, а Даниил пошёл к себе вместе с Данилом.</p>
-                
-                <p>Зайдя в квартиру, Даниил пошёл в комнату надевать рюкзак и брать пакеты и баклажки с припасами. Данил начал осматривать квартиру и левым ухом услышал, как открылась и захлопнулась дверь. Он насторожился и снял АКС с предохранителя. Предупредив Даниила об этом, он тоже насторожился. Они решили посмотреть в глазок – на лестничной клетке было чисто. Они вышли в подъезд. Прихлопнув дверь, в тот же момент Данил увидел, как на ступеньках стояло 4 человека и на их лестничной площадке ещё 3. Данила схватили за автомат и направили вверх, произнеслась очередь. Даниил снял предохранитель и выстрелил одиночным в ногу нападавшему, но тут же другие двое ребят накинулись на Даниила. Из-за узкого пространства у нападавших было больше шансов забить наших ребят. Выбив оружие из рук, они отошли и направили стволы в лица Данилам, сказав, чтобы те открывали квартиру и чтобы все последовали внутрь. Но тут раздался выстрел дробовика: на лестничной клетке двоих из 4 ребят задело дробью. У самого близкого к выстрелу Славы разлетелась голова как арбуз, а второму половина дроби прошла через плечо, другая осталась внутри. Нападавший повернулся к Славе, и раздался выстрел АКС, Славе прилетело в плечо, но Слава выстрелил в ответ, и у нападавшего так же разлетелась голова. Нападавших осталось трое. Один с оружием повернулся так же на Славу, но, не успев выстрелить, ему свернул шею Даниил.</p>
-                
-                <p>Забрав АКС, Данил накинулся с тактическим ножом на двоих оставшихся под прицелом Даниила. Слава облокотился с облегчением на стену и сполз на задницу. Из-за крупных плеч Славы пуля не прошла на вылет, а застряла между ключицей и костью, повезло, что не пробило артерию. Данил в это время набросился на одного и скатился с ним по ступенькам, вонзив тому в горло нож. Второй уже замахнулся, но прозвучал выстрел, и тот упал замертво. Данил кивнул Даниилу, поднялся наверх, схватив АКС. Данилы взяли Славу на плечи и понесли на улицу. Выйдя, открыв металлическую дверь, их встретило два дула АК-47, направленных на наших героев. Их было трое. Для Славы и Даниила они были знакомы – это те неизвестные, которые шли с сумками и позже угрожали им пистолетом. Неизвестный потребовал положить оружие. После этого он спросил, кто является главным и кто убил больше всего его людей. Даниил назвался главным, и его посадили в Волгу наших героев, отобрав перед этим у Данила ключи. Слава сказал, что перебил больше половины его людей. Неизвестный сказал одному из своих, чтобы тот его вёл до последнего подъезда и следил за ним в оба глаза. Данила положили в багажник, а Даниила – на сиденье. Неизвестный сел за руль, и они медленно подъехали. Главный назвался Лёней, а его двух людей звали Егор и Дима. Даниил ответил тем же, назвав своё имя. Лёня сказал, что ещё с того момента, как вы нас преследовали, я на вас зол, а сейчас вы убили моих 7 людей, за это вы будете наказаны. Даниил предложил мир, но Лёня ответил отрицательно, сказав, что можно было решить всё тихо мирно, но вы этого не захотели. Уже подъезжая к подъезду, Лёня сказал, что преследует цель найти свою девушку Дашу, которая была на катке с подругами, но куда-то пропала. Остановившись, Егор посадил Славу в машину и сел сам. Они поехали вверх, на Братское шоссе, 7, где будет решаться судьба наших главных героев.</p>
-                
-                <p>Успокоив Дашу, Костя пошёл к Елисею и подругам сказать, чтобы они собирались и все дружно пошли до гаражного кооператива, где находится гараж его друга. Выйдя на улицу, они последовали наверх по дороге, которая вела на Братское шоссе, 7. Оттуда они собирались добраться до гаражей. Приближаясь к улице, Костя услышал заведённый двигатель. Поднявшись, они увидели заведённую машину, стоящую перед подъездом. Из багажника слышались стуки и крики. Костя сказал ребятам стоять за домом и, если что, бежать, забыв про него. Подойдя к багажнику, он попытался его открыть, но он был заперт. На звуки открытия багажника из машины вышел старый знакомый Егор, который, в свою очередь, направил автомат на Костю.</p>
-                
-                <p>— Егор: Руки за голову, Костя!</p>
-                
-                <p>— Костя: Положи оружие, я с миром пришёл.</p>
-                
-                <p>— Егор: У меня задание защищать машину. Ты прикоснулся к ней и попытался открыть этого ублюдка из багажника. За это Лёня мне сказал стрелять, но так как ты мой друг, я отпу…</p>
-                
-                <p class="scene-change">Удар…</p>
-                
-                <p>— Костя: Бл@ть!</p>
-                
-                <p>— Кирилл: Не ори, мы тебя спасать пришли.</p>
-                
-                <p class="scene-change">Звук открытия багажника</p>
-                
-                <p>— Данил: Фух, наконец-то меня вытащили из этого грёбаного багажника. Стёпа? Кирилл? Костя? А вы тут что забыли?</p>
-                
-                <p>— Костя: Мы до вас шли, заметили тачку, а ты оттуда кричал, я решил подойти открыть, но на меня вот этот чудо вышел из машины.</p>
-                
-                <p>— Кирилл: Мы увидели, что на парня ствол наставили, решили подойти помочь.</p>
-                
-                <p>— Стёпа: Я возьму автомат, хочется попробовать пострелять.</p>
-                
-                <p>Данил выбил из рук автомат и взял его себе, сказав:</p>
-                
-                <p>— Данил: Вот именно, ты стрелять не умеешь. А нам нужно сейчас будет пойти спасти Даниила и Славу.</p>
-                
-                <p>— Стёпа: Ну смотри, бл@ть, я потом всё равно заберу его у тебя.</p>
-                
-                <p>— Костя: Всё, хватит. Идёмте вчетвером в подъезд, а Елисей приглядит за нашими девочками и Полиной с Дашей.</p>
-                
-                <p>— Елисей: Стой!</p>
-                
-                <p>Костя и ребята забежали в подъезд, и Елисей остался единственный среди девочек. Он потащил Егора в багажник, чтобы, если тот проснётся, не напал на него со спины.</p>
-                
-                <p>Данил, поднимаясь, смотрел в прицел автомата: если увидит Лёню – на месте пристрелить. Они шли по следам крови Славы, которая всё ещё шла из неперевязанного плеча. Кровь вела на 3 этаж, 144 квартиру. Кирилл со Стёпой сжали бейсбольные биты в руках, Костя схватил поудобнее нож, Данил снял автомат с предохранителя.</p>
-                
-                <p class="scene-change">Началась облава.</p>
-                
-                <p>Данил произвёл выстрел в замок, Степа выбил дверь с ноги, и все по одному зашли внутрь. Дмитрий, прибежав на звук, рефлекторно выстрелил Стёпе в плечо из ПЛ (пистолет Лебедева). Стёпа сжал зубы от боли. Ответный удар нанёс Кирилл, ударив битой в лоб Дмитрию. Тот свалился на землю и снова решил прицелиться на второй выстрел, но его пистолет был отбит битой в стенку. В следующий момент ему прилетело ботинком в лицо, он отключился. Лёня сидел и не выходил. Костя забежал в комнату и увидел, как пристёгнутый к батарее Слава лежал без сознания, Даниил сидел рядом весь побитый. Лёня накинулся на него и сбил с ног, начал молотить Костю по лицу, но Данил ударил Лёню прикладом, тот упал на спину и начал отползать назад. Даниил очнулся и через боль в голове сказал, чтобы дали ключ, который лежит у Лёни в кармане. Лёня лежал под прицелом, Костя подошёл к нему и взял ключи, освободив Даниила и Славу. Данил подошёл к Лёне и вырубил его. Все вышли на улицу. Кирилл и Костя несли Славу без сознания. Алина, подойдя к ним, сказала, что он потерял много крови и скорее всего потребуется переливание, иначе он умрёт.</p>
-                
-                <p class="scene-change">Спустя день</p>
-                
-                <p>Слава лежал на койке в погребе гаража, чувствуя себя ужасно, находясь в сознании. Алина сидела и проверяла его, давала витамины, меняла повязку, но нужна была кровь. Тем временем на улице троих ребят, которые буквально день назад угрожали нам, окружили 5 парней: Костя, Стёпа, Кирилл, Даниил, Данил – каждый из них стоял с АКС. Даша стояла возле гаража с Миланой, курила винстон. В её глазах виднелось, что она хотела спасти Лёню, но и Костю с его друзьями не хотелось предавать. Она потушила сигарету и зашла внутрь гаража.</p>
-                
-                <p>Даниил вышел на середину к трём парням, которые стояли на коленях в наручниках и смотрели на него, переглядываясь между собой.</p>
-                
-                <p>— Даниил: За то, что вы первые напали на нас, будете наказаны. Поединок: Костя и Лёня. Если Костя побеждает, он имеет право убить Лёню и его друзей. Если побеждает Лёня – мы отпускаем вас.</p>
-                
-                <p>— Лёня: Это не выгодно.</p>
-                
-                <p>— Даниил: Ещё до меня дошла информация от твоих парней, что это не ваша основная квартира. Основная квартира находится рядом, может быть, и в одном подъезде. Поэтому проиграешь ты или выиграешь – всё равно кого-то из вас мы заставим рассказать, где находится ваша квартира.</p>
-                
-                <p>— Лёня: Сука, нах@я, Дима, Егор, зачем я с вами связался? Почему именно я должен драться с этим фриком?</p>
-                
-                <p>— Даниил: Ну, чтобы разогреть твой интерес – набить ему рожу. Костя встречается с Дашей, и она сейчас в гараже.</p>
-                
-                <p>— Лёня: Чего? Вы чё, псы еб@ные, вообще страх потеряли? Приведите её сюда.</p>
-                
-                <p>— Костя: Тише будь, истеричка. Если выиграешь меня – увидишься с Дашей.</p>
-                
-                <p>— Лёня: Я убью тебя, ублюдок.</p>
-                
-                <p>— Даниил: Бьёмся кулаками и борьбой. Глаза не выдавливаем, по яйцам не бьём. Бой!</p>
-                
-                <p>Начался бой. Костя встал в стойку, Лёню освободили, и он тоже встал в стойку. Лёня начал первым: прямой джем полетел Косте в лицо, он увернулся и пробил апперкот в печень. Лёня пошатнулся и получил второй удар в висок хуком. Лёня отпрыгнул, схватившись за висок. Костя ударил хуком, но Лёня уклонился и зашёл за спину, кинув Костю на прогиб. Костя упал на землю, подняв голову, ему прилетело кроссовком по лицу. Костя успел подняться перед втаптывающим ударом Лёни в землю. Лёня сделал джеб и ушёл, Костя увернулся и прошёл в ноги, опрокинув Лёню на землю. Костя начал вбивать нос Лёне в лицо. Лёня начал блокировать удары по лицу руками, но его нос уже был сломан трижды. В какой-то момент Лёня ударил ногой Косте в грудь, тот отлетел на землю, прокатившись по земле спиной. Костя уже выдохся, а его оппоненту было уже плохо: сломанный нос, разбитый висок, пробитая печень и закончившееся дыхание. Лёня ударил хуком Костю, но тот увернулся и пробил снова апперкот, только уже по рёбрам. Лёня схватился за рёбра и получил хуком в тот же висок. Зайдя в спину, Костя взял Лёню на удушающий и начал душить со всей силы. У Лёни пошла пена изо рта, перемешанная со слюной и кровью. Лёня начал бить по руке, прося этим остановиться, но Костя не собирался останавливаться. В какой-то момент хрустнула шея, и Лёня перестал дёргаться. На его синем лице остались глаза, которые закатились наверх. Костя отпустил своего оппонента, тем самым победив в этом поединке.</p>
-                
-                <p>Даниил сказал Данилу: кто готов сказать, где находится квартира – того он не тронет. Это был Дмитрий, а второго он сказал убить. Данил направил автомат на Егора. Егор начал умолять Костю, чтобы он прекратил это и пощадил его и Дмитрия, обещая, что они больше никогда не пересекутся. Костя принял решение в знак своей победы отпустить друзей Лёни, но перед этим они должны будут рассказать, где находится квартира.</p>
-                
-                <p class="scene-change">Конец 1 главы «Первые Дни»</p>
+
+        <div class="white-layer">
+
+            <div class="hero">
+                <h2 class="greeting">Здравствуйте, это сайт ученика <span class="highlight">НАДИП</span></h2>
+                <p class="description">
+                    Здесь будет описание сайта, которое ты мне скинешь позже.
+                </p>
             </div>
-        </div>
 
-        <section class="personal-touch">
-            <div class="container">
-                <h3>Для себя</h3>
-                <div class="personal-content">
-                    <div class="personal-text">
-                        <p>Этот сайт создан с уважением к творчеству ученика НАДИП.</p>
-                        <p>Книга "СИБИРЬ" — не просто книга, это отдельная история маленького городка в Сибири, что в нём начало происходить после ядерной войны.</p>
-                        <p>Сюжет книги СИБИРЬ вдохновлён трилогией книг Дмитрия Глуховского "Метро 2033", "Метро 2034", "Метро 2035".</p>
-                        <p>Читайте и делитесь со своими друзьями книгой ученика НАДИП.</p>
+            <div class="bookshelf">
+
+                <!-- КНИГА 1 - С ОПИСАНИЕМ -->
+                <div class="book-card">
+                    <div class="generated-cover">
+                        <div class="city">LOUISVILLE</div>
+                        <div class="nightmare">NIGHTMARE</div>
+                        <div class="divider"></div>
+                        <div class="sub">WELCOME TO<br>KENTUCKY</div>
+                        <div class="stamp">✦ RUINS ✦</div>
                     </div>
-                    <div class="personal-image">
-                        <i class="fas fa-book-open"></i>
+                    <!-- ОПИСАНИЕ ПРИ НАВЕДЕНИИ -->
+                    <div class="book-description">
+                        <div>
+                            <div class="title">📖 О КНИГЕ</div>
+                            <p>
+                                В Луисвилле прорывается смертельный вирус,<br>
+                                превращающий людей в агрессивных заражённых.<br>
+                                Трое школьников — Владислав, Даниил и Данил —<br>
+                                оказываются в эпицентре катастрофы.<br>
+                                Им предстоит выжить в городе, где каждый<br>
+                                может стать врагом, а единственная надежда —<br>
+                                держаться вместе.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="copyright">© 2026 Книги ученика НАДИП. Все права защищены.</div>
-            <div class="nav-links">
-                <a href="#">О проекте</a>
-                <a href="#">Биография НАДИП</a>
-                <a href="#">Другие книги</a>
-                <a href="#">Контакты</a>
+                <!-- КНИГА 2 -->
+                <div class="book-card">
+                    <div class="book-placeholder">📖<br>КНИГА 2</div>
+                </div>
+
+                <!-- КНИГА 3 -->
+                <div class="book-card">
+                    <div class="book-placeholder">📖<br>КНИГА 3</div>
+                </div>
+
             </div>
+
         </div>
-    </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const chapterButtons = document.querySelectorAll('.chapter-btn');
-            const chapterTitle = document.querySelector('.chapter-title');
-            const chapterText = document.querySelector('.chapter-text');
-            const chapterContent = document.querySelector('.chapter-content');
-            
-            // Содержание глав книги (первая глава теперь содержит HTML-разметку)
-            const chapters = {
-                1: {
-                    title: "Глава 1: Первые дни",
-                    content: document.querySelector('.chapter-text').innerHTML  // сохраняем то, что уже загружено в HTML
-                },
-                2: {
-                    title: "Глава 2: Тайга",
-                    content: `
-                        <div class="placeholder-text">
-                            <i class="fas fa-pencil-alt" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                            <p>Вставьте текст второй главы книги "СИБИРЬ" здесь.</p>
-                            <p>Этот блок будет заменен на ваш текст.</p>
-                        </div>
-                        
-                        <div class="quote">
-                            "Тайга не терпит суеты. Она живет в своем ритме, измеряемом не часами, а сменами сезонов." — НАДИП
-                        </div>
-                        
-                        <div class="placeholder-text">
-                            <p>Продолжение текста второй главы...</p>
-                            <p>Вы можете заменить эти заглушки на полный текст своей книги.</p>
-                        </div>
-                    `
-                },
-                3: {
-                    title: "Глава 3: Встреча с шаманом",
-                    content: `
-                        <div class="placeholder-text">
-                            <i class="fas fa-pencil-alt" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                            <p>Вставьте текст третьей главы книги "СИБИРЬ" здесь.</p>
-                            <p>Этот блок будет заменен на ваш текст.</p>
-                        </div>
-                        
-                        <div class="quote">
-                            "Сибирь хранит не только природные богатства, но и мудрость народов, сумевших найти гармонию с этой суровой землей." — НАДИП
-                        </div>
-                        
-                        <div class="placeholder-text">
-                            <p>Продолжение текста третьей главы...</p>
-                            <p>Вы можете заменить эти заглушки на полный текст своей книги.</p>
-                        </div>
-                    `
-                },
-                4: {
-                    title: "Глава 4: Заповедные земли",
-                    content: `
-                        <div class="placeholder-text">
-                            <i class="fas fa-pencil-alt" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                            <p>Вставьте текст четвертой главы книги "СИБИРЬ" здесь.</p>
-                            <p>Этот блок будет заменен на ваш текст.</p>
-                        </div>
-                        
-                        <div class="quote">
-                            "В заповедных землях время течет иначе. Здесь можно услышать биение сердца земли." — НАДИП
-                        </div>
-                        
-                        <div class="placeholder-text">
-                            <p>Продолжение текста четвертой главы...</p>
-                            <p>Вы можете заменить эти заглушки на полный текст своей книги.</p>
-                        </div>
-                    `
-                },
-                5: {
-                    title: "Глава 5: Северное сияние",
-                    content: `
-                        <div class="placeholder-text">
-                            <i class="fas fa-pencil-alt" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                            <p>Вставьте текст пятой главы книги "СИБИРЬ" здесь.</p>
-                            <p>Этот блок будет заменен на ваш текст.</p>
-                        </div>
-                        
-                        <div class="quote">
-                            "Северное сияние — это танец небесных духов, который видели лишь те, кто достоин." — НАДИП
-                        </div>
-                        
-                        <div class="placeholder-text">
-                            <p>Продолжение текста пятой главы...</p>
-                            <p>Вы можете заменить эти заглушки на полный текст своей книги.</p>
-                        </div>
-                    `
-                },
-                6: {
-                    title: "Глава 6: Испытание холодом",
-                    content: `
-                        <div class="placeholder-text">
-                            <i class="fas fa-pencil-alt" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                            <p>Вставьте текст шестой главы книги "СИБИРЬ" здесь.</p>
-                            <p>Этот блок будет заменен на ваш текст.</p>
-                        </div>
-                        
-                        <div class="quote">
-                            "Холод закаляет не только тело, но и дух. Он обнажает суть человека, снимая все маски." — НАДИП
-                        </div>
-                        
-                        <div class="placeholder-text">
-                            <p>Продолжение текста шестой главы...</p>
-                            <p>Вы можете заменить эти заглушки на полный текст своей книги.</p>
-                        </div>
-                    `
-                },
-                7: {
-                    title: "Глава 7: Возвращение",
-                    content: `
-                        <div class="placeholder-text">
-                            <i class="fas fa-pencil-alt" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                            <p>Вставьте текст седьмой главы книги "СИБИРЬ" здесь.</p>
-                            <p>Этот блок будет заменен на ваш текст.</p>
-                        </div>
-                        
-                        <div class="quote">
-                            "Возвращаясь из Сибири, понимаешь, что оставляешь там часть себя, но приобретаешь нечто большее — понимание." — НАДИП
-                        </div>
-                        
-                        <div class="placeholder-text">
-                            <p>Продолжение текста седьмой главы...</p>
-                            <p>Вы можете заменить эти заглушки на полный текст своей книги.</p>
-                        </div>
-                    `
-                }
-            };
-            
-            // Обработчик клика по кнопкам глав
-            chapterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const chapterId = this.getAttribute('data-chapter');
-                    
-                    // Удаляем активный класс у всех кнопок
-                    chapterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Добавляем активный класс текущей кнопке
-                    this.classList.add('active');
-                    
-                    // Добавляем анимацию перехода
-                    chapterContent.classList.remove('fade-in');
-                    void chapterContent.offsetWidth; // Триггер перерисовки
-                    
-                    // Обновляем содержимое главы
-                    chapterTitle.textContent = chapters[chapterId].title;
-                    
-                    // Для всех глав используем innerHTML (первая глава теперь содержит HTML)
-                    chapterText.innerHTML = chapters[chapterId].content;
-                    
-                    // Добавляем анимацию появления
-                    chapterContent.classList.add('fade-in');
-                    
-                    // Прокручиваем к началу главы
-                    chapterContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
-            });
-            
-            // Инициализация: первая глава уже загружена, дополнительных действий не требуется
-        });
-    </script>
+    </div>
+
 </body>
 </html>
