@@ -11,17 +11,21 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #0a0a0a;
+            font-family: 'Special Elite', 'Courier New', cursive;
+            padding: 20px;
         }
+
         .site-wrapper {
-            width: 92%;
+            width: 100%;
             max-width: 1300px;
-            height: 90vh;
+            min-height: 90vh;
             background-color: #0a0a0a;
             border-radius: 12px;
             padding: 70px 35px 35px 35px;
@@ -29,13 +33,17 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), inset 0 0 60px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.03);
         }
+
         .header {
             position: absolute;
             top: 25px;
             left: 45px;
             z-index: 10;
         }
+
         .site-title {
             font-family: 'Special Elite', 'Courier New', cursive;
             font-size: 34px;
@@ -44,10 +52,11 @@
             letter-spacing: 6px;
             text-transform: uppercase;
         }
+
         .white-layer {
             background-color: #f5f3f0;
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             border-radius: 10px;
             padding: 45px 55px 40px 55px;
             display: flex;
@@ -56,6 +65,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .white-layer::before {
             content: "☢️ 💀 📖 ☢️ 💀 📖 ☢️ 💀 📖 ☢️ 💀 📖 ☢️ 💀 📖";
             position: absolute;
@@ -76,6 +86,21 @@
             padding: 30px;
             z-index: 0;
         }
+
+        /* ===== ГЛАВНАЯ СТРАНИЦА ===== */
+        .page {
+            display: none;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .page.active {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
         .hero {
             text-align: center;
             position: relative;
@@ -85,6 +110,7 @@
             flex-direction: column;
             justify-content: center;
         }
+
         .greeting {
             font-size: 38px;
             font-weight: 300;
@@ -92,6 +118,7 @@
             color: #1a1a1a;
             font-family: 'Cinzel', 'Georgia', serif;
         }
+
         .highlight {
             font-weight: 900;
             background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
@@ -101,6 +128,7 @@
             font-size: 44px;
             letter-spacing: 3px;
         }
+
         .description {
             margin-top: 15px;
             font-size: 17px;
@@ -110,6 +138,7 @@
             font-family: 'Special Elite', 'Courier New', cursive;
             opacity: 0.7;
         }
+
         .bookshelf {
             display: flex;
             justify-content: center;
@@ -117,7 +146,9 @@
             position: relative;
             z-index: 1;
             margin-top: 10px;
+            flex-wrap: wrap;
         }
+
         .book-card {
             width: 190px;
             height: 250px;
@@ -132,19 +163,12 @@
             justify-content: center;
             position: relative;
         }
+
         .book-card:hover {
             transform: scale(1.08) translateY(-8px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
         }
-        .book-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .book-card:hover .book-image {
-            filter: brightness(0.7);
-        }
+
         .book-placeholder {
             width: 100%;
             height: 100%;
@@ -159,12 +183,11 @@
             flex-direction: column;
             gap: 5px;
         }
-        /* ===== ГЕНЕРИРУЕМАЯ КАРТИНКА ДЛЯ ПЕРВОЙ КНИГИ ===== */
+
         .generated-cover {
             width: 100%;
             height: 100%;
-            background: 
-                linear-gradient(135deg, #1a0a0a 0%, #2d1a1a 30%, #3d2a1a 60%, #1a0a0a 100%);
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1a1a 30%, #3d2a1a 60%, #1a0a0a 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -175,8 +198,8 @@
             color: #c4a882;
             position: relative;
             border-radius: 8px;
-            transition: all 0.3s ease;
         }
+
         .generated-cover::before {
             content: "☢️";
             position: absolute;
@@ -185,51 +208,37 @@
             font-size: 28px;
             opacity: 0.3;
         }
-        .generated-cover::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, transparent 100%);
-            border-radius: 0 0 8px 8px;
-            pointer-events: none;
-        }
+
         .generated-cover .city {
             font-size: 22px;
             font-weight: 700;
             letter-spacing: 8px;
             color: #d4b896;
             text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            position: relative;
-            z-index: 1;
             line-height: 1.2;
         }
+
         .generated-cover .nightmare {
             font-size: 14px;
             letter-spacing: 12px;
             color: #8a6a4a;
             margin-top: 4px;
-            position: relative;
-            z-index: 1;
         }
+
         .generated-cover .divider {
             width: 60%;
             height: 1px;
             background: linear-gradient(90deg, transparent, #8a6a4a, transparent);
             margin: 8px 0;
-            position: relative;
-            z-index: 1;
         }
+
         .generated-cover .sub {
             font-size: 11px;
             letter-spacing: 4px;
             color: #6a5a4a;
-            position: relative;
-            z-index: 1;
             line-height: 1.6;
         }
+
         .generated-cover .stamp {
             position: absolute;
             bottom: 20px;
@@ -239,10 +248,9 @@
             opacity: 0.4;
             transform: rotate(-10deg);
             letter-spacing: 2px;
-            z-index: 1;
         }
 
-        /* ===== ОПИСАНИЕ КНИГИ ПРИ НАВЕДЕНИИ ===== */
+        /* ===== ОПИСАНИЕ ПРИ НАВЕДЕНИИ ===== */
         .book-description {
             position: absolute;
             top: 0;
@@ -261,9 +269,11 @@
             z-index: 10;
             pointer-events: none;
         }
+
         .book-card:hover .book-description {
             opacity: 1;
         }
+
         .book-description p {
             color: #c4a882;
             font-family: 'Special Elite', cursive;
@@ -273,6 +283,7 @@
             text-align: center;
             text-shadow: 0 1px 4px rgba(0,0,0,0.8);
         }
+
         .book-description .title {
             font-family: 'Cinzel', serif;
             font-size: 11px;
@@ -282,35 +293,348 @@
             font-weight: 700;
         }
 
-        @media (max-width: 768px) {
-            .site-wrapper { padding: 55px 15px 15px 15px; }
-            .site-title { font-size: 22px; }
-            .white-layer { padding: 25px 20px 20px 20px; }
-            .greeting { font-size: 22px; }
-            .highlight { font-size: 26px; }
-            .description { font-size: 14px; }
-            .bookshelf { flex-direction: column; align-items: center; gap: 15px; }
-            .book-card { width: 140px; height: 180px; }
-            .generated-cover .city { font-size: 18px; letter-spacing: 5px; }
-            .generated-cover .nightmare { font-size: 12px; letter-spacing: 8px; }
-            .book-description p { font-size: 8px; line-height: 1.4; }
-            .book-description .title { font-size: 10px; }
+        /* ===== СТРАНИЦА КНИГИ ===== */
+        .book-page-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+            padding: 20px 0;
         }
+
+        .book-cover-large {
+            flex: 0 0 280px;
+            height: 380px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1a1a 30%, #3d2a1a 60%, #1a0a0a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            text-align: center;
+            color: #c4a882;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+
+        .book-cover-large::before {
+            content: "☢️";
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 36px;
+            opacity: 0.3;
+        }
+
+        .book-cover-large .city {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 10px;
+            color: #d4b896;
+            line-height: 1.2;
+        }
+
+        .book-cover-large .nightmare {
+            font-size: 18px;
+            letter-spacing: 14px;
+            color: #8a6a4a;
+            margin-top: 6px;
+        }
+
+        .book-cover-large .divider {
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8a6a4a, transparent);
+            margin: 12px 0;
+        }
+
+        .book-cover-large .sub {
+            font-size: 13px;
+            letter-spacing: 5px;
+            color: #6a5a4a;
+            line-height: 1.6;
+        }
+
+        .book-info {
+            flex: 1;
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .book-info h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            color: #1a1a1a;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .book-info .short-desc {
+            font-family: 'Special Elite', cursive;
+            font-size: 14px;
+            color: #444;
+            line-height: 1.7;
+            letter-spacing: 0.5px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 22px;
+            background: #1a1a1a;
+            color: #d4b896;
+            border: 1px solid #3d2a1a;
+            border-radius: 6px;
+            font-family: 'Special Elite', cursive;
+            font-size: 13px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        .back-btn:hover {
+            background: #2d1a1a;
+            border-color: #8a6a4a;
+            color: #f0d9b5;
+        }
+
+        /* ===== ВКЛАДКИ ГЛАВ ===== */
+        .chapters-tabs {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .chapter-tab {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: 'Special Elite', cursive;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #555;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chapter-tab:hover {
+            background: #e8e4e0;
+        }
+
+        .chapter-tab.active {
+            background: #1a1a1a;
+            color: #d4b896;
+            border-color: #1a1a1a;
+        }
+
+        .chapter-content {
+            margin-top: 25px;
+            font-family: 'Special Elite', cursive;
+            font-size: 15px;
+            line-height: 1.9;
+            color: #222;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 1;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+
+        .chapter-content p {
+            margin-bottom: 15px;
+            text-indent: 25px;
+        }
+
+        .chapter-content .chapter-title {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            letter-spacing: 3px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-align: center;
+            text-indent: 0;
+        }
+
+        .chapter-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chapter-content::-webkit-scrollbar-track {
+            background: #e8e4e0;
+            border-radius: 3px;
+        }
+
+        .chapter-content::-webkit-scrollbar-thumb {
+            background: #8a6a4a;
+            border-radius: 3px;
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 900px) {
+            .book-page-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .book-cover-large {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 280px;
+                height: 360px;
+            }
+
+            .book-info {
+                text-align: center;
+                align-items: center;
+            }
+
+            .back-btn {
+                align-self: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-wrapper {
+                padding: 55px 15px 15px 15px;
+            }
+
+            .header {
+                top: 15px;
+                left: 20px;
+            }
+
+            .site-title {
+                font-size: 22px;
+                letter-spacing: 4px;
+            }
+
+            .white-layer {
+                padding: 25px 20px 20px 20px;
+            }
+
+            .greeting {
+                font-size: 22px;
+            }
+
+            .highlight {
+                font-size: 26px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .bookshelf {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .book-card {
+                width: 140px;
+                height: 180px;
+            }
+
+            .book-info h2 {
+                font-size: 24px;
+            }
+
+            .chapter-content {
+                font-size: 13px;
+            }
+
+            .chapter-content .chapter-title {
+                font-size: 18px;
+            }
+
+            .book-description p {
+                font-size: 8px;
+            }
+
+            .book-description .title {
+                font-size: 10px;
+            }
+        }
+
         @media (max-width: 480px) {
-            .site-wrapper { padding: 45px 10px 10px 10px; }
-            .site-title { font-size: 17px; }
-            .white-layer { padding: 20px 15px 15px 15px; }
-            .greeting { font-size: 18px; }
-            .highlight { font-size: 22px; }
-            .description { font-size: 12px; }
-            .book-card { width: 120px; height: 155px; }
-            .generated-cover .city { font-size: 14px; letter-spacing: 3px; }
-            .generated-cover .nightmare { font-size: 10px; letter-spacing: 5px; }
-            .generated-cover .sub { font-size: 9px; }
-            .generated-cover::before { font-size: 18px; top: 8px; right: 8px; }
-            .book-description p { font-size: 7px; line-height: 1.3; }
-            .book-description .title { font-size: 9px; }
-            .book-description { padding: 8px; }
+            .site-wrapper {
+                padding: 45px 10px 10px 10px;
+            }
+
+            .site-title {
+                font-size: 17px;
+                letter-spacing: 3px;
+            }
+
+            .white-layer {
+                padding: 20px 15px 15px 15px;
+            }
+
+            .greeting {
+                font-size: 18px;
+            }
+
+            .highlight {
+                font-size: 22px;
+            }
+
+            .description {
+                font-size: 12px;
+            }
+
+            .book-card {
+                width: 120px;
+                height: 155px;
+            }
+
+            .book-cover-large {
+                height: 300px;
+            }
+
+            .book-cover-large .city {
+                font-size: 22px;
+                letter-spacing: 6px;
+            }
+
+            .book-cover-large .nightmare {
+                font-size: 14px;
+                letter-spacing: 8px;
+            }
+
+            .book-info h2 {
+                font-size: 20px;
+            }
+
+            .book-info .short-desc {
+                font-size: 12px;
+            }
+
+            .chapter-tab {
+                padding: 8px 14px;
+                font-size: 11px;
+            }
+
+            .chapter-content {
+                font-size: 12px;
+                line-height: 1.7;
+            }
+
+            .chapter-content .chapter-title {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -324,49 +648,335 @@
 
         <div class="white-layer">
 
-            <div class="hero">
-                <h2 class="greeting">Здравствуйте, это сайт ученика <span class="highlight">НАДИП</span></h2>
-                <p class="description">
-                    Здесь будет описание сайта, которое ты мне скинешь позже.
-                </p>
+            <!-- ===== ГЛАВНАЯ СТРАНИЦА ===== -->
+            <div class="page active" id="mainPage">
+                <div class="hero">
+                    <h2 class="greeting">Здравствуйте, это сайт ученика <span class="highlight">НАДИП</span></h2>
+                    <p class="description">
+                        Здесь будет описание сайта, которое ты мне скинешь позже.
+                    </p>
+                </div>
+
+                <div class="bookshelf">
+
+                    <!-- КНИГА 1 -->
+                    <div class="book-card" onclick="openBook()">
+                        <div class="generated-cover">
+                            <div class="city">LOUISVILLE</div>
+                            <div class="nightmare">NIGHTMARE</div>
+                            <div class="divider"></div>
+                            <div class="sub">WELCOME TO<br>KENTUCKY</div>
+                            <div class="stamp">✦ RUINS ✦</div>
+                        </div>
+                        <div class="book-description">
+                            <div>
+                                <div class="title">📖 О КНИГЕ</div>
+                                <p>
+                                    В Луисвилле прорывается смертельный вирус,<br>
+                                    превращающий людей в агрессивных заражённых.<br>
+                                    Трое школьников — Владислав, Даниил и Данил —<br>
+                                    оказываются в эпицентре катастрофы.<br>
+                                    Им предстоит выжить в городе, где каждый<br>
+                                    может стать врагом, а единственная надежда —<br>
+                                    держаться вместе.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- КНИГА 2 -->
+                    <div class="book-card">
+                        <div class="book-placeholder">📖<br>КНИГА 2</div>
+                    </div>
+
+                    <!-- КНИГА 3 -->
+                    <div class="book-card">
+                        <div class="book-placeholder">📖<br>КНИГА 3</div>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="bookshelf">
+            <!-- ===== СТРАНИЦА КНИГИ ===== -->
+            <div class="page" id="bookPage">
 
-                <!-- КНИГА 1 - С ОПИСАНИЕМ -->
-                <div class="book-card">
-                    <div class="generated-cover">
+                <div class="book-page-content">
+
+                    <!-- ОБЛОЖКА -->
+                    <div class="book-cover-large">
                         <div class="city">LOUISVILLE</div>
                         <div class="nightmare">NIGHTMARE</div>
                         <div class="divider"></div>
                         <div class="sub">WELCOME TO<br>KENTUCKY</div>
-                        <div class="stamp">✦ RUINS ✦</div>
                     </div>
-                    <!-- ОПИСАНИЕ ПРИ НАВЕДЕНИИ -->
-                    <div class="book-description">
-                        <div>
-                            <div class="title">📖 О КНИГЕ</div>
-                            <p>
-                                В Луисвилле прорывается смертельный вирус,<br>
-                                превращающий людей в агрессивных заражённых.<br>
-                                Школьники такие как — Владислав, Даниил ,Данил и Дэрил —<br>
-                                оказываются в эпицентре катастрофы.<br>
-                                Им предстоит выжить в городе, где каждый<br>
-                                может стать врагом, а единственная надежда —<br>
-                                держаться вместе.
-                            </p>
-                        </div>
+
+                    <!-- ИНФО О КНИГЕ -->
+                    <div class="book-info">
+                        <h2>LOUISVILLE NIGHTMARE</h2>
+                        <p class="short-desc">
+                            В Луисвилле прорывается смертельный вирус, превращающий людей в агрессивных заражённых. Трое школьников — Владислав, Даниил и Данил — оказываются в эпицентре катастрофы. Им предстоит выжить в городе, где каждый может стать врагом, а единственная надежда — держаться вместе.
+                        </p>
+                        <button class="back-btn" onclick="goBack()">← Назад</button>
                     </div>
+
                 </div>
 
-                <!-- КНИГА 2 -->
-                <div class="book-card">
-                    <div class="book-placeholder">📖<br>КНИГА 2</div>
+                <!-- ВКЛАДКИ ГЛАВ -->
+                <div class="chapters-tabs">
+                    <button class="chapter-tab active" onclick="showChapter(1, this)">Глава 1</button>
+                    <button class="chapter-tab" onclick="showChapter(2, this)">Глава 2</button>
+                    <button class="chapter-tab" onclick="showChapter(3, this)">Глава 3</button>
                 </div>
 
-                <!-- КНИГА 3 -->
-                <div class="book-card">
-                    <div class="book-placeholder">📖<br>КНИГА 3</div>
+                <!-- СОДЕРЖИМОЕ ГЛАВ -->
+                <div class="chapter-content" id="chapterContent">
+                    <!-- Глава 1 -->
+                    <div class="chapter-text active" id="chapter1">
+                        <p class="chapter-title">Глава 1. Луисвилл</p>
+                        <p>Этим утром солнце встретило граждан города Луисвилль яркими лучами. Дул прохладный ветер. Все торопились по делам: кому-то в школу, кто-то ехал на метро или машине на работу. Ничего не предвещало беды в этот прекрасный день.</p>
+                        <p>История пойдёт о трёх одноклассниках 10 класса (Sophomore), которые находились в школе. Повествование пойдёт от лица Данила — шестнадцатилетнего парня, который торопился в школу на первый урок, не думая и не зная, что сегодня может произойти.</p>
+                        <p>Зайдя в школу, прозвенел звонок. Данил последовал в кабинет биологии на второй этаж. По пути он увидел, как на лавочке плакала девушка из его параллели. Он не решился подойти и спросить, что у неё произошло, так как торопился в класс.</p>
+                        <p>Зайдя в класс, его встретили взглядами ученики и учитель.</p>
+                        <p>— Здравствуйте, извините за опоздание, можно пройти в класс? — спросил Данил.</p>
+                        <p>— Здравствуй, Данил, проходи, — ответил учитель.</p>
+                        <p>С задних парт послышался отдалённый смех и шутки про Данила. Он проследовал за парту.</p>
+                        <p>— Привет, братан, чего опоздал-то? — спросил Влад.</p>
+                        <p>— Привет. Да так, автобус раньше времени уехал, — ответил Данил.</p>
+                        <p>— А, ну понял, понял, — кивнул Влад.</p>
+                        <p>К ним повернулся их друг Дэрил — обросший парень шестнадцати лет.</p>
+                        <p>— Че, парни, в баскет, может, сегодня на физре зарубимся? — предложил Дэрил.</p>
+                        <p>— Ну давай, — согласились Данил и Влад.</p>
+                        <p>— Третий ряд, перестаньте вести беседу, я тут урок веду, а не вы, — строго сказал учитель.</p>
+                        <p>— Извините! — ответили с третьего ряда.</p>
+                        <p>Урок продолжился. Тема была «ДНК и синтез белка». Учитель рассказывал, как структура ДНК кодирует инструкции для создания белков, выполняющих ключевые функции в клетках. Все вели записи в тетрадях.</p>
+                        <p>Сзади наших двух друзей сидело двое задир — Даниил и Карл. Даниил был капитаном футбольной команды и боксёром в категории «Elite». Все его уважали и боялись. Он был высокомерен и постоянно третировал своих одноклассников, а Карл был его шестёркой. На этот урок цель этих двоих была докопаться до Данила и Влада.</p>
+                        <p>— Слышишь, Влад, ты мне на обед мелочь принёс? — спросил Карл.</p>
+                        <p>Влад повернулся к Карлу. На лице Карла была улыбка.</p>
+                        <p>— С каких пор я должен приносить что-то и отдавать тебе? — ответил Влад.</p>
+                        <p>— Карл, отвали от нас уже, мы же вроде к тебе не лезли, да и ты к нам не лезь, — вмешался Данил.</p>
+                        <p>— Вы чего, ничтожества, вообще берега попутали? Влад, мути деньгу до обеда. Если не отдашь — беда вам двоим, — оскалился Карл.</p>
+                        <p>— Я сказал: нечего я тебе отдавать не буду, значит, не буду, — твёрдо ответил Влад.</p>
+                        <p>Даниил схватил Влада за шею. Влад начал вырываться.</p>
+                        <p>— Слушай, ничтожество, тебе если сказали — так и делай. Или ты думаешь, взбучку лучше будет получить? — прошипел Даниил.</p>
+                        <p>— Так, третий ряд, вы меня вообще не понимаете? — вмешался учитель.</p>
+                        <p>Влад вырвался.</p>
+                        <p>— Так а чего они пристали к нам? — возмутился Влад.</p>
+                        <p>— Так, вы двое, вышли из кабинета. Ставлю вам по F каждому, — отрезал учитель.</p>
+                        <p>Даниил и Карл переглянулись, посмотрев на Данила и Влада, собрались и вышли из кабинета.</p>
+                        <p>— Кхм, — кашлянул учитель. — Продолжаем урок.</p>
+                        <p>— Вот влипли вы, парни. Ну, если что с вами — просто реально достали уже эти ублюдки, — тихо сказал Дэрил.</p>
+                        <p>— Они разозлились на нас. Надо будет как-то без драки решить, — ответил Данил.</p>
+                        <p>— Да а чего с ними решать? Надо отпор дать им, да и всё. Только, Дэрил, ты не лезь, если драться будем. А то они это воспримут как 3 на 2, и Карл ещё парней с футбола позовёт — тогда нам конкретно конец, — сказал Влад.</p>
+                        <p>— Ты чего, вообще с ума сошёл — с ними драться? Ладно с Карлом, он слабак. А с Даниилом — он нас двоих сложит и не почувствует, — возразил Данил.</p>
+                        <p>— Ну да, так-то. Ладно, на перемене решим, — вздохнул Дэрил.</p>
+                        <p>Данил сидел и записывал всё в тетрадь, думая о том, как бы решить всё мирно.</p>
+                        <p>Прозвенел звонок. Трое парней последовали на физру, в спортзал. Зайдя в зал, половина их класса уже находилась внутри. Учитель физкультуры Майлз принимал нормативы. Их одноклассник Слава из футбольной команды Даниила закидывал баскетбольный мяч в кольцо. Парни решили присоединиться к нему и поиграть в баскетбол.</p>
+                        <p>— Привет, Слава, чего как? — спросил Дэрил.</p>
+                        <p>— Приветствую. Да потихоньку. Про вас сегодня Дэнчик говорил? — поинтересовался Слава.</p>
+                        <p>— Да, про нас. Карл слишком сильно выёживаться начал, деньги требовать решил с нас. Я ему отказал, Даниил решил припугнуть меня, но их выгнали с урока и по F влепили, — рассказал Влад.</p>
+                        <p>Слава улыбнулся, взял мяч, пробежался и закинул его в кольцо.</p>
+                        <p>— Ну, попали вы, походу. Потому что они злые были, — усмехнулся Слава.</p>
+                        <p>— Да мы не сильно переживаем. Ну, ты, если что, встанешь за нас? Ну либо поговоришь, может быть, с Даниилом? — спросил Данил.</p>
+                        <p>— Ну, в обиду я вас не дам. Но ты сам понимаешь: если я выёживаться сильно буду — меня из команды попрут, — ответил Слава.</p>
+                        <p>— Мы всё понимаем… Ладно, мы не за этим пришли. Может, в баскет сыграем 2 на 2? — предложил Влад.</p>
+                        <p>— Но-но, Слава, полетели? — подхватил Дэрил.</p>
+                        <p>— Ну давайте, всё равно делать нечего, — согласился Слава.</p>
+                        <p>Парни разделились и начали играть в баскет.</p>
+                        <p>Прозвенел звонок, начался урок. Майлз так же сидел на лавочке и принимал нормативы. В этот момент в зал зашли Даниил, Карл и Тони. Оглянувшись, они заметили своих должников и последовали к ним. Их заметил Майлз и подозвал к себе сдать норматив. Парни оглянулись и решили для начала сдать норматив, заодно и размяться.</p>
+                        <p>— Сдаём подтягивание. Мера оценивания такова: 1–3 — F, 4–6 — D, 7–10 — C, 11–13 — B, 14–16 — A, — объявил Майлз. — По фамилии. Первый идёт Тони.</p>
+                        <p>Пока задиры сдавали норматив, их заметил Дэрил и окликнул Данила и Влада.</p>
+                        <p>— Пацаны, они в зале. Чего делаем-то? — спросил Дэрил.</p>
+                        <p>— Пусть сами подойдут. Ждём их, — ответил Влад.</p>
+                        <p>— Ох, не нравится мне, что сейчас будет, — пробормотал Данил.</p>
+                        <p>Слава заметил, что парни встали, посмотрел за них и увидел задир.</p>
+                        <p>— Каков ваш план действий? — спросил Слава.</p>
+                        <p>— Ждём, пока подойдут. Будем говорить с ними, — ответил Данил.</p>
+                        <p>— Услышал вас. Ну, ждите. Я пойду пока в уборную выйду. Надеюсь, не пропущу ничего, — усмехнулся Слава и последовал на выход.</p>
+                        <p>— Тони — 12, у тебя B. Карл — 8, у тебя C. Даниил — 24 раза, не подводишь, у тебя A+. Не за горами «Presidential Physical Fitness Award», — подвёл итоги Майлз.</p>
+                        <p>— Услышали тебя, Майлз. Сейчас не лезь и не подходи даже. Пошли, парни, — бросил Даниил.</p>
+                        <p>— В смысле? — не понял Майлз.</p>
+                        <p>Трое парней начали следовать к нашим — Данилу, Владу и Дэрилу.</p>
+                        <p>— Пацаны, извиняйте нас, но вы… — начал Данил.</p>
+                        <p>Туф. Удар. Данил упал от удара в челюсть от Тони. Его подхватил Дэрил.</p>
+                        <p>— Ну чего, сосунки, мелочь принесли? — оскалился Даниил.</p>
+                        <p>К ним обратились две девочки.</p>
+                        <p>— Вы что, совсем ненормальные? Зачем Данила ударили? Отстаньте от них, — возмутилась Мелони.</p>
+                        <p>— Рот закройте, истерички, — отрезал Карл. — Ну чего, Влад, не такой смелый теперь?</p>
+                        <p>Карл начал толкать Влада, а на Дэрила попёр Тони. Дэрил положил Данила на пол и стал отступать назад, в стойке.</p>
+                        <p>— Всё, парни, успокойтесь, дам я мелочь, — сказал Дэрил.</p>
+                        <p>— Поздно, — ответил Даниил.</p>
+                        <p>Карл ударил прямой. Влад увернулся, пройдя ему в ноги, переведя в партер. На полу Влад начал забивать Карла локтями. Раз удар — на лбу красный след. Два удара — разбит нос. Три удара — Карл уснул с разбитым лицом.</p>
+                        <p>Вдруг Владу прилетело с голени в лицо. Туф. Удар. Влад упал на Карла.</p>
+                        <p>Дэрил начал бороться с Тони, пропустив до этого три удара в лицо. Майлз подбежал и начал разнимать их. В зал забежал Слава. Заметив эту картину, он тоже побежал в самую гущу событий. Даниил фыркнул и подошёл к разнимающему Майлзу, схватил Тони за руку и выдернул его оттуда.</p>
+                        <p>— Вы чего творите, пацаны? Вы же одноклассники и дерётесь, — возмутился Майлз.</p>
+                        <p>Данил начал приходить в себя. Держась одной рукой за пол, он привстал.</p>
+                        <p>Майлз дальше зачитывал лекцию Тони и Даниилу. Каждый из них держал руки скрещенными.</p>
+                        <p>Одноклассницы и одноклассники проследовали на выход из зала. Слава помог подняться Данилу, а Дэрил подбежал к Владу и начал его приводить в себя.</p>
+                        <p>Через десять минут все сидели на лавке в ряд и слушали лекцию от Майлза насчёт драк в школе. Кто-то с разбитым лицом, кто-то с болью в челюсти, кто-то с разбитым носом, а кто-то просто потасканный.</p>
+                        <p>— Вы вообще не понимаете, что за драку в учебном заведении вас могут исключить. Думайте головой, что делаете. Вас троих касается, футболисты недоделанные. Извинитесь перед ними, — строго сказал Майлз.</p>
+                        <p>— С чего бы ради я должен извиняться перед этими ничтожествами? — фыркнул Карл.</p>
+                        <p>— Ага, они сами нарвались. Их предупреждали, — поддержал Тони.</p>
+                        <p>— Майлз, вы тоже ерунду не несите. В смысле — извиняться перед этими жертвами травли? — возмутился Даниил.</p>
+                        <p>Влад привстал и полез на Даниила. Даниил тоже привстал. Они схватили друг друга, били друг друга, их начали разнимать. Разняв, они сидели вдвоём запыхавшиеся и смотрели друг на друга.</p>
+                        <p>— Фух… Ладно, извиняйте, пацаны. Зря нагнали на вас, — выдохнул Даниил.</p>
+                        <p>— Ты чего, Дэнчик, как баба извинился перед ничтожествами? — усмехнулся Карл.</p>
+                        <p>— Чего?! — рявкнул Даниил.</p>
+                        <p>— Извини, извини. Вы, пацаны, тоже извините нас, — быстро сказал Карл.</p>
+                        <p>— Извиняюсь, — буркнул Тони.</p>
+                        <p>— Так бы сразу, — кивнул Майлз.</p>
+                        <p>Вдруг издалека начали слышаться лопасти вертолёта. Над школой пролетели два военно-транспортных вертолёта CH-47.</p>
+                        <p>— Хм, они летят со стороны Форт-Нокс, — заметил Майлз, глядя в окно.</p>
+                        <p>— Куда они могут лететь? — спросил Даниил.</p>
+                        <p>— Эм… Ну, в той стороне из таких важных объектов только региональная лаборатория, — ответил Данил.</p>
+                        <p>В коридоре прозвенел женский визг. Даниил и Тони побежали туда, за ними Карл и Майлз. Данил с Владом и Дэрилом переглянулись и тоже побежали туда.</p>
+                        <p>Выбежав в коридор, они увидели девушку с вскрытыми венами на полу. Под ней растекалась кровь алого цвета, в отражении которого светили лампы. Рядом с ней сидела на коленях её подруга и, по информации, которая разлеталась в кучке сбежавшихся, её бывший парень. Они сидели и плакали. Данил, увидев лицо девушки, понял, кто это — та самая девушка, которая сидела в коридоре и плакала.</p>
+                        <p>На улице начались сирены, вдалеке послышались мигалки.</p>
+                        <p>— Вот чёрт, что за чертовщина началась? — выдохнул Дэрил.</p>
+                        <p>Все начали оглядываться вокруг. Даниил, Данил, Тони, Карл, Влад, Дэрил и другие побежали к окнам. Кучка рассосалась. Даниил увидел, как двое парней бегут за девушкой, догнав, напрыгнули на неё и начали вгрызаться в неё.</p>
+                        <p>— Что за ерунда? — пробормотал Карл.</p>
+                        <p>— Да я откуда знаю-то, — ответил Даниил.</p>
+                        <p>Сзади послышался крик подруги. Ожившая девушка вгрызлась в ногу. Бывший начал отползать назад. Девушка полностью набросилась на подругу и укусила её за шею. Подруга умерла за секунды.</p>
+                        <p>Сзади трёх парней, которые снимали и ползущего бывшего, выбежали из-за угла шесть школьников, начав прыгать на них сзади и вгрызаться в них. Бывшего начали рвать вдвоём. По школе начали доноситься визги и крики.</p>
+                        <p>Данил, Влад и Дэрил стояли в ступоре, пока к ним бежала их бешеная одноклассница. Даниил отреагировал быстро: намотав на руку бомбер, он разбил шкафчик с пожарным топором и огнетушителем. Схватив топор, он воткнул его в голову однокласснице. Она упала замертво.</p>
+                        <p>Тони влепил пощёчину Данилу и окликнул остальных бежать. Они побежали в спортзал. Дожидаясь Майлза, пока он забежит, в пятистах метрах от школы в жилой дом влетел вертолёт. Прозвенел взрыв, слегка контузив наших героев.</p>
+                        <p>Майлз буквально запрыгнул в последний момент в зал. Тони закрыл дверь, но рука заражённого осталась болтаться и пытаться протиснуть тело, чтобы вцепиться в наших героев зубами. Даниил рефлекторно, с оттяжкой, ударил по руке. Рука отлетела и упала на пол. Дверь захлопнулась, но заражённый начал долбиться в дверь снова, привлекая других.</p>
+                        <p>Влад с Дэрилом начали носить вещи, чтобы забаррикадироваться. Поставили на вход козла, подперев штангой и блинами. Майлз подменил Тони держать дверь. Все в панике, все учащённо дышат.</p>
+                        <p>— Дэнчик, чего делать-то будем? — спросил Карл.</p>
+                        <p>— Фух… Надо думать. И скорее — не думаю, что эта баррикада надолго их сдержит, — ответил Даниил.</p>
+                        <p>— Тут есть аварийный выход. Можно через него выйти безопасно, — сказал Влад.</p>
+                        <p>— Хорошая идея. У меня стоит наш фургон, на котором мы ездим на соревнования. На парковке можно взять его и уехать куда-нибудь. Ключи в моей коморке, третьей по счёту, — сказал Майлз.</p>
+                        <p>Туф, туф, туф. От двери начала сыпаться штукатурка.</p>
+                        <p>— Можем поехать ко мне, — предложил Данил. — Не думаю, что мой дед будет против, смотря на сложившуюся ситуацию.</p>
+                        <p>— На ферму? — переспросил Даниил.</p>
+                        <p>— Да, — кивнул Данил.</p>
+                        <p>— Надо родителей тоже забрать и предупредить, — сказал Дэрил.</p>
+                        <p>— Моя мать не берёт трубки, — нахмурился Карл.</p>
+                        <p>— Связи нет, потому что растяпа, — ответил Тони.</p>
+                        <p>— Правда, нет связи, — подтвердил Влад.</p>
+                        <p>Образовалась щель, откуда повылазили руки.</p>
+                        <p>— Бегите, берите ключи и уезжайте. Я вас догоню, а пока подержу, — сказал Майлз.</p>
+                        <p>— Хорошо. Держи топор, тогда тебе он нужнее будет, — ответил Даниил.</p>
+                        <p>— Спасибо. Поставь рядом со мной его, — попросил Майлз.</p>
+                        <p>— Я взял ключи. Побежали, — скомандовал Влад.</p>
+                        <p>Влад побежал вперёд, отперев дверь и распахнув её. Все вышли на улицу и увидели город. Дымящиеся здания, мигалки, вертолёт в здании. Вдалеке были слышны выстрелы. Увидев это, все встали в шок. Влад очухался и окликнул всех бежать к фургону.</p>
+                        <p>Подбежав к фургону, открыв его, все залезли, кроме Влада, Дэрила и Даниила. Они остались ждать Майлза. Из окна третьего этажа полетела девушка. Упав, она умерла. Из школы начали выбегать школьники. В сторону наших парней побежали две девушки — Алина и Мегги.</p>
+                        <p>— Можете, пожалуйста, нас взять с собой? Прошу вас! — крикнула Мегги.</p>
+                        <p>— Ну, вам придётся на колени усаживаться. Не против? — ответил Даниил.</p>
+                        <p>— Ты что, шутки вздумал шутить? Мы просим, чтобы вы взяли нас с вами. Нам без разницы, главное — заберите нас отсюда, — резко сказала Алина.</p>
+                        <p>— Хорошо, хорошо. Заходите, падайте к кому-то, — махнул рукой Влад.</p>
+                        <p>Даниил нахмурился.</p>
+                        <p>— Где его носит… — пробормотал он.</p>
+                        <p>Из запасного выхода вылетел Майлз — весь порванный, разгрызанный, с топором и бешеными глазами. А за ним ещё двое школьников.</p>
+                        <p>— В машину! Даниил, за руль падай! — крикнул Дэрил.</p>
+                        <p>— Залазь, я выхвачу топор и к вам, — сказал Влад.</p>
+                        <p>— Нет, не геройствуй. Я помогу тебе. Слава, залазь за руль, заводи — мы сейчас, — скомандовал Даниил.</p>
+                        <p>С выхода из школы в сторону парней побежало ещё трое школьников в крови. Та девушка, которая упала с третьего этажа, ожила и тоже поползла в сторону фургона.</p>
+                        <p>Даниил поднял осколок стекла с бетона.</p>
+                        <p>— Извини, Майлз… — прошептал Данил.</p>
+                        <p>Воткнул в голову. Майлз упал. Топор проскользил по бетону в ноги к Владу. На Влада неслось трое школьников. Влад схватил топор, увернулся — двое школьников упало. Третьей он воткнул топор в голову. Вытащив, те двое поднялись. Даниил подбежал сзади, воткнул одному в шею. Тот просто обратил внимание на Даниила и попятился на него. Даниил с изумлением смотрел на школьника с осколком в шее, идущего прямо на него.</p>
+                        <p>Влад ударом распорол живот школьнику. Вывалились кишки. Тот на них наступил и упал на землю, ударившись головой об бетон. Влад ударил ногой, раздробив череп — тот перестал шевелиться.</p>
+                        <p>На помощь к Данилу вылетел Дэрил и дал подсечку школьнику. Тот упал. Осколок упал и подлетел вверх инерцией от удара. Даниил схватил осколок и вонзил школьнику в голову.</p>
+                        <p>Влад забежал в фургон с Дэрилом. Даниил последовал за ними. К ним бежали ещё двое заражённых школьников. Он закрыл перед их лицом дверь. Слава нажал на газ в пол, и они поехали в сторону шоссе.</p>
+                    </div>
+
+                    <!-- Глава 2 -->
+                    <div class="chapter-text" id="chapter2" style="display:none;">
+                        <p class="chapter-title">Глава 2. Дорога</p>
+                        <p>Спустя 20 минут они ехали по шоссе. По пути встретился один перевёрнутый пикап с заражённым, который ел свою собаку.</p>
+                        <p>— Мерзость… — поморщился Карл.</p>
+                        <p>— Ага, — согласился Тони.</p>
+                        <p>Они продолжили путь к ферме Данила.</p>
+                        <p>Спустя 15 минут фургон шёл по трассе. Лес по обе стороны постепенно редел, и впереди открылось широкое поле — бескрайнее, покрытое жухлой травой. Небо было ясным, солнце висело низко, но светило ярко, заливая поле золотистым светом. Дорога была пустой — ни машин, ни людей, ни заражённых. Только ветер гнал по асфальту мелкий мусор.</p>
+                        <p>Влад сидел у окна. Он облокотился на подлокотник, подпёр голову рукой и смотрел в окно. Топор лежал у его ног, завернутый в куртку. В фургоне было тихо — все молчали, переваривая случившееся. Слава вёл, Даниил сидел на пассажирском, остальные — сзади.</p>
+                        <p>Влад смотрел на поле. Мелькали столбы, провода, редкие деревья. И вдруг он напрягся.</p>
+                        <p>Из леса, со стороны Форт-Нокс, на трассу выехала колонна национальный гвардии. Первым шёл «Хамви» — тёмно-зелёный, с пулемётной турелью на крыше, где сидел стрелок в бронежилете и каске. За ним — второй, третий, четвёртый, пятый. За «Хамви» — три грузовика: тяжёлые, армейские, с брезентовыми верхами и людьми в кузове. Между машинами — квадроциклы сопровождения, два или три. Всё это двигалось ровно, слаженно, по-военному.</p>
+                        <p>Влад сжал топор в руках. Пальцы побелели.</p>
+                        <p>— Эй, — сказал он тихо, не отрывая взгляда от окна. — Гляньте.</p>
+                        <p>Данил повернулся к окну. Даниил тоже.</p>
+                        <p>— Что там? — спросил Слава, не оборачиваясь.</p>
+                        <p>— Военные, — ответил Влад. — Колонна. Пять «Хамви», три грузовика. Со стороны Форт-Нокс.</p>
+                        <p>Данил подался вперёд, вглядываясь в окно.</p>
+                        <p>— Это… это армия? — спросил он.</p>
+                        <p>— Похоже на то, — сказал Даниил. — Только что они тут делают?</p>
+                        <p>— Может, эвакуация? — предположил Дэрил.</p>
+                        <p>— Или зачистка, — мрачно сказал Влад.</p>
+                        <p>Колонна шла параллельно им, по встречной полосе. «Хамви» сверкали на солнце, грузовики гудели, мотоциклы ревели. Один из солдат в кузове грузовика посмотрел в их сторону, но ничего не сделал. Колонна прошла мимо и скрылась за поворотом, оставив после себя только запах выхлопа и пыль.</p>
+                        <p>— Проехали, — выдохнул Данил.</p>
+                        <p>— Ага, — кивнул Влад, но топор не выпустил.</p>
+                        <p>Фургон ехал дальше. Через минуту трасса снова сузилась, и по обе стороны вырос лес — густой, тёмный, с высокими соснами. Фургон нырнул в чащу, как в туннель.</p>
+                        <p>А над лесом, вдалеке, ярко светило солнце. Оно поднималось всё выше, заливая верхушки деревьев золотым светом. Где-то там, за горизонтом, были поля, люди. Но здесь, внизу, под кронами, было темно и тихо.</p>
+                        <p>Фургон ехал дальше — к ферме.</p>
+                        <p>Спустя 10 минут езды у поворота, у самой дороги, стояла старая деревянная табличка. Краска на ней облупилась, буквы почти стёрлись, но ещё можно было разобрать: «Ферма. 2 мили». Рядом с табличкой, в тени старого дуба, стоял маленький олень — Бемби. Он поднял голову, посмотрел на проезжающий фургон большими тёмными глазами, потом сорвался с места и побежал вглубь леса, мелькая среди деревьев. Его силуэт становился всё меньше и меньше, пока не растворился в лесной чаще. Фургон проехал мимо, свернул на поворот, и вскоре скрылся за холмом.</p>
+                        <p>Фургон выехал из чащи на открытое пространство. Лес остался позади, и перед ними раскинулись бескрайние поля пшеницы. Золотые колосья колыхались под лёгким ветром, создавая волны, которые шли одна за другой до самого горизонта. Солнце светило ярко, заливая всё вокруг тёплым светом — таким тёплым, что даже сквозь запылённое стекло фургона чувствовалось, как оно греет. Казалось, что где-то там, за этими полями, нет никакого апокалипсиса — только мир, покой и тишина. Только далёкие столбы дыма сзади на горизонте напоминали, что это не так.</p>
+                        <p>В фургоне спустя десять минут езды поля пшеницы окружили их со всех сторон. Дорога стала узкой, грунтовой, с глубокими колеями от трактора. В фургоне было душно — но никто не решался открыть окно. Тишину нарушали только гул двигателя, скрип подвески на кочках и редкие разговоры. Запах в салоне был тяжёлым — смесь пота, бензина, пороха и чужой крови, которая ещё не выветрилась с курток.</p>
+                        <p>Алина и Мегги сидели на коленях у Карла и Тони. Девушки были бледными, напуганными, но держались. Мегги — высокая брюнетка с длинными волосами, заплетёнными в косу, которая растрепалась. Алина — невысокая, с короткой стрижкой и веснушками на носу. Они обе были из параллельного класса, но раньше почти не общались с нашими героями.</p>
+                        <p>— Как думаете, откуда они взялись? — тихо спросила Мегги, глядя в окно. Её голос дрожал.</p>
+                        <p>— Кто? — переспросил Тони, не сразу поняв.</p>
+                        <p>— Эти… заражённые, — она сглотнула. — Почему они жрут друг друга?</p>
+                        <p>— Я слышал, что-то про мутированное бешенство, — сказал Карл, потирая разбитый нос. — Из за того что крыса заражалась бешенством и занималась каннибализмом. Вроде это начала изучать.</p>
+                        <p>— Крыс? — переспросила Алина, поморщившись.</p>
+                        <p>— Ага, — кивнул Карл. Они жрали друг друга. Что-то такое.</p>
+                        <p>— И оно вырвалось, — закончила Мегги. — Как в фильмах.</p>
+                        <p>— Только это не фильм, — мрачно сказал Тони. — Это реальность.</p>
+                        <p>— Может, это вообще какая-то биологическая атака? — предположила Мегги. — Или эксперимент, который вышел из-под контроля.</p>
+                        <p>— Какая разница? — буркнул Карл. — Они реальны, и они нас хотят сожрать.</p>
+                        <p>— Хватит, — сказала Алина. — Мы и так на нервах. Давайте о чём-нибудь другом.</p>
+                        <p>Разговор затих.</p>
+                        <p>Тони решил позвонить родителям, показывало 2 палки. Не кто не брал трубку, у Тони промелькнула слеза. Все начали звонить своим родителям, у Мегги и Алины ответили только мамы, они сказали то что их мамы в карантинной зоне и то что их дома оцепили. Их матери сказали продержаться с кем то 2-3 ночи в безопасном месте пока ситуация не уляжется потом они им позвонят. Они сбросили трубки.</p>
+                        <p>Данил позвонил Деду:</p>
+                        <p>Гудок. Второй. Третий.</p>
+                        <p>— Алло? — раздался хриплый голос на том конце. — Данил? Ты чего звонишь? Связь же вроде пропала.</p>
+                        <p>— Дед, это я, — сказал Данил, и голос его дрогнул. — Я еду к тебе. Не один. С друзьями.</p>
+                        <p>— С друзьями? — переспросил дед. — Ты чего, в школе должен быть. Уроки, то-сё.</p>
+                        <p>— Дед, — Данил понизил голос. — В городе творится чёрт знает что. Мы еле выбрались.</p>
+                        <p>Пауза. Долгая, тяжёлая.</p>
+                        <p>— Что значит «чёрт знает что»? — голос деда стал серьёзным.</p>
+                        <p>— Люди сходят с ума, — ответил Данил. — Нападают на других. Жрут их. Я серьёзно. Мы видели. В школе. На улицах. Везде.</p>
+                        <p>— Господи, — выдохнул дед. — Совсем рехнулись?</p>
+                        <p>— Похоже на то, — сказал Данил. — Мы едем к тебе. Нас семеро. Восемь. С учителем физкультуры. Он… — Данил замолчал. — Он не выжил. Мы едем без него.</p>
+                        <p>— Понял, — коротко сказал дед. — Сколько вас?</p>
+                        <p>— Девять. Двое девчонок, — ответил Данил. — И… Карл с Тони. Из школы.</p>
+                        <p>— Карл? — дед хмыкнул. — Это тот, который тебя доставал?</p>
+                        <p>— Он самый, — буркнул Данил.</p>
+                        <p>— Ну, — дед помолчал, потом усмехнулся. — Ладно. Если он полезет — примет своими щами приклад Mossberg 500 . А если он заражённый — примет с особой теплотой.</p>
+                        <p>Данил невольно улыбнулся.</p>
+                        <p>— Дед, ты чего, дробовик из сейфа достал?</p>
+                        <p>— А то, — ответил дед. — Я его ещё в восемьдесят четвёртом покупал. Или в девяносто четвёртом. Не помню. Но он работает. Патронов — 8 коробок. Картечь, дробь. На всех хватит.</p>
+                        <p>— Хорошо, — сказал Данил. — Мы будем через полчаса. Может, меньше.</p>
+                        <p>— Давай, — сказал дед. — Я ворота открою. И печку затоплю. У меня как раз похлёбка варится.</p>
+                        <p>— Дед, — тихо сказал Данил.</p>
+                        <p>— Что?</p>
+                        <p>— Спасибо.</p>
+                        <p>— Не за что, внук, — ответил дед. — Ты главное — доедь. И друзей довези. А остальное — разберёмся.</p>
+                        <p>— Хорошо, — сказал Данил. — Конец связи.</p>
+                        <p>— Давай. Жду.</p>
+                        <p>У Влада, Дэрила и Даниила родители так же не взяли трубки, они отнесли это к тому что их так же забрали на карантин.</p>
+                        <p>Через несколько минут после разговора Мегги повернулась к Данилу, который сидел у окна, глядя на поля.</p>
+                        <p>— Данил, — позвала она.</p>
+                        <p>Он обернулся.</p>
+                        <p>— У тебя безопасно на ферме? — спросила она. — Мы с Алиной будем очень благодарны, если ты позволишь нам остаться. Нам некуда идти.</p>
+                        <p>Данил помолчал, глядя на неё. Потом посмотрел на Алину, которая тоже смотрела на него с надеждой.</p>
+                        <p>— Да, — сказал он. — Я всех впущу. Но не уверен, что еды хватит на всех. Нужно будет раздобыть её где-нибудь. Сбор урожая намечается только на начало лета.</p>
+                        <p>— Мы поможем, — быстро сказала Алина. — Чем сможем.</p>
+                        <p>— Я прослежу за этими двоими, — вмешался Даниил, кивнув на Карла и Тони. — Чтобы дичь не творили.</p>
+                        <p>— Эй, — возмутился Карл. — Мы не дичь.</p>
+                        <p>— Пока что, — усмехнулся Даниил.</p>
+                        <p>Данил посмотрел на него.</p>
+                        <p>— Я не против, чтобы они остались, — сказал он. — Но если начнут проблемы — выгоню. И не посмотрю, что мы вместе учились.</p>
+                        <p>— Понял, — буркнул Карл.</p>
+                        <p>— Принято, — кивнул Тони.</p>
+                        <p>— Спасибо, Данил, — сказала Мегги.</p>
+                        <p>— Спасибо, — эхом отозвалась Алина.</p>
+                        <p>— Не благодарите пока, — ответил Данил. — Сначала доживём.</p>
+                        <p>Фургон ехал дальше. Поля пшеницы тянулись до горизонта, и где-то вдалеке, за холмом, уже виднелась крыша старого амбара.</p>
+                    </div>
+
+                    <!-- Глава 3 -->
+                    <div class="chapter-text" id="chapter3" style="display:none;">
+                        <p class="chapter-title">Глава 3. Ферма</p>
+                        <p>Здесь будет третья глава. Ты можешь добавить её позже.</p>
+                    </div>
+
                 </div>
 
             </div>
@@ -374,6 +984,32 @@
         </div>
 
     </div>
+
+    <script>
+        function openBook() {
+            document.getElementById('mainPage').classList.remove('active');
+            document.getElementById('bookPage').classList.add('active');
+            // Сброс на первую главу
+            showChapter(1, document.querySelector('.chapter-tab'));
+        }
+
+        function goBack() {
+            document.getElementById('bookPage').classList.remove('active');
+            document.getElementById('mainPage').classList.add('active');
+        }
+
+        function showChapter(num, btn) {
+            // Скрыть все главы
+            document.querySelectorAll('.chapter-text').forEach(el => el.style.display = 'none');
+            // Показать нужную
+            document.getElementById('chapter' + num).style.display = 'block';
+
+            // Убрать active у всех вкладок
+            document.querySelectorAll('.chapter-tab').forEach(el => el.classList.remove('active'));
+            // Добавить active нажатой
+            if (btn) btn.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
