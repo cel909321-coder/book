@@ -33,92 +33,50 @@
             border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
-        .header {
-            position: absolute;
-            top: 25px;
-            left: 45px;
-            z-index: 10;
-        }
+        .header { position: absolute; top: 25px; left: 45px; z-index: 10; }
 
         .site-title {
             font-family: 'Cinzel', Georgia, serif;
-            font-size: 34px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 6px;
-            text-transform: uppercase;
+            font-size: 34px; font-weight: 700; color: #ffffff;
+            letter-spacing: 6px; text-transform: uppercase;
         }
 
         .white-layer {
             background-color: #f5f3f0;
-            width: 100%;
-            min-height: 100%;
+            width: 100%; min-height: 100%;
             border-radius: 10px;
             padding: 45px 55px 40px 55px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
+            display: flex; flex-direction: column; justify-content: space-between;
+            position: relative; overflow: hidden;
         }
 
         .white-layer::before {
             content: "☢️ 💀 📖 ☢️ 💀 📖 ☢️ 💀 📖 ☢️ 💀 📖 ☢️ 💀 📖";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            font-size: 60px;
-            letter-spacing: 40px;
-            word-spacing: 60px;
-            line-height: 2.8;
-            opacity: 0.04;
-            pointer-events: none;
-            display: flex;
-            flex-wrap: wrap;
-            align-content: center;
-            justify-content: center;
-            padding: 30px;
-            z-index: 0;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            font-size: 60px; letter-spacing: 40px; word-spacing: 60px; line-height: 2.8;
+            opacity: 0.04; pointer-events: none;
+            display: flex; flex-wrap: wrap; align-content: center; justify-content: center;
+            padding: 30px; z-index: 0;
         }
 
         .page { display: none; position: relative; z-index: 1; width: 100%; }
         .page.active { display: flex; flex-direction: column; min-height: 100%; }
 
         .hero {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            text-align: center; position: relative; z-index: 1;
+            flex: 1; display: flex; flex-direction: column; justify-content: center;
         }
 
         .greeting {
-            font-size: 34px;
-            font-weight: 400;
-            letter-spacing: 2px;
-            color: #1a1a1a;
-            font-family: 'Cinzel', Georgia, serif;
-            margin-bottom: 25px;
+            font-size: 34px; font-weight: 400; letter-spacing: 2px;
+            color: #1a1a1a; font-family: 'Cinzel', Georgia, serif; margin-bottom: 25px;
         }
 
-        .highlight {
-            font-weight: 900;
-            color: #0a0a0a;
-            font-size: 40px;
-            letter-spacing: 3px;
-        }
+        .highlight { font-weight: 900; color: #0a0a0a; font-size: 40px; letter-spacing: 3px; }
 
         .site-description {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #333;
-            line-height: 1.8;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: left;
+            margin-top: 15px; font-size: 14px; color: #333; line-height: 1.8;
+            max-width: 800px; margin-left: auto; margin-right: auto; text-align: left;
         }
         .site-description p { margin-bottom: 12px; }
         .site-description strong { color: #0a0a0a; font-weight: 700; }
@@ -127,43 +85,23 @@
         .site-description .features { margin-top: 15px; }
         .site-description .features p { margin-bottom: 6px; }
         .site-description .welcome {
-            margin-top: 20px;
-            text-align: center;
+            margin-top: 20px; text-align: center;
             font-family: 'Cinzel', Georgia, serif;
-            font-size: 16px;
-            color: #1a1a1a;
-            font-weight: 700;
+            font-size: 16px; color: #1a1a1a; font-weight: 700;
         }
 
         .bookshelf {
-            display: flex;
-            justify-content: center;
-            gap: 35px;
-            position: relative;
-            z-index: 1;
-            margin-top: 30px;
-            flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 35px;
+            position: relative; z-index: 1; margin-top: 30px; flex-wrap: wrap;
         }
 
-        .book-column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
+        .book-column { display: flex; flex-direction: column; align-items: center; gap: 12px; }
 
         .book-card {
-            width: 190px;
-            height: 250px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 190px; height: 250px; border-radius: 8px;
+            transition: all 0.3s ease; cursor: pointer; overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); background: #1a1a1a;
+            display: flex; align-items: center; justify-content: center;
             position: relative;
         }
 
@@ -172,335 +110,212 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
         }
 
-        .book-cover-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+        /* ===== ОБЛОЖКА LOUISVILLE (в меню и на странице) ===== */
+        .generated-cover {
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1a1a 30%, #3d2a1a 60%, #1a0a0a 100%);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 20px; text-align: center;
+            font-family: 'Cinzel', Georgia, serif; color: #c4a882;
+            position: relative; border-radius: 8px;
+        }
+        .generated-cover::before {
+            content: "☢️"; position: absolute; top: 15px; right: 15px;
+            font-size: 28px; opacity: 0.3;
+        }
+        .generated-cover .city {
+            font-size: 22px; font-weight: 700; letter-spacing: 6px;
+            color: #d4b896; line-height: 1.2;
+        }
+        .generated-cover .nightmare {
+            font-size: 14px; letter-spacing: 10px; color: #8a6a4a; margin-top: 4px;
+        }
+        .generated-cover .divider {
+            width: 60%; height: 1px;
+            background: linear-gradient(90deg, transparent, #8a6a4a, transparent);
+            margin: 8px 0;
+        }
+        .generated-cover .sub {
+            font-size: 11px; letter-spacing: 3px; color: #6a5a4a; line-height: 1.6;
+        }
+        .generated-cover .stamp {
+            position: absolute; bottom: 20px; right: 15px;
+            font-size: 10px; color: #5a4a3a; opacity: 0.4;
+            transform: rotate(-10deg); letter-spacing: 2px;
+        }
+
+        /* ===== ОБЛОЖКА СИБИРЬ (в меню и на странице) ===== */
+        .generated-cover-siberia {
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #0a1419 0%, #14202d 30%, #1a2d3d 60%, #0a1419 100%);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 20px; text-align: center;
+            font-family: 'Cinzel', Georgia, serif; color: #a8c4d4;
+            position: relative; border-radius: 8px;
+        }
+        .generated-cover-siberia::before {
+            content: "❄️"; position: absolute; top: 15px; right: 15px;
+            font-size: 28px; opacity: 0.3;
+        }
+        .generated-cover-siberia .siberia-title {
+            font-size: 22px; font-weight: 700; letter-spacing: 8px;
+            color: #c4dce8; line-height: 1.2;
+        }
+        .generated-cover-siberia .siberia-sub {
+            font-size: 11px; letter-spacing: 6px; color: #6a8a9a; margin-top: 4px;
+        }
+        .generated-cover-siberia .divider {
+            width: 60%; height: 1px;
+            background: linear-gradient(90deg, transparent, #6a8a9a, transparent);
+            margin: 8px 0;
+        }
+        .generated-cover-siberia .siberia-tag {
+            font-size: 10px; letter-spacing: 3px; color: #4a6a7a; line-height: 1.6;
+        }
+        .generated-cover-siberia .stamp {
+            position: absolute; bottom: 20px; right: 15px;
+            font-size: 10px; color: #3a5a6a; opacity: 0.4;
+            transform: rotate(-10deg); letter-spacing: 2px;
         }
 
         .book-placeholder {
-            width: 100%;
-            height: 100%;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
-            font-family: 'Cinzel', serif;
-            font-size: 14px;
-            letter-spacing: 2px;
-            flex-direction: column;
-            gap: 5px;
+            width: 100%; height: 100%; background: #1a1a1a;
+            display: flex; align-items: center; justify-content: center;
+            color: #555; font-family: 'Cinzel', serif; font-size: 14px;
+            letter-spacing: 2px; flex-direction: column; gap: 5px;
         }
 
         .book-description {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(10, 10, 10, 0.9);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px;
-            opacity: 0;
-            transition: all 0.4s ease;
-            z-index: 10;
-            pointer-events: none;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 10, 10, 0.9); border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            padding: 12px; opacity: 0; transition: all 0.4s ease;
+            z-index: 10; pointer-events: none;
         }
-
         .book-card:hover .book-description { opacity: 1; }
-
         .book-description p {
-            color: #c4a882;
-            font-family: Georgia, serif;
-            font-size: 9px;
-            line-height: 1.5;
-            text-align: center;
+            color: #c4a882; font-family: Georgia, serif;
+            font-size: 9px; line-height: 1.5; text-align: center;
         }
-
         .book-description .title {
-            font-family: 'Cinzel', serif;
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: #d4b896;
-            margin-bottom: 4px;
-            font-weight: 700;
+            font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px;
+            color: #d4b896; margin-bottom: 4px; font-weight: 700;
         }
 
         .world-btn {
-            padding: 8px 14px;
-            background: #1a1a1a;
-            color: #d4b896;
-            border: 1px solid #3d2a1a;
-            border-radius: 6px;
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 10px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            max-width: 190px;
-            text-align: center;
-            line-height: 1.3;
+            padding: 8px 14px; background: #1a1a1a; color: #d4b896;
+            border: 1px solid #3d2a1a; border-radius: 6px;
+            font-family: 'Cinzel', Georgia, serif; font-size: 10px;
+            letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease;
+            text-transform: uppercase; max-width: 190px; text-align: center; line-height: 1.3;
         }
-
         .world-btn:hover {
-            background: #2d1a1a;
-            border-color: #8a6a4a;
-            color: #f0d9b5;
-            transform: translateY(-2px);
+            background: #2d1a1a; border-color: #8a6a4a;
+            color: #f0d9b5; transform: translateY(-2px);
         }
 
         .world-page-content { position: relative; z-index: 1; padding: 20px 0; }
-
         .world-page-content h2 {
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 32px;
-            color: #1a1a1a;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            text-align: center;
+            font-family: 'Cinzel', Georgia, serif; font-size: 32px;
+            color: #1a1a1a; letter-spacing: 3px; margin-bottom: 10px; text-align: center;
         }
-
         .world-page-content .world-subtitle {
-            text-align: center;
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 16px;
-            color: #666;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
+            text-align: center; font-family: 'Cinzel', Georgia, serif;
+            font-size: 16px; color: #666; letter-spacing: 2px; margin-bottom: 25px;
         }
-
         .world-text {
-            font-family: Georgia, serif;
-            font-size: 14px;
-            color: #333;
-            line-height: 1.8;
-            max-height: 500px;
-            overflow-y: auto;
-            padding-right: 15px;
+            font-family: Georgia, serif; font-size: 14px; color: #333;
+            line-height: 1.8; max-height: 500px; overflow-y: auto; padding-right: 15px;
         }
-
-        .world-text h3 {
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 18px;
-            color: #1a1a1a;
-            letter-spacing: 2px;
-            margin: 22px 0 10px 0;
-            border-bottom: 1px solid #d4b896;
-            padding-bottom: 5px;
-        }
-
-        .world-text p { margin-bottom: 10px; text-indent: 20px; }
-
-        .world-text .char-block {
-            margin-bottom: 14px;
-            padding-left: 10px;
-            border-left: 2px solid #d4b896;
-        }
-        .world-text .char-block p { text-indent: 0; margin-bottom: 4px; font-size: 13px; }
-        .world-text .char-block .char-name {
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 15px;
-            color: #1a1a1a;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .world-text .char-block .char-line { color: #555; font-size: 13px; line-height: 1.6; }
-
-        .world-text .faction-block {
-            margin-bottom: 16px;
-            padding: 10px 12px;
-            background: #f0ece8;
-            border-radius: 6px;
-            border-left: 3px solid #8a6a4a;
-        }
-        .world-text .faction-block .faction-name {
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 15px;
-            color: #1a1a1a;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        .world-text .faction-block p { text-indent: 0; margin-bottom: 3px; font-size: 13px; line-height: 1.6; }
-
         .world-text::-webkit-scrollbar { width: 6px; }
         .world-text::-webkit-scrollbar-track { background: #e8e4e0; border-radius: 3px; }
         .world-text::-webkit-scrollbar-thumb { background: #8a6a4a; border-radius: 3px; }
 
         .world-back-btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 10px 22px;
-            background: #1a1a1a;
-            color: #d4b896;
-            border: 1px solid #3d2a1a;
-            border-radius: 6px;
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            align-self: flex-start;
+            display: inline-block; margin-top: 25px; padding: 10px 22px;
+            background: #1a1a1a; color: #d4b896; border: 1px solid #3d2a1a;
+            border-radius: 6px; font-family: 'Cinzel', Georgia, serif;
+            font-size: 13px; letter-spacing: 2px; cursor: pointer;
+            transition: all 0.3s ease; text-transform: uppercase; align-self: flex-start;
         }
-
         .world-back-btn:hover { background: #2d1a1a; border-color: #8a6a4a; color: #f0d9b5; }
 
         .book-page-content {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-            padding: 20px 0;
+            display: flex; gap: 40px; flex-wrap: wrap;
+            position: relative; z-index: 1; padding: 20px 0;
         }
 
         .book-cover-large {
-            flex: 0 0 300px;
-            height: 420px;
-            border-radius: 10px;
-            overflow: hidden;
+            flex: 0 0 300px; height: 420px;
+            border-radius: 10px; overflow: hidden;
             box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-            position: relative;
-            background: #1a1a1a;
-        }
-
-        .book-cover-large img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            position: relative; background: #1a1a1a;
         }
 
         .book-info {
-            flex: 1;
-            min-width: 260px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex: 1; min-width: 260px;
+            display: flex; flex-direction: column; justify-content: center;
         }
-
         .book-info h2 {
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 32px;
-            color: #1a1a1a;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            font-family: 'Cinzel', Georgia, serif; font-size: 32px;
+            color: #1a1a1a; letter-spacing: 3px; margin-bottom: 15px;
         }
-
         .book-info .short-desc {
-            font-family: Georgia, serif;
-            font-size: 15px;
-            color: #444;
-            line-height: 1.7;
+            font-family: Georgia, serif; font-size: 15px; color: #444; line-height: 1.7;
         }
 
         .back-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 22px;
-            background: #1a1a1a;
-            color: #d4b896;
-            border: 1px solid #3d2a1a;
-            border-radius: 6px;
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 13px;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            align-self: flex-start;
+            display: inline-block; margin-top: 20px; padding: 10px 22px;
+            background: #1a1a1a; color: #d4b896; border: 1px solid #3d2a1a;
+            border-radius: 6px; font-family: 'Cinzel', Georgia, serif;
+            font-size: 13px; letter-spacing: 2px; cursor: pointer;
+            transition: all 0.3s ease; text-transform: uppercase; align-self: flex-start;
         }
-
         .back-btn:hover { background: #2d1a1a; border-color: #8a6a4a; color: #f0d9b5; }
 
         .chapters-tabs {
-            display: flex;
-            gap: 10px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
+            display: flex; gap: 10px; margin-top: 30px; flex-wrap: wrap;
+            position: relative; z-index: 1; border-bottom: 1px solid #ddd; padding-bottom: 10px;
         }
 
         .chapter-tab {
-            padding: 10px 20px;
-            background: transparent;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 12px;
-            letter-spacing: 1px;
-            color: #555;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            padding: 10px 20px; background: transparent;
+            border: 1px solid #ccc; border-radius: 6px;
+            font-family: 'Cinzel', Georgia, serif; font-size: 12px;
+            letter-spacing: 1px; color: #555; cursor: pointer; transition: all 0.3s ease;
         }
-
         .chapter-tab:hover { background: #e8e4e0; }
         .chapter-tab.active { background: #1a1a1a; color: #d4b896; border-color: #1a1a1a; }
 
         .chapter-content {
-            margin-top: 25px;
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: 16px;
-            line-height: 1.9;
-            color: #222;
-            position: relative;
-            z-index: 1;
-            max-height: 450px;
-            overflow-y: auto;
-            padding-right: 15px;
+            margin-top: 25px; font-family: Georgia, 'Times New Roman', serif;
+            font-size: 16px; line-height: 1.9; color: #222;
+            position: relative; z-index: 1; max-height: 450px;
+            overflow-y: auto; padding-right: 15px;
         }
-
         .chapter-content p { margin-bottom: 14px; text-indent: 25px; }
-
         .chapter-content .chapter-title {
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 22px;
-            letter-spacing: 2px;
-            color: #1a1a1a;
-            margin-bottom: 25px;
-            text-align: center;
-            text-indent: 0;
-            font-weight: 700;
+            font-family: 'Cinzel', Georgia, serif; font-size: 22px;
+            letter-spacing: 2px; color: #1a1a1a; margin-bottom: 25px;
+            text-align: center; text-indent: 0; font-weight: 700;
         }
-
         .chapter-content .scene-title {
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 16px;
-            letter-spacing: 1px;
-            color: #8a6a4a;
-            margin: 25px 0 15px 0;
-            text-align: center;
-            text-indent: 0;
-            font-weight: 700;
+            font-family: 'Cinzel', Georgia, serif; font-size: 16px;
+            letter-spacing: 1px; color: #8a6a4a; margin: 25px 0 15px 0;
+            text-align: center; text-indent: 0; font-weight: 700;
         }
-
         .chapter-content .dialog {
-            margin-bottom: 10px;
-            text-indent: 0;
-            padding-left: 15px;
+            margin-bottom: 10px; text-indent: 0; padding-left: 15px;
         }
-
         .chapter-content .dialog .speaker { font-weight: 700; color: #1a1a1a; }
-
         .chapter-content::-webkit-scrollbar { width: 6px; }
         .chapter-content::-webkit-scrollbar-track { background: #e8e4e0; border-radius: 3px; }
         .chapter-content::-webkit-scrollbar-thumb { background: #8a6a4a; border-radius: 3px; }
 
         .empty-chapter {
-            text-align: center;
-            font-family: 'Cinzel', Georgia, serif;
-            font-size: 18px;
-            color: #888;
-            letter-spacing: 2px;
-            padding: 60px 20px;
-            text-indent: 0;
+            text-align: center; font-family: 'Cinzel', Georgia, serif;
+            font-size: 18px; color: #888; letter-spacing: 2px;
+            padding: 60px 20px; text-indent: 0;
         }
 
         @media (max-width: 900px) {
@@ -525,9 +340,6 @@
             .book-info h2 { font-size: 24px; }
             .chapter-content { font-size: 15px; line-height: 1.8; }
             .chapter-content .chapter-title { font-size: 18px; }
-            .world-page-content h2 { font-size: 24px; }
-            .world-text { font-size: 13px; }
-            .world-text h3 { font-size: 16px; }
         }
 
         @media (max-width: 480px) {
@@ -537,19 +349,12 @@
             .greeting { font-size: 17px; }
             .highlight { font-size: 20px; }
             .site-description { font-size: 12px; line-height: 1.7; }
-            .site-description .welcome { font-size: 13px; }
             .book-card { width: 120px; height: 155px; }
-            .world-btn { font-size: 8px; padding: 5px 8px; max-width: 120px; }
             .book-cover-large { max-width: 260px; height: 360px; }
             .book-info h2 { font-size: 20px; }
-            .book-info .short-desc { font-size: 13px; }
             .chapter-tab { padding: 8px 14px; font-size: 11px; }
             .chapter-content { font-size: 14px; line-height: 1.7; }
             .chapter-content .chapter-title { font-size: 16px; }
-            .chapter-content .scene-title { font-size: 14px; }
-            .world-page-content h2 { font-size: 20px; }
-            .world-text { font-size: 12px; }
-            .world-text h3 { font-size: 15px; }
         }
     </style>
 </head>
@@ -592,10 +397,15 @@
 
                 <div class="bookshelf">
 
-                    <!-- КНИГА 1: LOUISVILLE NIGHTMARE -->
                     <div class="book-column">
                         <div class="book-card" onclick="openBook('louisville')">
-                            <img src="cover.jpg" alt="Louisville Nightmare" class="book-cover-img">
+                            <div class="generated-cover">
+                                <div class="city">LOUISVILLE</div>
+                                <div class="nightmare">NIGHTMARE</div>
+                                <div class="divider"></div>
+                                <div class="sub">WELCOME TO<br>KENTUCKY</div>
+                                <div class="stamp">✦ RUINS ✦</div>
+                            </div>
                             <div class="book-description">
                                 <div>
                                     <div class="title">📖 О КНИГЕ</div>
@@ -616,10 +426,15 @@
                         </button>
                     </div>
 
-                    <!-- КНИГА 2: СИБИРЬ -->
                     <div class="book-column">
                         <div class="book-card" onclick="openBook('siberia')">
-                            <img src="siberia-cover.jpg" alt="Сибирь" class="book-cover-img">
+                            <div class="generated-cover-siberia">
+                                <div class="siberia-title">СИБИРЬ</div>
+                                <div class="siberia-sub">SIBERIA</div>
+                                <div class="divider"></div>
+                                <div class="siberia-tag">ЯДЕРНАЯ ЗИМА<br>ТАЙГА</div>
+                                <div class="stamp">✦ RUINS ✦</div>
+                            </div>
                             <div class="book-description">
                                 <div>
                                     <div class="title">📖 О КНИГЕ</div>
@@ -638,7 +453,6 @@
                         </button>
                     </div>
 
-                    <!-- КНИГА 3 (заглушка) -->
                     <div class="book-column">
                         <div class="book-card">
                             <div class="book-placeholder">📖<br>СКОРО</div>
@@ -648,35 +462,41 @@
                 </div>
             </div>
 
-            <!-- ===== СТРАНИЦА ОПИСАНИЯ МИРА: КОШМАР ЛУИСВИЛЛЯ ===== -->
+            <!-- ===== ОПИСАНИЕ МИРА: ЛУИСВИЛЛЬ ===== -->
             <div class="page" id="worldPageLouisville">
                 <div class="world-page-content">
                     <h2>КОШМАР ЛУИСВИЛЛЯ</h2>
                     <p class="world-subtitle">Описание мира и персонажей</p>
                     <div class="world-text">
-                        <!-- Сюда вставь описание мира Луисвилля -->
+                        <!-- сюда вставишь описание мира Луисвилля -->
                     </div>
                     <button class="world-back-btn" onclick="goBack()">← Назад</button>
                 </div>
             </div>
 
-            <!-- ===== СТРАНИЦА ОПИСАНИЯ МИРА: СИБИРЬ ===== -->
+            <!-- ===== ОПИСАНИЕ МИРА: СИБИРЬ ===== -->
             <div class="page" id="worldPageSiberia">
                 <div class="world-page-content">
                     <h2>СИБИРЬ</h2>
                     <p class="world-subtitle">Описание мира и персонажей</p>
                     <div class="world-text">
-                        <!-- Сюда вставь описание мира Сибири -->
+                        <!-- сюда вставишь описание мира Сибири -->
                     </div>
                     <button class="world-back-btn" onclick="goBack()">← Назад</button>
                 </div>
             </div>
 
-            <!-- ===== СТРАНИЦА КНИГИ: LOUISVILLE NIGHTMARE ===== -->
+            <!-- ===== КНИГА: LOUISVILLE NIGHTMARE ===== -->
             <div class="page" id="bookPageLouisville">
                 <div class="book-page-content">
                     <div class="book-cover-large">
-                        <img src="cover.jpg?v=2" alt="Louisville Nightmare" onerror="this.src='cover.jpg'">
+                        <div class="generated-cover">
+                            <div class="city">LOUISVILLE</div>
+                            <div class="nightmare">NIGHTMARE</div>
+                            <div class="divider"></div>
+                            <div class="sub">WELCOME TO<br>KENTUCKY</div>
+                            <div class="stamp">✦ RUINS ✦</div>
+                        </div>
                     </div>
                     <div class="book-info">
                         <h2>LOUISVILLE NIGHTMARE</h2>
@@ -694,30 +514,32 @@
                 </div>
 
                 <div class="chapter-content">
-
                     <div class="chapter-text active" id="louisville-chapter1">
                         <p class="chapter-title">Глава 1. Уроки отменяются навсегда</p>
                         <p class="empty-chapter">✍️ Текст главы 1</p>
                     </div>
-
                     <div class="chapter-text" id="louisville-chapter2" style="display:none;">
                         <p class="chapter-title">Глава 2</p>
                         <p class="empty-chapter">✍️ Глава ещё пишется...</p>
                     </div>
-
                     <div class="chapter-text" id="louisville-chapter3" style="display:none;">
                         <p class="chapter-title">Глава 3</p>
                         <p class="empty-chapter">✍️ Глава ещё пишется...</p>
                     </div>
-
                 </div>
             </div>
 
-            <!-- ===== СТРАНИЦА КНИГИ: СИБИРЬ ===== -->
+            <!-- ===== КНИГА: СИБИРЬ ===== -->
             <div class="page" id="bookPageSiberia">
                 <div class="book-page-content">
                     <div class="book-cover-large">
-                        <img src="siberia-cover.jpg?v=2" alt="Сибирь" onerror="this.src='siberia-cover.jpg'">
+                        <div class="generated-cover-siberia">
+                            <div class="siberia-title">СИБИРЬ</div>
+                            <div class="siberia-sub">SIBERIA</div>
+                            <div class="divider"></div>
+                            <div class="siberia-tag">ЯДЕРНАЯ ЗИМА<br>ТАЙГА</div>
+                            <div class="stamp">✦ RUINS ✦</div>
+                        </div>
                     </div>
                     <div class="book-info">
                         <h2>СИБИРЬ</h2>
@@ -736,27 +558,22 @@
                 </div>
 
                 <div class="chapter-content">
-
                     <div class="chapter-text active" id="siberia-chapter1">
                         <p class="chapter-title">Глава 1. Первые дни</p>
                         <p class="empty-chapter">✍️ Текст главы 1</p>
                     </div>
-
                     <div class="chapter-text" id="siberia-chapter2" style="display:none;">
                         <p class="chapter-title">Глава 2. Освоение нового мира</p>
                         <p class="empty-chapter">✍️ Текст главы 2</p>
                     </div>
-
                     <div class="chapter-text" id="siberia-chapter3" style="display:none;">
                         <p class="chapter-title">Глава 3. Битва</p>
                         <p class="empty-chapter">✍️ Текст главы 3</p>
                     </div>
-
                     <div class="chapter-text" id="siberia-chapter4" style="display:none;">
                         <p class="chapter-title">Глава 4. Мирное небо над Сибирской тенью</p>
                         <p class="empty-chapter">✍️ Текст главы 4</p>
                     </div>
-
                 </div>
             </div>
 
