@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruins Library - Надип</title>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,7 +18,7 @@
             justify-content: center;
             align-items: center;
             background-color: #0a0a0a;
-            font-family: 'Special Elite', 'Courier New', cursive;
+            font-family: Georgia, 'Times New Roman', serif;
             padding: 20px;
         }
 
@@ -45,9 +45,9 @@
         }
 
         .site-title {
-            font-family: 'Special Elite', 'Courier New', cursive;
+            font-family: 'Cinzel', Georgia, serif;
             font-size: 34px;
-            font-weight: 400;
+            font-weight: 700;
             color: #ffffff;
             letter-spacing: 6px;
             text-transform: uppercase;
@@ -87,7 +87,6 @@
             z-index: 0;
         }
 
-        /* ===== ГЛАВНАЯ СТРАНИЦА ===== */
         .page {
             display: none;
             position: relative;
@@ -112,31 +111,48 @@
         }
 
         .greeting {
-            font-size: 38px;
-            font-weight: 300;
+            font-size: 34px;
+            font-weight: 400;
             letter-spacing: 2px;
             color: #1a1a1a;
-            font-family: 'Cinzel', 'Georgia', serif;
+            font-family: 'Cinzel', Georgia, serif;
+            margin-bottom: 25px;
         }
 
         .highlight {
             font-weight: 900;
-            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 44px;
+            color: #0a0a0a;
+            font-size: 40px;
             letter-spacing: 3px;
         }
 
-        .description {
+        .site-description {
             margin-top: 15px;
-            font-size: 17px;
-            color: #555;
-            font-weight: 300;
-            letter-spacing: 2px;
-            font-family: 'Special Elite', 'Courier New', cursive;
-            opacity: 0.7;
+            font-size: 14px;
+            color: #333;
+            font-weight: 400;
+            line-height: 1.8;
+            font-family: Georgia, serif;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .site-description p { margin-bottom: 12px; }
+        .site-description strong { color: #0a0a0a; font-weight: 700; }
+        .site-description .catalog { margin: 15px 0; padding-left: 10px; }
+        .site-description .catalog-item { margin-bottom: 8px; }
+        .site-description .features { margin-top: 15px; }
+        .site-description .features p { margin-bottom: 6px; }
+        .site-description .welcome {
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+            font-weight: 700;
         }
 
         .bookshelf {
@@ -145,8 +161,15 @@
             gap: 35px;
             position: relative;
             z-index: 1;
-            margin-top: 10px;
+            margin-top: 30px;
             flex-wrap: wrap;
+        }
+
+        .book-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
         }
 
         .book-card {
@@ -194,7 +217,7 @@
             justify-content: center;
             padding: 20px;
             text-align: center;
-            font-family: 'Special Elite', cursive;
+            font-family: 'Cinzel', Georgia, serif;
             color: #c4a882;
             position: relative;
             border-radius: 8px;
@@ -212,15 +235,14 @@
         .generated-cover .city {
             font-size: 22px;
             font-weight: 700;
-            letter-spacing: 8px;
+            letter-spacing: 6px;
             color: #d4b896;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
             line-height: 1.2;
         }
 
         .generated-cover .nightmare {
             font-size: 14px;
-            letter-spacing: 12px;
+            letter-spacing: 10px;
             color: #8a6a4a;
             margin-top: 4px;
         }
@@ -234,7 +256,7 @@
 
         .generated-cover .sub {
             font-size: 11px;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             color: #6a5a4a;
             line-height: 1.6;
         }
@@ -250,15 +272,78 @@
             letter-spacing: 2px;
         }
 
-        /* ===== ОПИСАНИЕ ПРИ НАВЕДЕНИИ ===== */
+        .generated-cover-siberia {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a1419 0%, #14202d 30%, #1a2d3d 60%, #0a1419 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Cinzel', Georgia, serif;
+            color: #a8c4d4;
+            position: relative;
+            border-radius: 8px;
+        }
+
+        .generated-cover-siberia::before {
+            content: "❄️";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 28px;
+            opacity: 0.3;
+        }
+
+        .generated-cover-siberia .siberia-title {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: #c4dce8;
+            line-height: 1.2;
+        }
+
+        .generated-cover-siberia .siberia-sub {
+            font-size: 11px;
+            letter-spacing: 6px;
+            color: #6a8a9a;
+            margin-top: 4px;
+        }
+
+        .generated-cover-siberia .divider {
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #6a8a9a, transparent);
+            margin: 8px 0;
+        }
+
+        .generated-cover-siberia .siberia-tag {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: #4a6a7a;
+            line-height: 1.6;
+        }
+
+        .generated-cover-siberia .stamp {
+            position: absolute;
+            bottom: 20px;
+            right: 15px;
+            font-size: 10px;
+            color: #3a5a6a;
+            opacity: 0.4;
+            transform: rotate(-10deg);
+            letter-spacing: 2px;
+        }
+
         .book-description {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 10, 10, 0.88);
-            backdrop-filter: blur(4px);
+            background: rgba(10, 10, 10, 0.9);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -276,12 +361,10 @@
 
         .book-description p {
             color: #c4a882;
-            font-family: 'Special Elite', cursive;
+            font-family: Georgia, serif;
             font-size: 9px;
             line-height: 1.5;
-            letter-spacing: 0.3px;
             text-align: center;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
         }
 
         .book-description .title {
@@ -293,7 +376,167 @@
             font-weight: 700;
         }
 
-        /* ===== СТРАНИЦА КНИГИ ===== */
+        .world-btn {
+            padding: 8px 14px;
+            background: #1a1a1a;
+            color: #d4b896;
+            border: 1px solid #3d2a1a;
+            border-radius: 6px;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            max-width: 190px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .world-btn:hover {
+            background: #2d1a1a;
+            border-color: #8a6a4a;
+            color: #f0d9b5;
+            transform: translateY(-2px);
+        }
+
+        /* ===== СТРАНИЦА ОПИСАНИЯ МИРА ===== */
+        .world-page-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px 0;
+        }
+
+        .world-page-content h2 {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 32px;
+            color: #1a1a1a;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .world-page-content .world-subtitle {
+            text-align: center;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 16px;
+            color: #666;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .world-text {
+            font-family: Georgia, serif;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.8;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+
+        .world-text h3 {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 18px;
+            color: #1a1a1a;
+            letter-spacing: 2px;
+            margin: 22px 0 10px 0;
+            text-align: left;
+            border-bottom: 1px solid #d4b896;
+            padding-bottom: 5px;
+        }
+
+        .world-text h4 {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 15px;
+            color: #2a2a2a;
+            letter-spacing: 1px;
+            margin: 16px 0 8px 0;
+        }
+
+        .world-text p {
+            margin-bottom: 10px;
+            text-indent: 20px;
+        }
+
+        .world-text .char-block {
+            margin-bottom: 14px;
+            padding-left: 10px;
+            border-left: 2px solid #d4b896;
+        }
+
+        .world-text .char-block p {
+            text-indent: 0;
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+
+        .world-text .char-block .char-name {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 15px;
+            color: #1a1a1a;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .world-text .char-block .char-line {
+            color: #555;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .world-text .faction-block {
+            margin-bottom: 16px;
+            padding: 10px 12px;
+            background: #f0ece8;
+            border-radius: 6px;
+            border-left: 3px solid #8a6a4a;
+        }
+
+        .world-text .faction-block .faction-name {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 15px;
+            color: #1a1a1a;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .world-text .faction-block p {
+            text-indent: 0;
+            margin-bottom: 3px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .world-text::-webkit-scrollbar { width: 6px; }
+        .world-text::-webkit-scrollbar-track { background: #e8e4e0; border-radius: 3px; }
+        .world-text::-webkit-scrollbar-thumb { background: #8a6a4a; border-radius: 3px; }
+
+        .world-back-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 22px;
+            background: #1a1a1a;
+            color: #d4b896;
+            border: 1px solid #3d2a1a;
+            border-radius: 6px;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        .world-back-btn:hover {
+            background: #2d1a1a;
+            border-color: #8a6a4a;
+            color: #f0d9b5;
+        }
+
         .book-page-content {
             display: flex;
             gap: 40px;
@@ -304,57 +547,19 @@
         }
 
         .book-cover-large {
-            flex: 0 0 280px;
-            height: 380px;
+            flex: 0 0 300px;
+            height: 420px;
             border-radius: 10px;
-            background: linear-gradient(135deg, #1a0a0a 0%, #2d1a1a 30%, #3d2a1a 60%, #1a0a0a 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 25px;
-            text-align: center;
-            color: #c4a882;
-            position: relative;
+            overflow: hidden;
             box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            position: relative;
         }
 
-        .book-cover-large::before {
-            content: "☢️";
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 36px;
-            opacity: 0.3;
-        }
-
-        .book-cover-large .city {
-            font-size: 30px;
-            font-weight: 700;
-            letter-spacing: 10px;
-            color: #d4b896;
-            line-height: 1.2;
-        }
-
-        .book-cover-large .nightmare {
-            font-size: 18px;
-            letter-spacing: 14px;
-            color: #8a6a4a;
-            margin-top: 6px;
-        }
-
-        .book-cover-large .divider {
-            width: 60%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #8a6a4a, transparent);
-            margin: 12px 0;
-        }
-
-        .book-cover-large .sub {
-            font-size: 13px;
-            letter-spacing: 5px;
-            color: #6a5a4a;
-            line-height: 1.6;
+        .book-cover-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .book-info {
@@ -366,7 +571,7 @@
         }
 
         .book-info h2 {
-            font-family: 'Cinzel', serif;
+            font-family: 'Cinzel', Georgia, serif;
             font-size: 32px;
             color: #1a1a1a;
             letter-spacing: 3px;
@@ -374,11 +579,10 @@
         }
 
         .book-info .short-desc {
-            font-family: 'Special Elite', cursive;
-            font-size: 14px;
+            font-family: Georgia, serif;
+            font-size: 15px;
             color: #444;
             line-height: 1.7;
-            letter-spacing: 0.5px;
         }
 
         .back-btn {
@@ -389,9 +593,9 @@
             color: #d4b896;
             border: 1px solid #3d2a1a;
             border-radius: 6px;
-            font-family: 'Special Elite', cursive;
+            font-family: 'Cinzel', Georgia, serif;
             font-size: 13px;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
@@ -404,7 +608,6 @@
             color: #f0d9b5;
         }
 
-        /* ===== ВКЛАДКИ ГЛАВ ===== */
         .chapters-tabs {
             display: flex;
             gap: 10px;
@@ -421,17 +624,15 @@
             background: transparent;
             border: 1px solid #ccc;
             border-radius: 6px;
-            font-family: 'Special Elite', cursive;
-            font-size: 13px;
-            letter-spacing: 2px;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 12px;
+            letter-spacing: 1px;
             color: #555;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .chapter-tab:hover {
-            background: #e8e4e0;
-        }
+        .chapter-tab:hover { background: #e8e4e0; }
 
         .chapter-tab.active {
             background: #1a1a1a;
@@ -441,200 +642,90 @@
 
         .chapter-content {
             margin-top: 25px;
-            font-family: 'Special Elite', cursive;
-            font-size: 15px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 16px;
             line-height: 1.9;
             color: #222;
-            letter-spacing: 0.3px;
             position: relative;
             z-index: 1;
-            max-height: 400px;
+            max-height: 450px;
             overflow-y: auto;
             padding-right: 15px;
         }
 
-        .chapter-content p {
-            margin-bottom: 15px;
-            text-indent: 25px;
-        }
+        .chapter-content p { margin-bottom: 14px; text-indent: 25px; }
 
         .chapter-content .chapter-title {
-            font-family: 'Cinzel', serif;
+            font-family: 'Cinzel', Georgia, serif;
             font-size: 22px;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: #1a1a1a;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: center;
+            text-indent: 0;
+            font-weight: 700;
+        }
+
+        .chapter-content::-webkit-scrollbar { width: 6px; }
+        .chapter-content::-webkit-scrollbar-track { background: #e8e4e0; border-radius: 3px; }
+        .chapter-content::-webkit-scrollbar-thumb { background: #8a6a4a; border-radius: 3px; }
+
+        .empty-chapter {
+            text-align: center;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 18px;
+            color: #888;
+            letter-spacing: 2px;
+            padding: 60px 20px;
             text-indent: 0;
         }
 
-        .chapter-content::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .chapter-content::-webkit-scrollbar-track {
-            background: #e8e4e0;
-            border-radius: 3px;
-        }
-
-        .chapter-content::-webkit-scrollbar-thumb {
-            background: #8a6a4a;
-            border-radius: 3px;
-        }
-
-        /* ===== АДАПТИВНОСТЬ ===== */
         @media (max-width: 900px) {
-            .book-page-content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .book-cover-large {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 280px;
-                height: 360px;
-            }
-
-            .book-info {
-                text-align: center;
-                align-items: center;
-            }
-
-            .back-btn {
-                align-self: center;
-            }
+            .book-page-content { flex-direction: column; align-items: center; }
+            .book-cover-large { flex: 0 0 auto; width: 100%; max-width: 300px; height: 400px; }
+            .book-info { text-align: center; align-items: center; }
+            .back-btn { align-self: center; }
         }
 
         @media (max-width: 768px) {
-            .site-wrapper {
-                padding: 55px 15px 15px 15px;
-            }
-
-            .header {
-                top: 15px;
-                left: 20px;
-            }
-
-            .site-title {
-                font-size: 22px;
-                letter-spacing: 4px;
-            }
-
-            .white-layer {
-                padding: 25px 20px 20px 20px;
-            }
-
-            .greeting {
-                font-size: 22px;
-            }
-
-            .highlight {
-                font-size: 26px;
-            }
-
-            .description {
-                font-size: 14px;
-            }
-
-            .bookshelf {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .book-card {
-                width: 140px;
-                height: 180px;
-            }
-
-            .book-info h2 {
-                font-size: 24px;
-            }
-
-            .chapter-content {
-                font-size: 13px;
-            }
-
-            .chapter-content .chapter-title {
-                font-size: 18px;
-            }
-
-            .book-description p {
-                font-size: 8px;
-            }
-
-            .book-description .title {
-                font-size: 10px;
-            }
+            .site-wrapper { padding: 55px 15px 15px 15px; }
+            .header { top: 15px; left: 20px; }
+            .site-title { font-size: 22px; letter-spacing: 4px; }
+            .white-layer { padding: 25px 20px 20px 20px; }
+            .greeting { font-size: 20px; }
+            .highlight { font-size: 24px; }
+            .site-description { font-size: 13px; }
+            .site-description .welcome { font-size: 14px; }
+            .bookshelf { flex-direction: column; align-items: center; gap: 25px; }
+            .book-card { width: 140px; height: 180px; }
+            .world-btn { font-size: 9px; padding: 6px 10px; max-width: 140px; }
+            .book-info h2 { font-size: 24px; }
+            .chapter-content { font-size: 15px; line-height: 1.8; }
+            .chapter-content .chapter-title { font-size: 18px; }
+            .world-page-content h2 { font-size: 24px; }
+            .world-text { font-size: 13px; }
+            .world-text h3 { font-size: 16px; }
         }
 
         @media (max-width: 480px) {
-            .site-wrapper {
-                padding: 45px 10px 10px 10px;
-            }
-
-            .site-title {
-                font-size: 17px;
-                letter-spacing: 3px;
-            }
-
-            .white-layer {
-                padding: 20px 15px 15px 15px;
-            }
-
-            .greeting {
-                font-size: 18px;
-            }
-
-            .highlight {
-                font-size: 22px;
-            }
-
-            .description {
-                font-size: 12px;
-            }
-
-            .book-card {
-                width: 120px;
-                height: 155px;
-            }
-
-            .book-cover-large {
-                height: 300px;
-            }
-
-            .book-cover-large .city {
-                font-size: 22px;
-                letter-spacing: 6px;
-            }
-
-            .book-cover-large .nightmare {
-                font-size: 14px;
-                letter-spacing: 8px;
-            }
-
-            .book-info h2 {
-                font-size: 20px;
-            }
-
-            .book-info .short-desc {
-                font-size: 12px;
-            }
-
-            .chapter-tab {
-                padding: 8px 14px;
-                font-size: 11px;
-            }
-
-            .chapter-content {
-                font-size: 12px;
-                line-height: 1.7;
-            }
-
-            .chapter-content .chapter-title {
-                font-size: 16px;
-            }
+            .site-wrapper { padding: 45px 10px 10px 10px; }
+            .site-title { font-size: 17px; letter-spacing: 3px; }
+            .white-layer { padding: 20px 15px 15px 15px; }
+            .greeting { font-size: 17px; }
+            .highlight { font-size: 20px; }
+            .site-description { font-size: 12px; line-height: 1.7; }
+            .site-description .welcome { font-size: 13px; }
+            .book-card { width: 120px; height: 155px; }
+            .world-btn { font-size: 8px; padding: 5px 8px; max-width: 120px; }
+            .book-cover-large { max-width: 260px; height: 360px; }
+            .book-info h2 { font-size: 20px; }
+            .book-info .short-desc { font-size: 13px; }
+            .chapter-tab { padding: 8px 14px; font-size: 11px; }
+            .chapter-content { font-size: 14px; line-height: 1.7; }
+            .chapter-content .chapter-title { font-size: 16px; }
+            .world-page-content h2 { font-size: 20px; }
+            .world-text { font-size: 12px; }
+            .world-text h3 { font-size: 15px; }
         }
     </style>
 </head>
@@ -651,66 +742,601 @@
             <!-- ===== ГЛАВНАЯ СТРАНИЦА ===== -->
             <div class="page active" id="mainPage">
                 <div class="hero">
-                    <h2 class="greeting">Здравствуйте, это сайт ученика <span class="highlight">НАДИП</span></h2>
-                    <p class="description">
-                        Здесь будет описание сайта, которое ты мне скинешь позже.
-                    </p>
+                    <h2 class="greeting">Добро пожаловать в <span class="highlight">RUINS LIBRARY</span></h2>
+
+                    <div class="site-description">
+                        <p><strong>RUINS LIBRARY</strong> — твоя библиотека на руинах цивилизации.</p>
+                        <p>Мы собираем самые жесткие и атмосферные книги про падение привычного мира: вирусные эпидемии, апокалипсисы и истории выживших, оказавшихся на грани выживания.</p>
+
+                        <div class="catalog">
+                            <p><strong>В нашем каталоге:</strong></p>
+                            <p class="catalog-item">— «<strong>КОШМАР ЛУИСВИЛЛЯ</strong>» — вирус вырывается на свободу, и группа школьников пытается выжить на улицах паникующего мегаполиса и за его пределами.</p>
+                            <p class="catalog-item">— «<strong>СИБИРЬ</strong>» — ядерная война, группировки, охватившие глухой тихий городок посреди тайги.</p>
+                            <p class="catalog-item">— И другие эксклюзивные истории от автора, которые не любят мрачные реалистичные сюжеты.</p>
+                        </div>
+
+                        <div class="features">
+                            <p><strong>Особенности RUINS LIBRARY:</strong></p>
+                            <p>— Удобный ридер без рекламы и лишнего мусора.</p>
+                            <p>— Регулярный выход новых глав.</p>
+                            <p>— Сообщество любителей качественного пост-апокалипсиса.</p>
+                        </div>
+
+                        <p class="welcome">Заходи и выбирай книгу. Добро пожаловать в RUINS LIBRARY.</p>
+                    </div>
                 </div>
 
                 <div class="bookshelf">
 
-                    <!-- КНИГА 1 -->
-                    <div class="book-card" onclick="openBook()">
-                        <div class="generated-cover">
-                            <div class="city">LOUISVILLE</div>
-                            <div class="nightmare">NIGHTMARE</div>
-                            <div class="divider"></div>
-                            <div class="sub">WELCOME TO<br>KENTUCKY</div>
-                            <div class="stamp">✦ RUINS ✦</div>
-                        </div>
-                        <div class="book-description">
-                            <div>
-                                <div class="title">📖 О КНИГЕ</div>
-                                <p>
-                                    В Луисвилле прорывается смертельный вирус,<br>
-                                    превращающий людей в агрессивных заражённых.<br>
-                                    Трое школьников — Владислав, Даниил и Данил —<br>
-                                    оказываются в эпицентре катастрофы.<br>
-                                    Им предстоит выжить в городе, где каждый<br>
-                                    может стать врагом, а единственная надежда —<br>
-                                    держаться вместе.
-                                </p>
+                    <!-- КНИГА 1: LOUISVILLE NIGHTMARE -->
+                    <div class="book-column">
+                        <div class="book-card" onclick="openBook('louisville')">
+                            <div class="generated-cover">
+                                <div class="city">LOUISVILLE</div>
+                                <div class="nightmare">NIGHTMARE</div>
+                                <div class="divider"></div>
+                                <div class="sub">WELCOME TO<br>KENTUCKY</div>
+                                <div class="stamp">✦ RUINS ✦</div>
+                            </div>
+                            <div class="book-description">
+                                <div>
+                                    <div class="title">📖 О КНИГЕ</div>
+                                    <p>
+                                        В Луисвилле прорывается смертельный вирус,<br>
+                                        превращающий людей в агрессивных заражённых.<br>
+                                        Трое школьников — Владислав, Даниил и Данил —<br>
+                                        оказываются в эпицентре катастрофы.<br>
+                                        Им предстоит выжить в городе, где каждый<br>
+                                        может стать врагом, а единственная надежда —<br>
+                                        держаться вместе.
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                        <button class="world-btn" onclick="openWorld('louisville')">
+                            Описание мира и персонажей<br>книги Кошмар Луисвилля
+                        </button>
                     </div>
 
-                    <!-- КНИГА 2 -->
-                    <div class="book-card">
-                        <div class="book-placeholder">📖<br>КНИГА 2</div>
+                    <!-- КНИГА 2: СИБИРЬ -->
+                    <div class="book-column">
+                        <div class="book-card" onclick="openBook('siberia')">
+                            <div class="generated-cover-siberia">
+                                <div class="siberia-title">СИБИРЬ</div>
+                                <div class="siberia-sub">SIBERIA</div>
+                                <div class="divider"></div>
+                                <div class="siberia-tag">ЯДЕРНАЯ ЗИМА<br>ТАЙГА</div>
+                                <div class="stamp">✦ RUINS ✦</div>
+                            </div>
+                            <div class="book-description">
+                                <div>
+                                    <div class="title">📖 О КНИГЕ</div>
+                                    <p>
+                                        После ядерной войны мир погрузился в хаос.<br>
+                                        В глухом сибирском городке посреди тайги<br>
+                                        выжившие сталкиваются с группировками,<br>
+                                        голодом и вечной мерзлотой.<br>
+                                        Здесь каждый день — борьба за жизнь.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="world-btn" onclick="openWorld('siberia')">
+                            Описание мира и персонажей<br>книги СИБИРЬ
+                        </button>
                     </div>
 
-                    <!-- КНИГА 3 -->
-                    <div class="book-card">
-                        <div class="book-placeholder">📖<br>КНИГА 3</div>
+                    <!-- КНИГА 3 (заглушка) -->
+                    <div class="book-column">
+                        <div class="book-card">
+                            <div class="book-placeholder">📖<br>СКОРО</div>
+                        </div>
                     </div>
 
                 </div>
             </div>
 
-            <!-- ===== СТРАНИЦА КНИГИ ===== -->
-            <div class="page" id="bookPage">
+            <!-- ===== СТРАНИЦА ОПИСАНИЯ МИРА: КОШМАР ЛУИСВИЛЛЯ ===== -->
+            <div class="page" id="worldPageLouisville">
+                <div class="world-page-content">
+                    <h2>КОШМАР ЛУИСВИЛЛЯ</h2>
+                    <p class="world-subtitle">Описание мира и персонажей</p>
 
-                <div class="book-page-content">
+                    <div class="world-text">
 
-                    <!-- ОБЛОЖКА -->
-                    <div class="book-cover-large">
-                        <div class="city">LOUISVILLE</div>
-                        <div class="nightmare">NIGHTMARE</div>
-                        <div class="divider"></div>
-                        <div class="sub">WELCOME TO<br>KENTUCKY</div>
+                        <h3>🌍 Мир книги</h3>
+                        <p>Действие происходит в городе <strong>Луисвилл, штат Кентукки</strong>. В один обычный школьный день в городе прорывается смертельный вирус, превращающий людей в агрессивных заражённых. Никто не знает, откуда он взялся и как распространяется. Школа становится первой точкой катастрофы — и первой проверкой на выживание для трёх друзей.</p>
+                        <p>За окнами школы — паникующий мегаполис: сирены, вертолёты, взрывы, заражённые на улицах. Единственный шанс выжить — выбраться из города и добраться до фермы деда Данила, где ещё теплится жизнь.</p>
+
+                        <h3>👥 Главные персонажи</h3>
+
+                        <div class="char-block">
+                            <p class="char-name">Владислав (Влад)</p>
+                            <p class="char-line"><strong>Возраст:</strong> 16 лет &nbsp;|&nbsp; <strong>Вес:</strong> 70 кг &nbsp;|&nbsp; <strong>Рост:</strong> 177 см</p>
+                            <p class="char-line">Дзюдоист с коричневым поясом. Парень, любящий играть в игры, так называемый «геймер». Во время начала эпидемии находился в школе, в спортзале, вместе с двумя Данилами и учителем физкультуры. Хороший друг, готовый помочь в трудной ситуации во время выживания со своими наставниками и друзьями.</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Даниил</p>
+                            <p class="char-line"><strong>Возраст:</strong> 16 лет &nbsp;|&nbsp; <strong>Вес:</strong> 80 кг &nbsp;|&nbsp; <strong>Рост:</strong> 184 см</p>
+                            <p class="char-line">Боксёр в категории «Elite». Первый друг Влада, капитан команды по американскому футболу, любитель воркаута. Во время начала эпидемии сдавал норматив учителю физкультуры. Самовлюблённый парень в начале пути, но его ошибки привели его к тому, что он стал спокойным и расчётливым.</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Данил</p>
+                            <p class="char-line"><strong>Возраст:</strong> 16 лет &nbsp;|&nbsp; <strong>Вес:</strong> 70 кг &nbsp;|&nbsp; <strong>Рост:</strong> 178 см</p>
+                            <p class="char-line">Музыкант, его музыкальный инструмент — гитара. Второй друг Влада, любитель посидеть на школьном стадионе на трибунах с друзьями, играя на гитаре и общаясь на разные темы, так сказать, получал от этого вайб. Во время начала эпидемии был в спортзале с друзьями и учителем физкультуры, играя в баскетбол с Владом. Спокойный парень, имеющий только двух настоящих друзей в начале пути, если не считать знакомых, с которыми он играет в баскетбол или просто пожимает руку.</p>
+                        </div>
+
                     </div>
 
-                    <!-- ИНФО О КНИГЕ -->
+                    <button class="world-back-btn" onclick="goBack()">← Назад</button>
+                </div>
+            </div>
+
+            <!-- ===== СТРАНИЦА ОПИСАНИЯ МИРА: СИБИРЬ ===== -->
+            <div class="page" id="worldPageSiberia">
+                <div class="world-page-content">
+                    <h2>СИБИРЬ</h2>
+                    <p class="world-subtitle">Описание мира и персонажей</p>
+
+                    <div class="world-text">
+
+                        <h3>🌍 Мир книги</h3>
+                        <p>После ядерной войны мир погрузился в хаос. Городок <strong>«X»</strong> посреди сибирской тайги стал ареной борьбы за ресурсы, территорию и жизнь. Вокруг — леса, промзоны, общаги, порты, бункеры. Каждая группировка борется за своё место под холодным солнцем.</p>
+                        <p>Главный герой — отряд <strong>«Сибирская тень»</strong>, объединивший выживших из разных слоёв: школьников, спортсменов, медиков, рабочих, девушек. Они держат оборону в промзоне и пытаются выжить среди врагов и союзников.</p>
+
+                        <h3>👥 Главные персонажи</h3>
+
+                        <div class="char-block">
+                            <p class="char-name">Даниил</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Роль:</strong> Один из двух глав группы (вместе с Тимохой)</p>
+                            <p class="char-line"><strong>Характер:</strong> Спокойный, рассудительный, ответственный</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Учился в школе, занимался боксом (мастер спорта), встречался с Милой, играл в КС ГО с Володей. Мечтал стать программистом.</p>
+                            <p class="char-line"><strong>Оружие:</strong> АКС, пистолет Лебедева</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Уставшие глаза, щетина, спокойный голос, который редко повышает</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Тимоха</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Роль:</strong> Один из двух глав группы (вместе с Даниилом)</p>
+                            <p class="char-line"><strong>Характер:</strong> Расчётливый, умный, стратег</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Любил строить из конструктора, мечтал стать архитектором. В школе носил очки, вечно сползавшие. Встречается с Аней.</p>
+                            <p class="char-line"><strong>Оружие:</strong> Автомат</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Всегда с блокнотом для расчётов, носит очки</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Слава (Солевой)</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Роль:</strong> Тренер боевой бригады, главный по физической подготовке</p>
+                            <p class="char-line"><strong>Характер:</strong> Грубый, прямой, жёсткий, но верный друг. Мастер спорта по боксу.</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Занимался боксом с детства, подрабатывал вожатым в лагере (уволили из-за инцидента). Любит пиво и сигареты.</p>
+                            <p class="char-line"><strong>Оружие:</strong> АК-47, «Печенег» (пулемёт)</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Крупный, мощный, перебинтованные руки, грубый голос</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Данил</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Роль:</strong> Боец штурмовой группы, парень Наташи</p>
+                            <p class="char-line"><strong>Характер:</strong> Молчаливый, себе на уме, но с доброй улыбкой. Влюбчивый, романтичный, но жёсткий в бою.</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Брат погиб в первый день войны. До войны не имел серьёзных отношений. Мечтал стать актёром. Играет на гитаре.</p>
+                            <p class="char-line"><strong>Оружие:</strong> АК-47, АКС, тактический нож</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Кучерявые волосы, тёмные круги под глазами</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Костя</p>
+                            <p class="char-line"><strong>Возраст:</strong> 19 лет &nbsp;|&nbsp; <strong>Роль:</strong> Боец, парень Даши</p>
+                            <p class="char-line"><strong>Характер:</strong> Спокойный, рассудительный, немного застенчивый. В школе был геймером, играл в RUST.</p>
+                            <p class="char-line"><strong>Прошлое:</strong> В первый день войны спас Дашу и её подруг от банды Владислава. Убил отца и брата Владислава. После этого у него личные счёты с «Жнецами».</p>
+                            <p class="char-line"><strong>Оружие:</strong> Дробовик, автомат, нож</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Хромал после ранения в бедро (болт из арбалета)</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Елисей (пухлый друг Кости с очками)</p>
+                            <p class="char-line"><strong>Возраст:</strong> 19 лет &nbsp;|&nbsp; <strong>Роль:</strong> Друг Кости, парень Миланы</p>
+                            <p class="char-line"><strong>Характер:</strong> Весёлый, неуклюжий, но преданный. Носит очки (одна дужка треснута и перемотана изолентой).</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Учился в одной школе с Костей. В первый день войны помог Косте спасти Дашу. Влюбился в Милану.</p>
+                            <p class="char-line"><strong>Оружие:</strong> Автомат</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Пухлый, очки, часто потеет и тяжело дышит после бега</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Степа</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Роль:</strong> Боец</p>
+                            <p class="char-line"><strong>Характер:</strong> Эмоциональный, вспыльчивый, иногда пьёт лишнего. Верный друг.</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Любил футбол, играл в команде с Даниилом и другими. После пары дней апокалипсиса потерял Дашу (подругу Степана) и Полину — застрелены в баре.</p>
+                            <p class="char-line"><strong>Оружие:</strong> АКС, бейсбольная бита</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Лохматый, часто злой или пьяный</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Кирилл</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Роль:</strong> Боец, друг Степы</p>
+                            <p class="char-line"><strong>Характер:</strong> Спокойный, уравновешенный, молчаливый, надёжный. Всегда в кепке или панаме.</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Играл в футбол, был в одной команде с Даниилом и Степой. После пары дней апокалипсиса потерял Дашу (подругу Степана) и Полину — застрелены в баре.</p>
+                            <p class="char-line"><strong>Оружие:</strong> Ружьё, автомат</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Всегда в головном уборе, молчаливый взгляд</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Артемий (Артём)</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Роль:</strong> Командир боевой бригады (вместе с братом Елисеем)</p>
+                            <p class="char-line"><strong>Характер:</strong> Уверенный, жёсткий, иногда конфликтует со Славой и Данилом, но справедливый.</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Пришёл в «Сибирскую тень» со своей группой (брат Елисей, Вадим, девушка). Умеет драться.</p>
+                            <p class="char-line"><strong>Оружие:</strong> АКМ</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Блондин, быстрый и гибкий</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Елисей (брат Артемия)</p>
+                            <p class="char-line"><strong>Возраст:</strong> 19 лет &nbsp;|&nbsp; <strong>Роль:</strong> Снайпер, командир боевой бригады (вместе с братом)</p>
+                            <p class="char-line"><strong>Характер:</strong> Спокойный, точный, профессиональный</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Пришёл с братом. Лучший стрелок в отряде.</p>
+                            <p class="char-line"><strong>Оружие:</strong> СВД с восьмикратным прицелом</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Всегда на вышке или в укрытии, неразговорчив</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Вадим</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Роль:</strong> Технический специалист, сварщик, механик</p>
+                            <p class="char-line"><strong>Характер:</strong> Деловой, умелый, спокойный</p>
+                            <p class="char-line"><strong>Прошлое:</strong> До войны работал сварщиком. Пришёл в отряд с Артемием.</p>
+                            <p class="char-line"><strong>Оружие:</strong> Автомат</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Руки в мозолях, всегда с инструментами</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Сергей (Серёга)</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Роль:</strong> Радист, связист</p>
+                            <p class="char-line"><strong>Характер:</strong> Тревожный, внимательный, ответственный</p>
+                            <p class="char-line"><strong>Прошлое:</strong> В первый день войны был один на улице, Даниил позвал его к гаражам. Выжил. Теперь сидит на рации.</p>
+                            <p class="char-line"><strong>Оружие:</strong> Пистолет</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Всегда в наушниках, рядом с ноутбуком и рацией</p>
+                        </div>
+
+                        <h3>👩 Женские персонажи</h3>
+
+                        <div class="char-block">
+                            <p class="char-name">Алина</p>
+                            <p class="char-line"><strong>Возраст:</strong> 19-20 лет &nbsp;|&nbsp; <strong>Роль:</strong> Главный медик «Сибирской тени»</p>
+                            <p class="char-line"><strong>Характер:</strong> Спокойная, профессиональная, без лишних эмоций</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Училась на медсестру. В первый день войны была в группе Кости. Спасла Славу (переливание крови). Обучает Милану и других девушек.</p>
+                            <p class="char-line"><strong>Оружие:</strong> Медицинские инструменты, умеет обращаться с оружием</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Всегда в рабочей одежде, руки в йоде и бинтах</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Милана</p>
+                            <p class="char-line"><strong>Возраст:</strong> 17-18 лет &nbsp;|&nbsp; <strong>Роль:</strong> Помощница Алины, девушка Елисея (пухлого)</p>
+                            <p class="char-line"><strong>Характер:</strong> Добрая, старательная, немного застенчивая</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Подруга Даши (девушки Кости). Была спасена Костей и Елисеем в первый день. Теперь учится медицине.</p>
+                            <p class="char-line"><strong>Оружие:</strong> Медицинские инструменты, учится стрелять</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Очки (как у Елисея), всегда в чистой одежде</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Даша (девушка Кости)</p>
+                            <p class="char-line"><strong>Возраст:</strong> 17-18 лет &nbsp;|&nbsp; <strong>Роль:</strong> Девушка Кости</p>
+                            <p class="char-line"><strong>Характер:</strong> Добрая, заботливая, верная</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Подруга Миланы и Алины. Спасена Костей и Елисеем в первый день. Её бывший парень Лёня искал её. Теперь с Костей.</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Часто рядом с Костей, носит подаренный шарф</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Аня</p>
+                            <p class="char-line"><strong>Возраст:</strong> 17 лет &nbsp;|&nbsp; <strong>Роль:</strong> Девушка Тимохи</p>
+                            <p class="char-line"><strong>Характер:</strong> Весёлая, заботливая, смелая</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Была с Тимохой с первого дня на гаражах.</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Часто сидит у Тимохи на коленях, вяжет шарфы</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Наташа</p>
+                            <p class="char-line"><strong>Возраст:</strong> 19 лет &nbsp;|&nbsp; <strong>Роль:</strong> Бывшая пленница, девушка Данила, бывшая девушка Быка</p>
+                            <p class="char-line"><strong>Характер:</strong> Сначала агрессивная и недоверчивая, потом раскрывается — добрая, любящая, но напуганная.</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Была в отношениях с Быком год. Он контролировал её, унижал, держал как трофей. После апокалипсиса он взял её на базу. Она сбежала (или её взяли в плен «Сибирской тенью»). Полюбила Данила.</p>
+                            <p class="char-line"><strong>Оружие:</strong> Не воюет</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Светлые волосы, голубые глаза, красивая, но сломленная внутри</p>
+                        </div>
+
+                        <h3>💀 Второстепенные персонажи</h3>
+
+                        <div class="char-block">
+                            <p class="char-name">Даша (подруга Степана и Кирилла) — погибла</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Судьба:</strong> Убита в баре «Старый причал» в первой половине второй главы</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Полина (подруга Степана и Кирилла) — погибла</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Судьба:</strong> Убита в баре «Старый причал» в первой половине второй главы</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Лёня — погиб</p>
+                            <p class="char-line"><strong>Возраст:</strong> 20 лет &nbsp;|&nbsp; <strong>Судьба:</strong> Бывший парень Даши (девушки Кости). Пытался вернуть её, взял в заложники Славу и Даниила. Убит Костей в поединке.</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Егор и Дима (люди Лёни)</p>
+                            <p class="char-line"><strong>Судьба:</strong> Отпущены после того, как рассказали, где находится квартира Лёни</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Миша (полицейский)</p>
+                            <p class="char-line"><strong>Возраст:</strong> 25-30 лет &nbsp;|&nbsp; <strong>Роль:</strong> Полицейский, которого Данил спас в первый день. Позже помог «Сибирской тени», когда их задержали после взрыва моста.</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Тревор</p>
+                            <p class="char-line"><strong>Возраст:</strong> 40-45 лет &nbsp;|&nbsp; <strong>Роль:</strong> Глава группировки «Невонские»</p>
+                            <p class="char-line"><strong>Характер:</strong> Умный, осторожный, верный слову. Носит камуфляжную шляпу.</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Строит укреплённый посёлок за лесом. Союзник «Сибирской тени».</p>
+                            <p class="char-line"><strong>Техника:</strong> Бронированный фургон</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Борис</p>
+                            <p class="char-line"><strong>Возраст:</strong> 50-55 лет &nbsp;|&nbsp; <strong>Роль:</strong> Помощник Тревора</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Коренастый, с сединой в бороде</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Бык</p>
+                            <p class="char-line"><strong>Возраст:</strong> 25-30 лет &nbsp;|&nbsp; <strong>Роль:</strong> Главный антагонист 3 главы, глава группировки «Высотники»</p>
+                            <p class="char-line"><strong>Характер:</strong> Жестокий, умный, опасный. Психопат. Бывший военный (ВДВ, старшина). Прошёл передок.</p>
+                            <p class="char-line"><strong>Внешность:</strong> Рост 190 см, вес около 100 кг, мышцы, шрамы, светлые холодные глаза. Носит шлем 6Б6 и тяжёлый бронежилет «Ратник».</p>
+                            <p class="char-line"><strong>Оружие:</strong> АКМ, снайперская винтовка, нож</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Двигается бесшумно, убивает голыми руками. Имеет 5 жён (Наташа была одной из них). Живёт в четвёртом (главном) поселении высотников.</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Сталь (Товарищ Сталь)</p>
+                            <p class="char-line"><strong>Возраст:</strong> 40-45 лет &nbsp;|&nbsp; <strong>Роль:</strong> Глава группировки «Пролетарии» (коммунисты)</p>
+                            <p class="char-line"><strong>Характер:</strong> Убеждённый коммунист, жёсткий, но честный</p>
+                            <p class="char-line"><strong>Оружие:</strong> Карабин</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Носит советскую символику</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Старый</p>
+                            <p class="char-line"><strong>Возраст:</strong> 70 лет &nbsp;|&nbsp; <strong>Роль:</strong> Глава «Рыбаков»</p>
+                            <p class="char-line"><strong>Характер:</strong> Спокойный, мудрый, нейтральный</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Кузьма</p>
+                            <p class="char-line"><strong>Возраст:</strong> 40 лет &nbsp;|&nbsp; <strong>Роль:</strong> Глава торговцев в лесу</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Бывший коммерсант</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Михалыч</p>
+                            <p class="char-line"><strong>Возраст:</strong> 50-55 лет &nbsp;|&nbsp; <strong>Роль:</strong> Старший охотников в лесу</p>
+                        </div>
+
+                        <h3>⚔️ Группировки</h3>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🛡️ Сибирская тень (главные герои)</p>
+                            <p><strong>База:</strong> Промзона (1 км × 1 км)</p>
+                            <p><strong>Главы:</strong> Даниил и Тимоха</p>
+                            <p><strong>Численность:</strong> ~60-70 человек (бойцы, медики, рабочие, девушки)</p>
+                            <p><strong>Вооружение:</strong> АКС, АКМ, АК-47, дробовики, СВД, РПК, «Печенег», РПГ-7, бронежилеты, каски, огненные смеси, гранаты.</p>
+                            <p><strong>Техника:</strong> Волга, Газели, УАЗ, читырка, Ford, бронированные Уазы.</p>
+                            <p><strong>Союзники:</strong> Невонские, рыбаки, торговцы, охотники, коммунисты (временно)</p>
+                            <p><strong>Враги:</strong> Высотники, Жнецы, Нацисты</p>
+                            <p><strong>Форма:</strong> Тёмно-синие куртки, пуховики, штаны с нашивкой (чёрная тень на белом фоне)</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">💀 Высотники (главные враги)</p>
+                            <p><strong>База:</strong> Общая территория (3 км × 3 км), четыре поселения на высотке (1-3 — с рабами, 4 — главная база Быка)</p>
+                            <p><strong>Глава:</strong> Бык</p>
+                            <p><strong>Численность:</strong> ~400 человек</p>
+                            <p><strong>Вооружение:</strong> АКМ, АК-74, пулемёты, СВД, «Винторез», РПГ-7, миномёты 82 мм. Элита (37 человек) — бронежилеты «Ратник», каски 6Б6.</p>
+                            <p><strong>Техника:</strong> Один БТР-80, грузовики</p>
+                            <p><strong>Особые приметы:</strong> Носят зелёные пуховики и зелёные одеяния. Элита — нашивки с бычьей головой. Держат рабов (~40 человек в поселении 1).</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🤝 Невонские (союзники)</p>
+                            <p><strong>База:</strong> Посёлок за лесом</p>
+                            <p><strong>Глава:</strong> Тревор</p>
+                            <p><strong>Численность:</strong> ~700 человек</p>
+                            <p><strong>Вооружение:</strong> Автоматы Калашникова, карабины Симонова, немного бронежилетов</p>
+                            <p><strong>Техника:</strong> Гражданские машины, переделанные под военные нужды</p>
+                            <p><strong>Форма:</strong> Самодельная, без единого стандарта</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">⚔️ Жнецы (враги)</p>
+                            <p><strong>База:</strong> Общаги (20-я и 21-я) основные, другие так же под их влиянием, Старый город</p>
+                            <p><strong>Глава:</strong> Библиотекарь (Владислав) — 18 лет, бывший друг Кости, семью которого убил Костя</p>
+                            <p><strong>Численность:</strong> ~500 человек</p>
+                            <p><strong>Вооружение:</strong> Автоматы Калашникова, бронежилеты, снайперские винтовки</p>
+                            <p><strong>Техника:</strong> БТР-60 с боекомплектом (на ходу), грузовики</p>
+                            <p><strong>Особые приметы:</strong> Глава ходит в кожаном плаще и шляпе. Личная охрана — 10 человек в масках с черепами. Публичные казни.</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">☠️ Нацисты (враги)</p>
+                            <p><strong>База:</strong> Бывший военный полигон (сменили место после обстрела «Градом»)</p>
+                            <p><strong>Глава:</strong> Фюр (бывший прапорщик)</p>
+                            <p><strong>Численность:</strong> ~250 человек</p>
+                            <p><strong>Вооружение:</strong> Автоматы, пулемёты, гранатомёты, миномёты.</p>
+                            <p><strong>Особые приметы:</strong> Носят свастики. «Красный Череп» обстрелял их из «Градов» — 10 убитых, но свастики не сняли.</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🖤 Чёрные береты (нейтралы)</p>
+                            <p><strong>База:</strong> Здание Управления на окраине города</p>
+                            <p><strong>Глава:</strong> Полковник Седов (бывший начальник городского УВД)</p>
+                            <p><strong>Численность:</strong> ~150 человек</p>
+                            <p><strong>Вооружение:</strong> Автоматы Калашникова, пистолеты Макарова, бронежилеты, каски, снайперы</p>
+                            <p><strong>Техника:</strong> Полицейские машины (используют редко)</p>
+                            <p><strong>Особые приметы:</strong> Бывшие полицейские, ни на кого не нападают, никого не пускают.</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🚩 Пролетарии (коммунисты) — временные союзники</p>
+                            <p><strong>База:</strong> Порт, складские помещения</p>
+                            <p><strong>Глава:</strong> Товарищ Сталь (бывший заводской рабочий)</p>
+                            <p><strong>Численность:</strong> ~200 человек</p>
+                            <p><strong>Вооружение:</strong> Карабины, обрезы, охотничьи ружья</p>
+                            <p><strong>Техника:</strong> Грузовики, погрузчики</p>
+                            <p><strong>Особые приметы:</strong> Лозунги «Власть Советам!», воюют с нацистами. У них есть ферма (коровы, куры, свиньи, овцы, козы).</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🎖️ Легион (нейтралы, опасны)</p>
+                            <p><strong>База:</strong> Старый гостиничный комплекс на въезде в город</p>
+                            <p><strong>Глава:</strong> Полковник (позывной неизвестен)</p>
+                            <p><strong>Численность:</strong> ~30 человек</p>
+                            <p><strong>Вооружение:</strong> Европейское оружие (H&K G36, FN FAL, Glock), европейские бронежилеты</p>
+                            <p><strong>Особые приметы:</strong> Наёмники, предположительно не из этого города, высокая боевая подготовка. Выполняют контракты за еду и патроны. Связаны с «Красным Черепом» нейтралитетом.</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🔴 Красный Череп (нейтралы, очень опасны)</p>
+                            <p><strong>База:</strong> Действующий бункер в 15 км от Невона (бывший командный бункер округа)</p>
+                            <p><strong>Глава:</strong> Пшенов, позывной «Барс»</p>
+                            <p><strong>Численность:</strong> ~100 человек (элитный спецназ, предположительно отряд «Вымпел»)</p>
+                            <p><strong>Вооружение:</strong> Неизвестно, предположительно самое современное</p>
+                            <p><strong>Техника:</strong> 3 танка Т-72 (на ходу) остальные стоят в ангарах, 4 пусковые установки «Град», бронемашины «Тигр» (не менее 6, с пулемётами «Корд»), 2 вертолёта Ми-24 (ударные)</p>
+                            <p><strong>Особые приметы:</strong> Логотип — красный череп. Связаны с правительством. Помогают гражданским. Не вступают в переговоры. Уничтожили 50 человек «Жнецов» за 15 минут без потерь. Обстреляли нацистов из «Градов», имеют самую высокую подготовку в городе «X».</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🎣 Рыбаки (нейтралы)</p>
+                            <p><strong>База:</strong> Старый рыбацкий посёлок на реке</p>
+                            <p><strong>Глава:</strong> Старый (70 лет)</p>
+                            <p><strong>Численность:</strong> ~50-60 человек</p>
+                            <p><strong>Вооружение:</strong> Старые ружья</p>
+                            <p><strong>Техника:</strong> Лодки</p>
+                            <p><strong>Особые приметы:</strong> Торгуют рыбой и водой, ни на кого не нападают. Союзники «Сибирской тени» (дают 5% улова в обмен на защиту).</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🛒 Торговцы (нейтралы)</p>
+                            <p><strong>База:</strong> Лесные землянки</p>
+                            <p><strong>Глава:</strong> Кузьма</p>
+                            <p><strong>Численность:</strong> Несколько семей</p>
+                            <p><strong>Вооружение:</strong> Минимальное</p>
+                            <p><strong>Техника:</strong> Отсутствует</p>
+                            <p><strong>Особые приметы:</strong> Торгуют солью, спичками, медикаментами, тёплой одеждой. Союзники «Сибирской тени» (дают 10% припасов в обмен на защиту).</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🏹 Охотники (союзники)</p>
+                            <p><strong>База:</strong> Лес, старые зимовья</p>
+                            <p><strong>Глава:</strong> Михалыч</p>
+                            <p><strong>Численность:</strong> 5 человек</p>
+                            <p><strong>Вооружение:</strong> Карабины</p>
+                            <p><strong>Особые приметы:</strong> Знают лес как свои пять пальцев. Следят за пространством, докладывают «Сибирской тени» о чужаках.</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">👁️ Синеглазые (секта, нейтралы, но опасны)</p>
+                            <p><strong>База:</strong> Бывший детский сад «Солнышко»</p>
+                            <p><strong>Глава:</strong> Отец Михаил (бывший священник с психическими отклонениями)</p>
+                            <p><strong>Численность:</strong> ~60 человек</p>
+                            <p><strong>Вооружение:</strong> Ножи, дубины, немного обрезов</p>
+                            <p><strong>Особые приметы:</strong> Фанатики. Проводят ритуальные убийства. Отец Михаил вещает каждый вечер. Володя и Иван прячутся у них.</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🏴 Скифы (распались)</p>
+                            <p><strong>Бывшая база:</strong> Окраина города</p>
+                            <p><strong>Бывший глава:</strong> Шаман (бывший историк, убит Быком)</p>
+                            <p><strong>Численность:</strong> Было ~300 человек</p>
+                            <p><strong>Судьба:</strong> Задавили «Высотники». Остатки разбежались.</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🐺 Волки (нейтралы)</p>
+                            <p><strong>База:</strong> Гаражный кооператив на южной стороне</p>
+                            <p><strong>Глава:</strong> Байк (бывший президент мотоклуба)</p>
+                            <p><strong>Численность:</strong> ~200 человек</p>
+                            <p><strong>Вооружение:</strong> Обрезы, карабины, самодельное оружие</p>
+                            <p><strong>Техника:</strong> Мотоциклы, переделанные грузовики</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🏜️ Пустынники (нейтралы)</p>
+                            <p><strong>База:</strong> Старое бомбоубежище на окраине</p>
+                            <p><strong>Глава:</strong> Отшельник (бывший военный инженер)</p>
+                            <p><strong>Численность:</strong> ~80 человек</p>
+                            <p><strong>Вооружение:</strong> Почти нет</p>
+                            <p><strong>Особые приметы:</strong> Просто выживают, просят медикаменты, обменивают запчасти.</p>
+                        </div>
+
+                        <h3>👤 Другие персонажи</h3>
+
+                        <div class="char-block">
+                            <p class="char-name">Володя</p>
+                            <p class="char-line"><strong>Возраст:</strong> 19 лет &nbsp;|&nbsp; <strong>Роль:</strong> Бывший друг Даниила и Кости, теперь прячется в секте «Синеглазые»</p>
+                            <p class="char-line"><strong>Характер:</strong> Сломленный, виноватый, пытается выжить</p>
+                            <p class="char-line"><strong>Прошлое:</strong> В первый день войны под воздействием галлюциногенных грибов убил свою девушку Настю и её подругу Полину. С тех пор прячется вместе с Иваном.</p>
+                            <p class="char-line"><strong>Особые приметы:</strong> Пустые глаза, не ест мяса (после убийства), не курит</p>
+                        </div>
+
+                        <div class="char-block">
+                            <p class="char-name">Иван</p>
+                            <p class="char-line"><strong>Возраст:</strong> 19 лет &nbsp;|&nbsp; <strong>Роль:</strong> Друг Володи, тоже в секте</p>
+                            <p class="char-line"><strong>Характер:</strong> Тревожный, виноватый (дал Володе грибы), хочет сбежать из секты</p>
+                            <p class="char-line"><strong>Прошлое:</strong> Дать грибы Володе. После убийства скрывается вместе с ним.</p>
+                        </div>
+
+                        <h3>🗺️ География</h3>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🏭 Промзона (база «Сибирской тени»)</p>
+                            <p>• Размер: 1 км × 1 км</p>
+                            <p>• Жилые корпуса (2-этажные)</p>
+                            <p>• Ангары (2 шт.)</p>
+                            <p>• Цех (рабочий)</p>
+                            <p>• Арсенал (стальные листы)</p>
+                            <p>• Блокпосты (2 готовых, 1 строится)</p>
+                            <p>• Стрельбище</p>
+                            <p>• Полигон</p>
+                            <p>• Сетчатый забор под напряжением + колючая проволока + бетонная стена (строится)</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🏢 Поселения высотников</p>
+                            <p>• 1-е поселение: рабы (~40 человек), цель первого штурма</p>
+                            <p>• 2-е и 3-е поселения: периметр</p>
+                            <p>• 4-е поселение: главная база Быка</p>
+                        </div>
+
+                        <div class="faction-block">
+                            <p class="faction-name">🏘️ Другие базы</p>
+                            <p>• База «Невонских»: Посёлок за лесом, укрепляется</p>
+                            <p>• База «Жнецов»: Общаги 20 и 21, Старый город</p>
+                            <p>• База «Нацистов»: Бывший военный полигон (сменили расположение)</p>
+                            <p>• База «Чёрных беретов»: Здание Управления на окраине</p>
+                            <p>• База «Легиона»: Старый гостиничный комплекс</p>
+                            <p>• Бункер «Красного Черепа»: 15 км от Невона, в лесу</p>
+                            <p>• Детский сад «Солнышко» (база «Синеглазых»)</p>
+                            <p>• Рыбацкий посёлок: На реке, в 0.5 км от промзоны</p>
+                            <p>• Ферма коммунистов: Рядом с портом (коровы, куры, свиньи)</p>
+                        </div>
+
+                    </div>
+
+                    <button class="world-back-btn" onclick="goBack()">← Назад</button>
+                </div>
+            </div>
+
+            <!-- ===== СТРАНИЦА КНИГИ: LOUISVILLE NIGHTMARE ===== -->
+            <div class="page" id="bookPageLouisville">
+
+                <div class="book-page-content">
+                    <div class="book-cover-large">
+                        <img src="cover.jpg" alt="Louisville Nightmare — обложка">
+                    </div>
                     <div class="book-info">
                         <h2>LOUISVILLE NIGHTMARE</h2>
                         <p class="short-desc">
@@ -718,21 +1344,18 @@
                         </p>
                         <button class="back-btn" onclick="goBack()">← Назад</button>
                     </div>
-
                 </div>
 
-                <!-- ВКЛАДКИ ГЛАВ -->
                 <div class="chapters-tabs">
-                    <button class="chapter-tab active" onclick="showChapter(1, this)">Глава 1</button>
-                    <button class="chapter-tab" onclick="showChapter(2, this)">Глава 2</button>
-                    <button class="chapter-tab" onclick="showChapter(3, this)">Глава 3</button>
+                    <button class="chapter-tab active" onclick="showChapter('louisville', 1, this)">Глава 1</button>
+                    <button class="chapter-tab" onclick="showChapter('louisville', 2, this)">Глава 2</button>
+                    <button class="chapter-tab" onclick="showChapter('louisville', 3, this)">Глава 3</button>
                 </div>
 
-                <!-- СОДЕРЖИМОЕ ГЛАВ -->
-                <div class="chapter-content" id="chapterContent">
-                    <!-- Глава 1 -->
-                    <div class="chapter-text active" id="chapter1">
-                        <p class="chapter-title">Глава 1. Луисвилл</p>
+                <div class="chapter-content">
+
+                    <div class="chapter-text active" id="louisville-chapter1">
+                        <p class="chapter-title">Глава 1. Уроки отменяются навсегда</p>
                         <p>Этим утром солнце встретило граждан города Луисвилль яркими лучами. Дул прохладный ветер. Все торопились по делам: кому-то в школу, кто-то ехал на метро или машине на работу. Ничего не предвещало беды в этот прекрасный день.</p>
                         <p>История пойдёт о трёх одноклассниках 10 класса (Sophomore), которые находились в школе. Повествование пойдёт от лица Данила — шестнадцатилетнего парня, который торопился в школу на первый урок, не думая и не зная, что сегодня может произойти.</p>
                         <p>Зайдя в школу, прозвенел звонок. Данил последовал в кабинет биологии на второй этаж. По пути он увидел, как на лавочке плакала девушка из его параллели. Он не решился подойти и спросить, что у неё произошло, так как торопился в класс.</p>
@@ -879,102 +1502,63 @@
                         <p>Влад забежал в фургон с Дэрилом. Даниил последовал за ними. К ним бежали ещё двое заражённых школьников. Он закрыл перед их лицом дверь. Слава нажал на газ в пол, и они поехали в сторону шоссе.</p>
                     </div>
 
-                    <!-- Глава 2 -->
-                    <div class="chapter-text" id="chapter2" style="display:none;">
-                        <p class="chapter-title">Глава 2. Дорога</p>
-                        <p>Спустя 20 минут они ехали по шоссе. По пути встретился один перевёрнутый пикап с заражённым, который ел свою собаку.</p>
-                        <p>— Мерзость… — поморщился Карл.</p>
-                        <p>— Ага, — согласился Тони.</p>
-                        <p>Они продолжили путь к ферме Данила.</p>
-                        <p>Спустя 15 минут фургон шёл по трассе. Лес по обе стороны постепенно редел, и впереди открылось широкое поле — бескрайнее, покрытое жухлой травой. Небо было ясным, солнце висело низко, но светило ярко, заливая поле золотистым светом. Дорога была пустой — ни машин, ни людей, ни заражённых. Только ветер гнал по асфальту мелкий мусор.</p>
-                        <p>Влад сидел у окна. Он облокотился на подлокотник, подпёр голову рукой и смотрел в окно. Топор лежал у его ног, завернутый в куртку. В фургоне было тихо — все молчали, переваривая случившееся. Слава вёл, Даниил сидел на пассажирском, остальные — сзади.</p>
-                        <p>Влад смотрел на поле. Мелькали столбы, провода, редкие деревья. И вдруг он напрягся.</p>
-                        <p>Из леса, со стороны Форт-Нокс, на трассу выехала колонна национальный гвардии. Первым шёл «Хамви» — тёмно-зелёный, с пулемётной турелью на крыше, где сидел стрелок в бронежилете и каске. За ним — второй, третий, четвёртый, пятый. За «Хамви» — три грузовика: тяжёлые, армейские, с брезентовыми верхами и людьми в кузове. Между машинами — квадроциклы сопровождения, два или три. Всё это двигалось ровно, слаженно, по-военному.</p>
-                        <p>Влад сжал топор в руках. Пальцы побелели.</p>
-                        <p>— Эй, — сказал он тихо, не отрывая взгляда от окна. — Гляньте.</p>
-                        <p>Данил повернулся к окну. Даниил тоже.</p>
-                        <p>— Что там? — спросил Слава, не оборачиваясь.</p>
-                        <p>— Военные, — ответил Влад. — Колонна. Пять «Хамви», три грузовика. Со стороны Форт-Нокс.</p>
-                        <p>Данил подался вперёд, вглядываясь в окно.</p>
-                        <p>— Это… это армия? — спросил он.</p>
-                        <p>— Похоже на то, — сказал Даниил. — Только что они тут делают?</p>
-                        <p>— Может, эвакуация? — предположил Дэрил.</p>
-                        <p>— Или зачистка, — мрачно сказал Влад.</p>
-                        <p>Колонна шла параллельно им, по встречной полосе. «Хамви» сверкали на солнце, грузовики гудели, мотоциклы ревели. Один из солдат в кузове грузовика посмотрел в их сторону, но ничего не сделал. Колонна прошла мимо и скрылась за поворотом, оставив после себя только запах выхлопа и пыль.</p>
-                        <p>— Проехали, — выдохнул Данил.</p>
-                        <p>— Ага, — кивнул Влад, но топор не выпустил.</p>
-                        <p>Фургон ехал дальше. Через минуту трасса снова сузилась, и по обе стороны вырос лес — густой, тёмный, с высокими соснами. Фургон нырнул в чащу, как в туннель.</p>
-                        <p>А над лесом, вдалеке, ярко светило солнце. Оно поднималось всё выше, заливая верхушки деревьев золотым светом. Где-то там, за горизонтом, были поля, люди. Но здесь, внизу, под кронами, было темно и тихо.</p>
-                        <p>Фургон ехал дальше — к ферме.</p>
-                        <p>Спустя 10 минут езды у поворота, у самой дороги, стояла старая деревянная табличка. Краска на ней облупилась, буквы почти стёрлись, но ещё можно было разобрать: «Ферма. 2 мили». Рядом с табличкой, в тени старого дуба, стоял маленький олень — Бемби. Он поднял голову, посмотрел на проезжающий фургон большими тёмными глазами, потом сорвался с места и побежал вглубь леса, мелькая среди деревьев. Его силуэт становился всё меньше и меньше, пока не растворился в лесной чаще. Фургон проехал мимо, свернул на поворот, и вскоре скрылся за холмом.</p>
-                        <p>Фургон выехал из чащи на открытое пространство. Лес остался позади, и перед ними раскинулись бескрайние поля пшеницы. Золотые колосья колыхались под лёгким ветром, создавая волны, которые шли одна за другой до самого горизонта. Солнце светило ярко, заливая всё вокруг тёплым светом — таким тёплым, что даже сквозь запылённое стекло фургона чувствовалось, как оно греет. Казалось, что где-то там, за этими полями, нет никакого апокалипсиса — только мир, покой и тишина. Только далёкие столбы дыма сзади на горизонте напоминали, что это не так.</p>
-                        <p>В фургоне спустя десять минут езды поля пшеницы окружили их со всех сторон. Дорога стала узкой, грунтовой, с глубокими колеями от трактора. В фургоне было душно — но никто не решался открыть окно. Тишину нарушали только гул двигателя, скрип подвески на кочках и редкие разговоры. Запах в салоне был тяжёлым — смесь пота, бензина, пороха и чужой крови, которая ещё не выветрилась с курток.</p>
-                        <p>Алина и Мегги сидели на коленях у Карла и Тони. Девушки были бледными, напуганными, но держались. Мегги — высокая брюнетка с длинными волосами, заплетёнными в косу, которая растрепалась. Алина — невысокая, с короткой стрижкой и веснушками на носу. Они обе были из параллельного класса, но раньше почти не общались с нашими героями.</p>
-                        <p>— Как думаете, откуда они взялись? — тихо спросила Мегги, глядя в окно. Её голос дрожал.</p>
-                        <p>— Кто? — переспросил Тони, не сразу поняв.</p>
-                        <p>— Эти… заражённые, — она сглотнула. — Почему они жрут друг друга?</p>
-                        <p>— Я слышал, что-то про мутированное бешенство, — сказал Карл, потирая разбитый нос. — Из за того что крыса заражалась бешенством и занималась каннибализмом. Вроде это начала изучать.</p>
-                        <p>— Крыс? — переспросила Алина, поморщившись.</p>
-                        <p>— Ага, — кивнул Карл. Они жрали друг друга. Что-то такое.</p>
-                        <p>— И оно вырвалось, — закончила Мегги. — Как в фильмах.</p>
-                        <p>— Только это не фильм, — мрачно сказал Тони. — Это реальность.</p>
-                        <p>— Может, это вообще какая-то биологическая атака? — предположила Мегги. — Или эксперимент, который вышел из-под контроля.</p>
-                        <p>— Какая разница? — буркнул Карл. — Они реальны, и они нас хотят сожрать.</p>
-                        <p>— Хватит, — сказала Алина. — Мы и так на нервах. Давайте о чём-нибудь другом.</p>
-                        <p>Разговор затих.</p>
-                        <p>Тони решил позвонить родителям, показывало 2 палки. Не кто не брал трубку, у Тони промелькнула слеза. Все начали звонить своим родителям, у Мегги и Алины ответили только мамы, они сказали то что их мамы в карантинной зоне и то что их дома оцепили. Их матери сказали продержаться с кем то 2-3 ночи в безопасном месте пока ситуация не уляжется потом они им позвонят. Они сбросили трубки.</p>
-                        <p>Данил позвонил Деду:</p>
-                        <p>Гудок. Второй. Третий.</p>
-                        <p>— Алло? — раздался хриплый голос на том конце. — Данил? Ты чего звонишь? Связь же вроде пропала.</p>
-                        <p>— Дед, это я, — сказал Данил, и голос его дрогнул. — Я еду к тебе. Не один. С друзьями.</p>
-                        <p>— С друзьями? — переспросил дед. — Ты чего, в школе должен быть. Уроки, то-сё.</p>
-                        <p>— Дед, — Данил понизил голос. — В городе творится чёрт знает что. Мы еле выбрались.</p>
-                        <p>Пауза. Долгая, тяжёлая.</p>
-                        <p>— Что значит «чёрт знает что»? — голос деда стал серьёзным.</p>
-                        <p>— Люди сходят с ума, — ответил Данил. — Нападают на других. Жрут их. Я серьёзно. Мы видели. В школе. На улицах. Везде.</p>
-                        <p>— Господи, — выдохнул дед. — Совсем рехнулись?</p>
-                        <p>— Похоже на то, — сказал Данил. — Мы едем к тебе. Нас семеро. Восемь. С учителем физкультуры. Он… — Данил замолчал. — Он не выжил. Мы едем без него.</p>
-                        <p>— Понял, — коротко сказал дед. — Сколько вас?</p>
-                        <p>— Девять. Двое девчонок, — ответил Данил. — И… Карл с Тони. Из школы.</p>
-                        <p>— Карл? — дед хмыкнул. — Это тот, который тебя доставал?</p>
-                        <p>— Он самый, — буркнул Данил.</p>
-                        <p>— Ну, — дед помолчал, потом усмехнулся. — Ладно. Если он полезет — примет своими щами приклад Mossberg 500 . А если он заражённый — примет с особой теплотой.</p>
-                        <p>Данил невольно улыбнулся.</p>
-                        <p>— Дед, ты чего, дробовик из сейфа достал?</p>
-                        <p>— А то, — ответил дед. — Я его ещё в восемьдесят четвёртом покупал. Или в девяносто четвёртом. Не помню. Но он работает. Патронов — 8 коробок. Картечь, дробь. На всех хватит.</p>
-                        <p>— Хорошо, — сказал Данил. — Мы будем через полчаса. Может, меньше.</p>
-                        <p>— Давай, — сказал дед. — Я ворота открою. И печку затоплю. У меня как раз похлёбка варится.</p>
-                        <p>— Дед, — тихо сказал Данил.</p>
-                        <p>— Что?</p>
-                        <p>— Спасибо.</p>
-                        <p>— Не за что, внук, — ответил дед. — Ты главное — доедь. И друзей довези. А остальное — разберёмся.</p>
-                        <p>— Хорошо, — сказал Данил. — Конец связи.</p>
-                        <p>— Давай. Жду.</p>
-                        <p>У Влада, Дэрила и Даниила родители так же не взяли трубки, они отнесли это к тому что их так же забрали на карантин.</p>
-                        <p>Через несколько минут после разговора Мегги повернулась к Данилу, который сидел у окна, глядя на поля.</p>
-                        <p>— Данил, — позвала она.</p>
-                        <p>Он обернулся.</p>
-                        <p>— У тебя безопасно на ферме? — спросила она. — Мы с Алиной будем очень благодарны, если ты позволишь нам остаться. Нам некуда идти.</p>
-                        <p>Данил помолчал, глядя на неё. Потом посмотрел на Алину, которая тоже смотрела на него с надеждой.</p>
-                        <p>— Да, — сказал он. — Я всех впущу. Но не уверен, что еды хватит на всех. Нужно будет раздобыть её где-нибудь. Сбор урожая намечается только на начало лета.</p>
-                        <p>— Мы поможем, — быстро сказала Алина. — Чем сможем.</p>
-                        <p>— Я прослежу за этими двоими, — вмешался Даниил, кивнув на Карла и Тони. — Чтобы дичь не творили.</p>
-                        <p>— Эй, — возмутился Карл. — Мы не дичь.</p>
-                        <p>— Пока что, — усмехнулся Даниил.</p>
-                        <p>Данил посмотрел на него.</p>
-                        <p>— Я не против, чтобы они остались, — сказал он. — Но если начнут проблемы — выгоню. И не посмотрю, что мы вместе учились.</p>
-                        <p>— Понял, — буркнул Карл.</p>
-                        <p>— Принято, — кивнул Тони.</p>
-                        <p>— Спасибо, Данил, — сказала Мегги.</p>
-                        <p>— Спасибо, — эхом отозвалась Алина.</p>
-                        <p>— Не благодарите пока, — ответил Данил. — Сначала доживём.</p>
-                        <p>Фургон ехал дальше. Поля пшеницы тянулись до горизонта, и где-то вдалеке, за холмом, уже виднелась крыша старого амбара.</p>
+                    <div class="chapter-text" id="louisville-chapter2" style="display:none;">
+                        <p class="chapter-title">Глава 2</p>
+                        <p class="empty-chapter">✍️ Глава ещё пишется...</p>
                     </div>
 
-                    <!-- Глава 3 -->
-                    <div class="chapter-text" id="chapter3" style="display:none;">
-                        <p class="chapter-title">Глава 3. Ферма</p>
-                        <p>Здесь будет третья глава. Ты можешь добавить её позже.</p>
+                    <div class="chapter-text" id="louisville-chapter3" style="display:none;">
+                        <p class="chapter-title">Глава 3</p>
+                        <p class="empty-chapter">✍️ Глава ещё пишется...</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ===== СТРАНИЦА КНИГИ: СИБИРЬ ===== -->
+            <div class="page" id="bookPageSiberia">
+
+                <div class="book-page-content">
+                    <div class="book-cover-large">
+                        <img src="siberia-cover.jpg" alt="Сибирь — обложка">
+                    </div>
+                    <div class="book-info">
+                        <h2>СИБИРЬ</h2>
+                        <p class="short-desc">
+                            После ядерной войны мир погрузился в хаос. В глухом сибирском городке посреди тайги выжившие сталкиваются с группировками, голодом и вечной мерзлотой. Здесь каждый день — борьба за жизнь.
+                        </p>
+                        <button class="back-btn" onclick="goBack()">← Назад</button>
+                    </div>
+                </div>
+
+                <div class="chapters-tabs">
+                    <button class="chapter-tab active" onclick="showChapter('siberia', 1, this)">Глава 1</button>
+                    <button class="chapter-tab" onclick="showChapter('siberia', 2, this)">Глава 2</button>
+                    <button class="chapter-tab" onclick="showChapter('siberia', 3, this)">Глава 3</button>
+                    <button class="chapter-tab" onclick="showChapter('siberia', 4, this)">Глава 4</button>
+                </div>
+
+                <div class="chapter-content">
+
+                    <div class="chapter-text active" id="siberia-chapter1">
+                        <p class="chapter-title">Глава 1</p>
+                        <p class="empty-chapter">✍️ Глава ещё пишется...</p>
+                    </div>
+
+                    <div class="chapter-text" id="siberia-chapter2" style="display:none;">
+                        <p class="chapter-title">Глава 2</p>
+                        <p class="empty-chapter">✍️ Глава ещё пишется...</p>
+                    </div>
+
+                    <div class="chapter-text" id="siberia-chapter3" style="display:none;">
+                        <p class="chapter-title">Глава 3</p>
+                        <p class="empty-chapter">✍️ Глава ещё пишется...</p>
+                    </div>
+
+                    <div class="chapter-text" id="siberia-chapter4" style="display:none;">
+                        <p class="chapter-title">Глава 4</p>
+                        <p class="empty-chapter">✍️ Глава ещё пишется...</p>
                     </div>
 
                 </div>
@@ -986,27 +1570,37 @@
     </div>
 
     <script>
-        function openBook() {
-            document.getElementById('mainPage').classList.remove('active');
-            document.getElementById('bookPage').classList.add('active');
-            // Сброс на первую главу
-            showChapter(1, document.querySelector('.chapter-tab'));
+        function openBook(bookId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+            if (bookId === 'louisville') {
+                document.getElementById('bookPageLouisville').classList.add('active');
+                showChapter('louisville', 1, document.querySelector('#bookPageLouisville .chapter-tab'));
+            } else if (bookId === 'siberia') {
+                document.getElementById('bookPageSiberia').classList.add('active');
+                showChapter('siberia', 1, document.querySelector('#bookPageSiberia .chapter-tab'));
+            }
+        }
+
+        function openWorld(bookId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+            if (bookId === 'louisville') {
+                document.getElementById('worldPageLouisville').classList.add('active');
+            } else if (bookId === 'siberia') {
+                document.getElementById('worldPageSiberia').classList.add('active');
+            }
         }
 
         function goBack() {
-            document.getElementById('bookPage').classList.remove('active');
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById('mainPage').classList.add('active');
         }
 
-        function showChapter(num, btn) {
-            // Скрыть все главы
-            document.querySelectorAll('.chapter-text').forEach(el => el.style.display = 'none');
-            // Показать нужную
-            document.getElementById('chapter' + num).style.display = 'block';
-
-            // Убрать active у всех вкладок
-            document.querySelectorAll('.chapter-tab').forEach(el => el.classList.remove('active'));
-            // Добавить active нажатой
+        function showChapter(bookId, num, btn) {
+            document.querySelectorAll('#bookPage' + (bookId === 'louisville' ? 'Louisville' : 'Siberia') + ' .chapter-text').forEach(el => el.style.display = 'none');
+            document.getElementById(bookId + '-chapter' + num).style.display = 'block';
+            document.querySelectorAll('#bookPage' + (bookId === 'louisville' ? 'Louisville' : 'Siberia') + ' .chapter-tab').forEach(el => el.classList.remove('active'));
             if (btn) btn.classList.add('active');
         }
     </script>
